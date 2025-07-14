@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 13,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "0.875rem",
+  "fontStyle": "ITALIC",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "jpqewa6imc",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 6,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 14,
+  "mobileTopRow": 2,
+  "needsErrorInfo": false,
+  "originalBottomRow": 17,
+  "originalTopRow": 13,
+  "overflow": "NONE",
+  "parentColumnSpace": 10.5625,
+  "parentId": "4iudwr87nu",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "shouldTruncate": false,
+  "text": "{{ \n  \"Meta para \" + \n  ({\n    \"Monday\": \"segunda-feira\",\n    \"Tuesday\": \"terça-feira\",\n    \"Wednesday\": \"quarta-feira\",\n    \"Thursday\": \"quinta-feira\",\n    \"Friday\": \"sexta-feira\",\n    \"Saturday\": \"sábado\",\n    \"Sunday\": \"domingo\"\n  })[moment(DatePicker_ResumoDia.selectedDate).format(\"dddd\")] + \", \" + \n  moment(DatePicker_ResumoDia.selectedDate).format(\"D\") + \" de \" + \n  ({\n    \"January\": \"janeiro\",\n    \"February\": \"fevereiro\",\n    \"March\": \"março\",\n    \"April\": \"abril\",\n    \"May\": \"maio\",\n    \"June\": \"junho\",\n    \"July\": \"julho\",\n    \"August\": \"agosto\",\n    \"September\": \"setembro\",\n    \"October\": \"outubro\",\n    \"November\": \"novembro\",\n    \"December\": \"dezembro\"\n  })[moment(DatePicker_ResumoDia.selectedDate).format(\"MMMM\")] + \" de \" + \n  moment(DatePicker_ResumoDia.selectedDate).format(\"YYYY\")\n}}",
+  "textAlign": "CENTER",
+  "textColor": "#231F20",
+  "topRow": 9,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "gs8qd3c859",
+  "widgetName": "Text_data_atual"
+}

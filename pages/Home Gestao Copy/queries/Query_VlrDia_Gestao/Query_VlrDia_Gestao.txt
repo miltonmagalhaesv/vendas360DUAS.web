@@ -1,0 +1,26 @@
+WITH vendas_filtradas AS (
+  SELECT 
+    valor_liquido,
+    data_lanca,
+    ponto_venda
+  FROM public.vw_faturamento_vendas_analitico
+  WHERE DATE_TRUNC('month', data_lanca) = '{{ Select_Mes.selectedOptionValue }}'::date
+    AND ponto_venda = ANY ({{ Select_Lojas.selectedOptionValues }})
+),
+ultima_data_venda AS (
+  SELECT 
+    MAX(data_lanca) AS ultima_data,
+    SUM(valor_liquido) AS total_vendido
+  FROM vendas_filtradas
+),
+soma_pesos AS (
+  SELECT 
+    SUM(peso_dia) AS total_peso
+  FROM public.vw_horarios_funcionamento_com_local
+  WHERE data <= (SELECT ultima_data FROM ultima_data_venda)
+    AND nome_loja = ANY ({{ appsmith.store.pontos_venda }})
+)
+SELECT 
+  ROUND((udv.total_vendido / NULLIF(sp.total_peso, 0))::numeric, 2) AS valor_dia
+FROM ultima_data_venda udv
+JOIN soma_pesos sp ON true;

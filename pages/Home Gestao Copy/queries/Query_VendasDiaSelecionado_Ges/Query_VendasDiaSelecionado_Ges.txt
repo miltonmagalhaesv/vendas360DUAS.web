@@ -1,0 +1,5 @@
+SELECT 
+  SUM(valor_liquido) AS total_vendido_dia
+FROM vw_faturamento_vendas_analitico
+WHERE data_lanca = '{{ DatePicker_ResumoDia.selectedDate }}'::date
+  AND ponto_venda = ANY ({{ Select_Lojas.selectedOptionValues }});

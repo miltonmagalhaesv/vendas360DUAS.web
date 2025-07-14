@@ -1,0 +1,67 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "allowScroll": false,
+  "animateLoading": true,
+  "borderRadius": "0.375rem",
+  "bottomRow": 97,
+  "boxShadow": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+  "chartData": {
+    "7tlgrcqeu3": {
+      "data": "{{\n  VendasMes_PDV.data\n    .filter(d => d.total_vendido > 0)\n    .map(d => {\n      const loja = d.ponto_venda?.trim();\n      const valor = d.total_vendido;\n      const metaObj = MetasMes_PDV.data.find(m => m.ponto_venda?.trim() === loja);\n      const meta = metaObj?.vlr_meta || 0;\n\n      return {\n        x: loja,\n        y: Number(valor.toFixed(2)),  // garante 2 casas decimais para o gráfico\n        color: valor >= meta ? \"#28a745\" : \"#e74c3c\",\n        label: valor.toLocaleString(\"pt-BR\", { minimumFractionDigits: 2, maximumFractionDigits: 2 })\n      };\n    })\n}}",
+      "seriesName": ""
+    }
+  },
+  "chartName": "Faturamento por PDV\t",
+  "chartType": "CUSTOM_ECHART",
+  "customEChartConfig": "{{ ((chartType) => ( \n(() => {\n  const vendas = Object.fromEntries(\n    VendasMes_PDV.data.map(d => [d.ponto_venda?.trim(), d.total_vendido || 0])\n  );\n\n  const metas = Object.fromEntries(\n    MetasMes_PDV.data.map(d => [d.ponto_venda?.trim(), d.vlr_meta || 0])\n  );\n\n  const pdvs = Object.keys(vendas).filter(loja => vendas[loja] > 0);\n\n  const seriesData = pdvs.map(loja => ({\n    name: loja,\n    value: Number(vendas[loja].toFixed(2)),\n    itemStyle: {\n      color: vendas[loja] >= (metas[loja] || 0) ? \"#28a745\" : \"#e74c3c\"\n    },\n    label: {\n      show: true,\n      position: 'top',\n      formatter: params =>\n        params.value.toLocaleString(\"pt-BR\", {\n          minimumFractionDigits: 2,\n          maximumFractionDigits: 2\n        })\n    }\n  }));\n\n  const markLines = pdvs.map(loja => ({\n    xAxis: loja,\n    yAxis: metas[loja] || 0\n  }));\n\n  return {\n    tooltip: {\n      trigger: 'item',\n      formatter: function (params) {\n        const loja = params.name;\n        const valor = params.value.toLocaleString(\"pt-BR\", {\n          minimumFractionDigits: 2,\n          maximumFractionDigits: 2\n        });\n        const meta = (metas[loja] || 0).toLocaleString(\"pt-BR\", {\n          minimumFractionDigits: 2,\n          maximumFractionDigits: 2\n        });\n        return `${loja}<br/>Faturamento: R$ ${valor}<br/>Meta: R$ ${meta}`;\n      }\n    },\n    grid: { left: '5%', right: '5%', bottom: '10%', containLabel: true },\n    xAxis: {\n      type: 'category',\n      data: pdvs\n    },\n    yAxis: {\n      type: 'value',\n      axisLabel: {\n        show: false // <--- remove os valores do eixo Y\n      }\n    },\n    series: [\n      {\n        type: 'bar',\n        name: 'Faturamento',\n        data: seriesData,\n        markLine: {\n          silent: true,\n          data: markLines,\n          label: {\n            show: true,\n            position: 'start',\n            formatter: function(params) {\n              const metaVal = params.data.yAxis || 0;\n              return metaVal.toLocaleString(\"pt-BR\", {\n                style: 'currency',\n                currency: 'BRL',\n                minimumFractionDigits: 2\n              });\n            },\n            color: '#007bff',\n            fontSize: 10\n          },\n          lineStyle: {\n            type: 'dashed',\n            color: '#007bff',\n            width: 1\n          }\n        }\n      }\n    ]\n  };\n})()\n))(Chart_Vendas_PDVCopy.chartType) }}",
+  "customFusionChartConfig": "{{\n{\n  type: \"bar2d\",\n  dataSource: {\n    chart: {\n      caption: \"Faturamento x Meta por PDV\",\n      xAxisName: \"Faturamento (R$)\",\n      yAxisName: \"PDVs\",\n      theme: \"fusion\",\n      decimals: \"2\",\n      formatNumberScale: \"0\",\n      showValues: \"1\",\n      usePlotGradientColor: \"0\",\n      plotFillAlpha: \"80\",\n      baseFont: \"Inter\",\n      baseFontSize: \"12\"\n    },\n    data: Query_TodosPDVs.data.map(pdv => {\n      const venda = Query_VendasMes_Gestao.data.find(item => item.ponto_venda === pdv.ponto_venda);\n      const meta = Query_MetaMes_Gestao.data.find(item => item.ponto_venda === pdv.ponto_venda);\n\n      const faturamento = venda?.total_vendido || 0;\n      const valor_meta = meta?.vlr_meta || 0;\n\n      return {\n        label: pdv.ponto_venda,\n        value: faturamento,\n        color: faturamento >= valor_meta ? \"#28a745\" : \"#e74c3c\",\n        toolText: \n          \"Faturamento: \" + faturamento.toLocaleString(\"pt-BR\", { style: \"currency\", currency: \"BRL\" }) +\n          \"\\nMeta: \" + valor_meta.toLocaleString(\"pt-BR\", { style: \"currency\", currency: \"BRL\" })\n      };\n    }),\n    trendlines: [\n      {\n        line: Query_TodosPDVs.data.map(pdv => {\n          const meta = Query_MetaMes_Gestao.data.find(item => item.ponto_venda === pdv.ponto_venda);\n          return {\n            startvalue: meta?.vlr_meta || 0,\n            color: \"#007bff\",\n            displayvalue: \"Meta\",\n            thickness: \"1\",\n            valueOnRight: \"1\",\n            dashed: \"1\"\n          };\n        })\n      }\n    ]\n  }\n}\n}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "chartData.7tlgrcqeu3.data"
+    },
+    {
+      "key": "customFusionChartConfig"
+    },
+    {
+      "key": "customEChartConfig"
+    }
+  ],
+  "dynamicPropertyPathList": [],
+  "dynamicTriggerPathList": [],
+  "flexVerticalAlignment": "start",
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "kfz79ynb2p",
+  "labelOrientation": "auto",
+  "leftColumn": 0,
+  "minWidth": 450,
+  "mobileBottomRow": 39,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 17,
+  "mobileTopRow": 7,
+  "needsErrorInfo": true,
+  "originalBottomRow": 93,
+  "originalTopRow": 55,
+  "parentColumnSpace": 15.234375,
+  "parentId": "fyjwj9ct4f",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "setAdaptiveYMin": false,
+  "showDataPointLabel": true,
+  "topRow": 59,
+  "type": "CHART_WIDGET",
+  "version": 1,
+  "widgetId": "y3v1wb8vti",
+  "widgetName": "Chart_Vendas_PDVCopy",
+  "xAxisName": "Faturamento (R$)",
+  "yAxisName": "Pontos de Venda"
+}

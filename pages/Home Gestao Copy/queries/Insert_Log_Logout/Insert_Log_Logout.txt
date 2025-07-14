@@ -1,0 +1,7 @@
+INSERT INTO logs_atividades (colaborador_id, nome_usuario, acao, data_hora)
+VALUES (
+  {{ appsmith.store.colaborador_id }},
+  '{{ appsmith.store.colaborador_usuario }}',
+  'logout',
+  now() AT TIME ZONE 'America/Recife'
+);

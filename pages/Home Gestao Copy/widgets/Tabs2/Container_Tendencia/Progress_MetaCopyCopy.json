@@ -1,0 +1,54 @@
+{
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 8,
+  "bottomRowBeforeCollapse": 8,
+  "counterClockwise": true,
+  "counterClosewise": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "progress"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "fillColor": "#ffc107",
+  "isCanvas": false,
+  "isIndeterminate": false,
+  "isLoading": false,
+  "isVisible": "{{ \n  JS_TendenciaGestao.getTendenciaAtingimento() >= 100\n}}",
+  "key": "mevqfz83ch",
+  "leftColumn": 43,
+  "mobileBottomRow": 4,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 21,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "originalBottomRow": 8,
+  "originalTopRow": 4,
+  "parentColumnSpace": 5.9061737060546875,
+  "parentId": "m9q5qvnl0m",
+  "parentRowSpace": 10,
+  "progress": "{{ \n  (\n    ( JS_TendenciaGestao.getTendenciaAtingimento() - 100)\n  ).toFixed(0)\n}}",
+  "progressType": "linear",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 52,
+  "showResult": false,
+  "steps": "1",
+  "topRow": 4,
+  "topRowBeforeCollapse": 4,
+  "type": "PROGRESS_WIDGET",
+  "version": 1,
+  "widgetId": "4wk2wk5764",
+  "widgetName": "Progress_MetaCopyCopy"
+}

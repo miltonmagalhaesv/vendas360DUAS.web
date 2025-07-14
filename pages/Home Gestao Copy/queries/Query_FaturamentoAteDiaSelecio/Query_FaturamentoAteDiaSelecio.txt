@@ -1,0 +1,6 @@
+SELECT
+  SUM(valor_liquido) AS faturamento_ate_hoje
+FROM public.vw_faturamento_vendas_analitico
+WHERE data_lanca >= date_trunc('month', '{{ moment(DatePicker_ResumoDia.selectedDate).format("YYYY-MM-DD") }}'::date)
+  AND data_lanca <= '{{ moment(DatePicker_ResumoDia.selectedDate).format("YYYY-MM-DD") }}'::date
+  AND ponto_venda = ANY ({{ Select_Lojas.selectedOptionValues }});

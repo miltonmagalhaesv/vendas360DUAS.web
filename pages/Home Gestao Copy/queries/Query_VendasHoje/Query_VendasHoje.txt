@@ -1,0 +1,11 @@
+-- Nome: Query_VendasHoje
+SELECT 
+  SUM(valor_liquido) AS total_vendido_dia
+FROM vw_faturamento_vendas_analitico
+WHERE data_lanca = CURRENT_DATE
+  AND vendedor ILIKE (
+    SELECT 
+      '%' || SPLIT_PART(nome_vendedor, ' - ', 2)
+    FROM rh.colaboradores
+    WHERE nome_usuario = '{{ appsmith.store.colaborador_usuario }}'
+  );

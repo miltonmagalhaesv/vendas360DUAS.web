@@ -1,0 +1,6 @@
+-- Nome: Query_MetaDia
+SELECT 
+  meta_valor / {{ Query_SomaPesoMes.data[0]?.total_peso_mes || 1 }} AS meta_dia
+FROM vw_metas_vendedor
+WHERE nome_usuario = '{{ appsmith.store.colaborador_usuario }}'
+  AND mes_ano = '{{ Select_Mes.selectedOptionValue }}'::date;

@@ -1,0 +1,60 @@
+{
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 8,
+  "bottomRowBeforeCollapse": 8,
+  "counterClockwise": true,
+  "counterClosewise": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "fillColor"
+    },
+    {
+      "key": "isVisible"
+    },
+    {
+      "key": "progress"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "fillColor"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "fillColor": "{{\n  (() => {\n    const progresso = Query_VendasMes_Gestao.data[0]?.total_vendido / Query_MetaMes_Gestao.data[0]?.meta_valor;\n\n    if (progresso >= 1) return '#28A745';       // Verde (100%+)\n    if (progresso >= 0.95) return '#4682B4';     // Azul (95-99.9%)\n    if (progresso >= 0.90) return '#FFA500';     // Laranja (90-94.9%)\n    return '#FF4C4C';                            // Vermelho (<90%)\n  })()\n}}",
+  "isCanvas": false,
+  "isIndeterminate": false,
+  "isLoading": false,
+  "isVisible": "{{\n  (Query_VendasMes.data[0]?.total_vendido || 0) === 0 \n  || \n  (\n    (Query_MetaVendedorMes.data[0]?.meta_valor || 1) !== 0 && \n    (Query_VendasMes.data[0]?.total_vendido / Query_MetaVendedorMes.data[0]?.meta_valor) < 1\n  )\n}}",
+  "key": "mevqfz83ch",
+  "leftColumn": 0,
+  "mobileBottomRow": 4,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 21,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "originalBottomRow": 8,
+  "originalTopRow": 4,
+  "parentColumnSpace": 5.9061737060546875,
+  "parentId": "s3q330rtqq",
+  "parentRowSpace": 10,
+  "progress": "{{ \n  Query_VendasMes_Gestao.data[0]?.total_vendido && Query_MetaMes_Gestao.data[0]?.meta_valor\n    ? ((Query_VendasMes_Gestao.data[0].total_vendido / Query_MetaMes_Gestao.data[0].meta_valor) * 100).toFixed(2)\n    : 0\n}}",
+  "progressType": "linear",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "showResult": true,
+  "steps": "1",
+  "topRow": 4,
+  "topRowBeforeCollapse": 4,
+  "type": "PROGRESS_WIDGET",
+  "version": 1,
+  "widgetId": "igqbub2n72",
+  "widgetName": "Progress_Meta_100"
+}

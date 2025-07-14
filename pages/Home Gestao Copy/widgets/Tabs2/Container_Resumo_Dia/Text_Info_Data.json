@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 9,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "1rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "8hl0wg24f8",
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 4,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 6,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "originalBottomRow": 13,
+  "originalTopRow": 5,
+  "overflow": "NONE",
+  "parentColumnSpace": 14.921875,
+  "parentId": "4iudwr87nu",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "shouldTruncate": false,
+  "text": "{{\n  (() => {\n    const dataSelecionada = moment(DatePicker_ResumoDia.selectedDate);\n    const hoje = moment();\n    const ehHoje = dataSelecionada.isSame(hoje, \"day\");\n\n    return !ehHoje\n      ? `<div style=\"background:#FFF3CD; color:#856404; border:1px solid #FFEEBA; border-radius:4px; padding:8px; font-size:13px; text-align:center;\"><span style=\"font-weight:bold;\">ℹ️</span> Você está visualizando dados do dia <b>${dataSelecionada.format(\"DD/MM/YYYY\")}</b>.<br>\n          Para retornar ao dia atual, selecione a data de hoje no calendário.</div>`\n      : \"\";\n  })()\n}}",
+  "textAlign": "LEFT",
+  "textColor": "#231F20",
+  "topRow": 5,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "6f06mbso1t",
+  "widgetName": "Text_Info_Data"
+}

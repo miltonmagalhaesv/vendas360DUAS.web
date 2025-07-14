@@ -27,7 +27,7 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": true,
+    "executeOnLoad": false,
     "name": "Query_VendasHoje",
     "pageId": "Home Gestao",
     "userSetOnLoad": false

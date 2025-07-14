@@ -1,0 +1,97 @@
+{
+  "animateLoading": true,
+  "backgroundColor": "{{\n  (() => {\n    const VV = Query_VendasMes_Gestao.data[0]?.total_vendido || 0;\n    const DUP = Query_SomaPesoMes_Gestao.data[0]?.total_peso_mes || 1;\n    const DUF = Query_PesoFuturo_Gestao.data[0]?.total_peso_futuro || 0;\n    const meta = Query_MetaMes_Gestao.data[0]?.meta_valor || 1;\n\n    const VD = VV / DUP;\n    const tendencia = ((VD * DUF) + VV) / meta;\n\n    if (tendencia >= 1) return \"rgba(40, 167, 69, 0.15)\";      // Verde claro\n    if (tendencia >= 0.95) return \"rgba(70, 130, 180, 0.15)\";   // Azul claro\n    if (tendencia >= 0.90) return \"rgba(255, 165, 0, 0.15)\";    // Laranja claro\n    return \"rgba(255, 76, 76, 0.15)\";                           // Vermelho claro\n  })()\n}}",
+  "borderColor": "",
+  "borderRadius": "0.375rem",
+  "borderWidth": "1",
+  "bottomRow": 20,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "children": [
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 80,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "1kpzhhrmwt",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 100,
+      "minWidth": 450,
+      "mobileBottomRow": 100,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 126.34765625,
+      "mobileTopRow": 0,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "85pwuu7ner",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 126.34765625,
+      "topRow": 0,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "edi7gbvj8s",
+      "widgetName": "Canvas7CopyCopy1Copy"
+    }
+  ],
+  "containerStyle": "card",
+  "dynamicBindingPathList": [
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "backgroundColor"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "backgroundColor"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "flexVerticalAlignment": "stretch",
+  "isCanvas": true,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "nced0x8aiq",
+  "leftColumn": 32,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 10,
+  "minWidth": 450,
+  "mobileBottomRow": 26,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 16,
+  "needsErrorInfo": false,
+  "originalBottomRow": 20,
+  "originalTopRow": 12,
+  "parentColumnSpace": 6.3173828125,
+  "parentId": "m9q5qvnl0m",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 62,
+  "shouldScrollContents": false,
+  "topRow": 12,
+  "type": "CONTAINER_WIDGET",
+  "version": 1,
+  "widgetId": "85pwuu7ner",
+  "widgetName": "Container_Bate_Meta"
+}

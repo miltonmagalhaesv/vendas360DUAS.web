@@ -1,0 +1,7 @@
+SELECT 
+  COUNT(DISTINCT vf.id_venda) AS qtd_vendas
+FROM public.vw_faturamento_vendas_analitico vf
+JOIN rh.colaboradores c 
+  ON c.nome_vendedor = vf.vend
+WHERE DATE_TRUNC('month', vf.data_lanca) = '{{ Select_Mes.selectedOptionValue }}'::date
+  AND c.nome_usuario = '{{ appsmith.store.colaborador_usuario }}';

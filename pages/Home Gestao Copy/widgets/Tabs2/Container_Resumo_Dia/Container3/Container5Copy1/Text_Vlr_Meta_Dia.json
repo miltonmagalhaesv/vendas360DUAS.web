@@ -1,0 +1,52 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 8,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "Roboto",
+  "fontSize": "1rem",
+  "fontStyle": "",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "u8x3525y9d",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 15,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 17,
+  "mobileTopRow": 11,
+  "needsErrorInfo": false,
+  "originalBottomRow": 8,
+  "originalTopRow": 0,
+  "overflow": "NONE",
+  "parentColumnSpace": 6.53125,
+  "parentId": "g4xs2l4yo9",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "shouldTruncate": false,
+  "text": "{{\n  (() => {\n    const VM = Query_MetaDia_Gestao.data[0]?.meta_valor || 0;\n    const VP = Query_FaturamentoAteDiaAnterio.data[0]?.faturamento_passado || 0;\n    const DF = Query_PesoFuturo_ResumoDia.data[0]?.total_peso_futuro || 1;\n\n    const NF = VM - VP;\n    const metaDia = DF > 0 ? NF / DF : 0;\n\n    const data = moment(DatePicker_ResumoDia.selectedDate).format(\"DD/MM/YY\");\n\n    return `<div style='display:flex; flex-direction:column; align-items:center; line-height:1.2;'>\n    <span style='font-size:20px; font-weight:bold; color:#228be6;'>      ${metaDia.toLocaleString(\"pt-BR\", { style: \"currency\", currency: \"BRL\" })}\n      <span style='font-size:12px; color:#228be6;'>Meta - ${data}</span>\n    </div>`;\n  })()\n}}",
+  "textAlign": "CENTER",
+  "textColor": "#3b82f6",
+  "topRow": 0,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "45ez88xpv1",
+  "widgetName": "Text_Vlr_Meta_Dia"
+}

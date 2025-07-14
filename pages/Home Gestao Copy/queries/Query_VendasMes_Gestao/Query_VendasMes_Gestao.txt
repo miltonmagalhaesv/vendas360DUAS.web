@@ -1,0 +1,5 @@
+SELECT 
+  SUM(valor_liquido) AS total_vendido
+FROM public.vw_faturamento_vendas_analitico
+WHERE DATE_TRUNC('month', data_lanca) = '{{ Select_Mes.selectedOptionValue }}'::date
+  AND ponto_venda = ANY ({{ Select_Lojas.selectedOptionValues }})
