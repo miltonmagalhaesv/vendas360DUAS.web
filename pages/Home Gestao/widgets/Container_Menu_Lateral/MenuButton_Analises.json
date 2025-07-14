@@ -35,10 +35,10 @@
   "menuItems": {
     "menuItem1": {
       "id": "menuItem1",
-      "index": 0,
+      "index": 2,
       "isDisabled": false,
       "isVisible": true,
-      "label": "First Menu Item",
+      "label": "Produtos",
       "widgetId": ""
     },
     "menuItem2": {
@@ -46,15 +46,15 @@
       "index": 1,
       "isDisabled": false,
       "isVisible": true,
-      "label": "Second Menu Item",
+      "label": "Vededor",
       "widgetId": ""
     },
     "menuItem3": {
       "id": "menuItem3",
-      "index": 2,
+      "index": 0,
       "isDisabled": false,
       "isVisible": true,
-      "label": "Third Menu Item",
+      "label": "Ponto de Venda",
       "widgetId": ""
     }
   },
@@ -76,5 +76,5 @@
   "type": "MENU_BUTTON_WIDGET",
   "version": 1,
   "widgetId": "sx1oqllv5n",
-  "widgetName": "MenuButton1Copy"
+  "widgetName": "MenuButton_Analises"
 }

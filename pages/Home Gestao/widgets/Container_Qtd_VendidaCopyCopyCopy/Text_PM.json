@@ -11,9 +11,6 @@
     },
     {
       "key": "textColor"
-    },
-    {
-      "key": "text"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -33,23 +30,23 @@
   "mobileRightColumn": 17,
   "mobileTopRow": 11,
   "needsErrorInfo": false,
-  "originalBottomRow": 5,
-  "originalTopRow": 0,
+  "originalBottomRow": 6,
+  "originalTopRow": 1,
   "overflow": "NONE",
   "parentColumnSpace": 6.53125,
-  "parentId": "m3q6pynp5g",
+  "parentId": "ydkfvns2jj",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 64,
+  "rightColumn": 39,
   "shouldTruncate": false,
-  "text": "{{\n  (() => {\n    const VV = Query_VendasMes_Gestao.data[0]?.total_vendido ?? 0;\n    const DUP = Query_SomaPesoMes_Gestao.data[0]?.total_peso_mes ?? 1;\n    const VD = DUP > 0 ? VV / DUP : 0;\n\n    return \"<div style='display:flex; flex-direction:column; align-items:center; line-height:1.2;'>\\\n              <span style='font-size:16px; font-weight:bold;'>\" +\n              VD.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) +\n              \"</span>\\\n              <span style='font-size:12px;'>Venda/dia</span>\\\n            </div>\";\n  })()\n}}",
+  "text": "PM",
   "textAlign": "CENTER",
   "textColor": "{{appsmith.theme.colors.primaryColor}}",
-  "topRow": 0,
+  "topRow": 1,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "2lk2vy94ny",
-  "widgetName": "Text_Vlr_Dia"
+  "widgetId": "szmx949a4e",
+  "widgetName": "Text_PM"
 }

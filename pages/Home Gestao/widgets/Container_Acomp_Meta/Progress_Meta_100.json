@@ -1,7 +1,7 @@
 {
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 4,
-  "bottomRowBeforeCollapse": 4,
+  "bottomRow": 13,
+  "bottomRowBeforeCollapse": 8,
   "counterClockwise": true,
   "counterClosewise": false,
   "dynamicBindingPathList": [
@@ -9,13 +9,13 @@
       "key": "borderRadius"
     },
     {
-      "key": "progress"
-    },
-    {
       "key": "fillColor"
     },
     {
       "key": "isVisible"
+    },
+    {
+      "key": "progress"
     }
   ],
   "dynamicPropertyPathList": [
@@ -31,7 +31,7 @@
   "isCanvas": false,
   "isIndeterminate": false,
   "isLoading": false,
-  "isVisible": "{{ \n  (Query_VendasMes_Gestao.data[0]?.total_vendido / Query_MetaMes_Gestao.data[0]?.meta_valor) >= 1 \n}}",
+  "isVisible": "{{\n  (Query_VendasMes.data[0]?.total_vendido || 0) === 0 \n  || \n  (\n    (Query_MetaVendedorMes.data[0]?.meta_valor || 1) !== 0 && \n    (Query_VendasMes.data[0]?.total_vendido / Query_MetaVendedorMes.data[0]?.meta_valor) < 1\n  )\n}}",
   "key": "mevqfz83ch",
   "leftColumn": 0,
   "mobileBottomRow": 4,
@@ -39,22 +39,22 @@
   "mobileRightColumn": 21,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "originalBottomRow": 4,
-  "originalTopRow": 0,
+  "originalBottomRow": 13,
+  "originalTopRow": 9,
   "parentColumnSpace": 5.9061737060546875,
-  "parentId": "s3q330rtqq",
+  "parentId": "ms6ycspxfe",
   "parentRowSpace": 10,
   "progress": "{{ \n  Query_VendasMes_Gestao.data[0]?.total_vendido && Query_MetaMes_Gestao.data[0]?.meta_valor\n    ? ((Query_VendasMes_Gestao.data[0].total_vendido / Query_MetaMes_Gestao.data[0].meta_valor) * 100).toFixed(2)\n    : 0\n}}",
   "progressType": "linear",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 38,
-  "showResult": false,
+  "rightColumn": 63,
+  "showResult": true,
   "steps": "1",
-  "topRow": 0,
-  "topRowBeforeCollapse": 0,
+  "topRow": 9,
+  "topRowBeforeCollapse": 4,
   "type": "PROGRESS_WIDGET",
   "version": 1,
-  "widgetId": "615429t9kg",
-  "widgetName": "Progress_Meta"
+  "widgetId": "igqbub2n72",
+  "widgetName": "Progress_Meta_100"
 }
