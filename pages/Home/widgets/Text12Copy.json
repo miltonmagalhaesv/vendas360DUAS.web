@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "backgroundColor": "#18181b",
+  "borderColor": "#18181b",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "",
+  "bottomRow": 141,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "1rem",
+  "fontStyle": "",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "voyl1axoxf",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 5,
+  "mobileLeftColumn": 11,
+  "mobileRightColumn": 27,
+  "mobileTopRow": 1,
+  "needsErrorInfo": false,
+  "originalBottomRow": 140,
+  "originalTopRow": 134,
+  "overflow": "NONE",
+  "parentColumnSpace": 6.42431640625,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "shouldTruncate": false,
+  "text": "👨🏽‍💻 Desenvolvido pela equipe DUAS \nespecialmente pra você. ❣",
+  "textAlign": "CENTER",
+  "textColor": "#ffffff",
+  "topRow": 135,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "2tw6i6vhwg",
+  "widgetName": "Text12Copy"
+}

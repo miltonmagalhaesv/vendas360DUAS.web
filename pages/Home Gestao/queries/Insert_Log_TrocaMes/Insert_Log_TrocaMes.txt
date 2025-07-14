@@ -1,0 +1,8 @@
+INSERT INTO logs_atividades (colaborador_id, nome_usuario, acao, detalhes, data_hora)
+VALUES (
+  {{ appsmith.store.colaborador_id }},
+  '{{ appsmith.store.colaborador_usuario }}',
+  'troca_mes',
+  jsonb_build_object('mes_selecionado', '{{ Select_Mes.selectedOptionValue }}'),
+  now() AT TIME ZONE 'America/Recife'
+);

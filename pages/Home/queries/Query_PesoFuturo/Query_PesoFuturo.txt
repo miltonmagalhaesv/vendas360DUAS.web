@@ -1,0 +1,14 @@
+SELECT 
+  COALESCE(SUM(peso_dia), 0) AS total_peso_futuro
+FROM vw_horarios_funcionamento_com_local
+WHERE local_trabalho_id = (
+  SELECT lt.id
+  FROM vw_metas_vendedor mv
+  JOIN public.locais_trabalho lt ON lt.nome = mv.nome_loja
+  WHERE mv.nome_usuario = '{{ appsmith.store.colaborador_usuario }}'
+    AND mv.mes_ano = '{{ Select_Mes.selectedOptionValue }}'::date
+  LIMIT 1
+)
+AND data > CURRENT_DATE
+AND EXTRACT(MONTH FROM data) = EXTRACT(MONTH FROM '{{ Select_Mes.selectedOptionValue }}'::date)
+AND EXTRACT(YEAR FROM data) = EXTRACT(YEAR FROM '{{ Select_Mes.selectedOptionValue }}'::date);

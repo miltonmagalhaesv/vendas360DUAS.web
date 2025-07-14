@@ -1,0 +1,8 @@
+SELECT mv.id, c.nome_vendedor
+FROM metas_vendas mv
+JOIN rh.colaboradores c ON mv.colaborador_id = c.id
+WHERE
+  mv.colaborador_id = {{this.params.colaborador_id}}
+  AND mv.loja_id = {{this.params.loja_id}}
+  AND mv.mes = {{this.params.mes}}
+  AND mv.ano = {{this.params.ano}}

@@ -1,0 +1,57 @@
+{
+  "animateLoading": true,
+  "borderColor": "",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "",
+  "bottomRow": 4,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "1rem",
+  "fontStyle": "",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "4ss5h55m8f",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 4,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 16,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "originalBottomRow": 15,
+  "originalTopRow": 0,
+  "overflow": "NONE",
+  "parentColumnSpace": 5.976806640625,
+  "parentId": "tf0jkdznvc",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 59,
+  "shouldTruncate": false,
+  "text": "{{\n(() => {\n  const { metaDia, VD_Hoje, faltanteHoje } = utils_meta_dia.metaDiaResumo();\n\n  return `\n    🍉 <b>Meta de hoje:</b> ${metaDia.toLocaleString(\"pt-BR\", { style: \"currency\", currency: \"BRL\" })}<br>\n    💰 <b>Vendido hoje:</b> ${VD_Hoje.toLocaleString(\"pt-BR\", { style: \"currency\", currency: \"BRL\" })}<br>\n    ⏳ <b>Falta vender hoje:</b> ${Math.max(faltanteHoje, 0).toLocaleString(\"pt-BR\", { style: \"currency\", currency: \"BRL\" })}\n  `;\n})()\n}}",
+  "textAlign": "LEFT",
+  "textColor": "#231F20",
+  "topRow": 0,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "w0ql5kwgoi",
+  "widgetName": "Text_modalCopy"
+}

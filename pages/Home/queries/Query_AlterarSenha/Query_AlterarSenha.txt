@@ -1,0 +1,5 @@
+UPDATE rh.colaboradores
+SET senha_hash = '{{ Input_NovaSenha.text }}'
+WHERE nome_usuario = '{{ appsmith.store.colaborador_usuario }}'
+  AND senha_hash = '{{ Input_SenhaAtual.text }}'
+RETURNING id;

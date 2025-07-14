@@ -1,0 +1,10 @@
+{{ 
+  moment.locale('pt-br'); // define o idioma
+  [...Array(12).keys()].map(i => {
+    const data = moment().month(i).startOf("month");
+    return {
+      label: data.format("MMMM[/]YY"), // Junho/25
+      value: data.format("YYYY-MM-DD") // 2025-06-01
+    };
+  })
+}}

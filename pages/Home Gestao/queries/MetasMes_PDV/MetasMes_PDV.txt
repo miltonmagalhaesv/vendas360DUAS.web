@@ -1,0 +1,6 @@
+SELECT 
+  nome_loja AS ponto_venda,
+  SUM(meta_valor) AS vlr_meta
+FROM vw_metas_vendas_completo
+WHERE mes_ano = '{{ Select_MesPDV.selectedOptionValue }}'::date
+GROUP BY nome_loja

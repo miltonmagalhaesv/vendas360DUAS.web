@@ -1,0 +1,76 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "allowSelectAll": true,
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 10,
+  "boxShadow": "none",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => (  \n  Array.isArray(appsmith.store.pontos_venda) && appsmith.store.pontos_venda.length \n    ? appsmith.store.pontos_venda \n    : [] \n))(Select_Lojas.options, Select_Lojas.serverSideFiltering) }}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "defaultOptionValue"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "onOptionChange"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onOptionChange"
+    }
+  ],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "bt5lzw3dpw",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelText": "Pontos de Venda",
+  "labelTextSize": "0.875rem",
+  "labelTooltip": "Selecione os pontos de venda que deseja visualizar. As opções já estão preenchidas com as lojas vinculadas ao seu perfil de acesso, mas você pode alterar para ampliar ou focar a análise.",
+  "labelWidth": 5,
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 22,
+  "mobileLeftColumn": 40,
+  "mobileRightColumn": 60,
+  "mobileTopRow": 16,
+  "needsErrorInfo": false,
+  "onOptionChange": "{{ JS_FiltrosGestao.atualizarDadosPorLoja() }}",
+  "optionLabel": "label",
+  "optionValue": "value",
+  "parentColumnSpace": 6.84375,
+  "parentId": "fegergsneq",
+  "parentRowSpace": 10,
+  "placeholderText": "Selecione o ponto de venda",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 61,
+  "serverSideFiltering": false,
+  "shouldScrollContents": true,
+  "sourceData": "{{ \n  Query_TodosPDVs.data.map(p => ({\n    label: p.ponto_venda,\n    value: p.ponto_venda\n  })) \n}}",
+  "topRow": 2,
+  "type": "MULTI_SELECT_WIDGET_V2",
+  "version": 1,
+  "widgetId": "1gpwejvod8",
+  "widgetName": "Select_Lojas"
+}

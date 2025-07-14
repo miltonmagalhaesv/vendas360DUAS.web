@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 23,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "1rem",
+  "fontStyle": "",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "7otitm5wtg",
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 9,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 17,
+  "mobileTopRow": 5,
+  "needsErrorInfo": false,
+  "originalBottomRow": 21,
+  "originalTopRow": 6,
+  "overflow": "NONE",
+  "parentColumnSpace": 6.9375,
+  "parentId": "7aomw5ds53",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 62,
+  "shouldTruncate": false,
+  "text": "Os seguintes <strong>vendedores</strong> já possuem registros para os dados informados. Por favor, verifique as informações antes de prosseguir:\n<br><br>\n<table border=\"1\" cellpadding=\"4\" cellspacing=\"0\" style=\"border-collapse: collapse; width: 100%;\">\n  <tr>\n    <th>Nome do Vendedor</th>\n    <th>Mês</th>\n    <th>Ano</th>\n    <th>Valor da Meta</th>\n  </tr>\n  {{ appsmith.store.duplicados_metas.map(vendedor =>\n    `<tr>\n      <td>${vendedor.nome_vendedor}</td>\n      <td>${Select_Mes.selectedOptionLabel}</td>\n      <td>${Select_Ano.selectedOptionLabel}</td>\n      <td>${Input_Valor_Meta.text}</td>\n    </tr>`\n  ).join('') }}\n</table>",
+  "textAlign": "LEFT",
+  "textColor": "#231F20",
+  "topRow": 6,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "uha24vw7m0",
+  "widgetName": "Text_explicacao"
+}

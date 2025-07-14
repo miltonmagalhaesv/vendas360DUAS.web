@@ -1,0 +1,12 @@
+WITH pesos_por_data AS (
+  SELECT 
+    data,
+    AVG(peso_dia) AS peso_medio
+  FROM public.vw_horarios_funcionamento_com_local
+  WHERE nome_loja = ANY ({{ Select_Lojas.selectedOptionValues }})
+    AND data > '{{ moment(DatePicker_ResumoDia.selectedDate).format("YYYY-MM-DD") }}'::date
+  GROUP BY data
+)
+SELECT 
+  ROUND(SUM(peso_medio), 2) AS dias_faltantes_normalizado
+FROM pesos_por_data;

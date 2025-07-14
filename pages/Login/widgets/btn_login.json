@@ -1,0 +1,48 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 51,
+  "boxShadow": "none",
+  "buttonColor": "#18181b",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "27makpwvzh",
+  "leftColumn": 29,
+  "minWidth": 120,
+  "mobileBottomRow": 28,
+  "mobileLeftColumn": 21,
+  "mobileRightColumn": 37,
+  "mobileTopRow": 24,
+  "needsErrorInfo": false,
+  "onClick": "{{verificarLogin.run().then(() => {\n  JSObject1.btn_loginonClick();\n});}}",
+  "parentColumnSpace": 10.5625,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 39,
+  "text": "Entrar",
+  "topRow": 47,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "518dek67oc",
+  "widgetName": "btn_login"
+}

@@ -1,0 +1,44 @@
+{
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 16,
+  "counterClockwise": true,
+  "counterClosewise": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "progress"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "fillColor": "#3b82f6",
+  "isCanvas": false,
+  "isIndeterminate": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "mevqfz83ch",
+  "leftColumn": 1,
+  "mobileBottomRow": 4,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 21,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "originalBottomRow": 18,
+  "originalTopRow": 13,
+  "parentColumnSpace": 5.9061737060546875,
+  "parentId": "nw5pcys3y9",
+  "parentRowSpace": 10,
+  "progress": "{{\n(() => {\n  const VV = Query_FaturamentoAteDiaSelecio.data[0]?.faturamento_ate_hoje || 0;\n  const FP = Query_FaturamentoAteDiaAnterio.data[0]?.faturamento_passado || 0;\n  const vendaDoDia = VV - FP;\n\n  const MD = JS_MetaDiaGestao.metaDiaGestao();\n  const progresso = MD > 0 ? (vendaDoDia / MD) * 100 : 0;\n  return progresso.toFixed(1);\n})()\n}}",
+  "progressType": "linear",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "showResult": true,
+  "steps": "1",
+  "topRow": 11,
+  "type": "PROGRESS_WIDGET",
+  "version": 1,
+  "widgetId": "7952158zeq",
+  "widgetName": "Progress_Meta_Dia"
+}

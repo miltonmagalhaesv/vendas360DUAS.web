@@ -1,0 +1,14 @@
+SELECT 
+  ponto_venda AS loja,
+  SUM(vlr_venda) AS total_vendas,
+  SUM(vlr_devolucao) AS total_devolucao,
+  SUM(vlr_venda - vlr_devolucao) AS faturamento,
+  MAX(vlr_meta) AS meta -- presumindo que meta esteja por ponto de venda
+FROM 
+  vw_faturamento_vendas_analitico
+WHERE 
+  mes = {{ Select_MesPDV.selectedOptionValue }}
+GROUP BY 
+  ponto_venda
+ORDER BY 
+  faturamento DESC;

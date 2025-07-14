@@ -1,0 +1,4 @@
+SELECT data_impo
+FROM oltp.tb_importacao
+ORDER BY data_impo DESC
+LIMIT 1;

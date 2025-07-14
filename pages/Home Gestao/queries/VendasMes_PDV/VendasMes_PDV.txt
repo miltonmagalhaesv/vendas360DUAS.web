@@ -1,0 +1,6 @@
+SELECT 
+  ponto_venda,
+  SUM(valor_liquido) AS total_vendido
+FROM public.vw_faturamento_vendas_analitico
+WHERE DATE_TRUNC('month', data_lanca) = '{{ Select_MesPDV.selectedOptionValue }}'::date
+GROUP BY ponto_venda

@@ -1,0 +1,60 @@
+{
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 8,
+  "bottomRowBeforeCollapse": 8,
+  "counterClockwise": true,
+  "counterClosewise": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "progress"
+    },
+    {
+      "key": "fillColor"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "fillColor"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "fillColor": "{{\n  (() => {\n    const VV = Query_VendasMes.data[0]?.total_vendido || 0;\n    const DUP = Query_SomaPesoMes.data[0]?.total_peso_mes || 1;\n    const DUF = Query_PesoFuturo.data[0]?.total_peso_futuro || 0;\n    const meta = Query_MetaVendedorMes.data[0]?.meta_valor || 1;\n\n    const VD = VV / DUP;\n    const tendencia = ((VD * DUF) + VV) / meta;\n\n    if (tendencia >= 1) return '#28A745';       // Verde\n    if (tendencia >= 0.95) return '#4682B4';     // Azul\n    if (tendencia >= 0.90) return '#FFA500';     // Laranja\n    return '#FF4C4C';                            // Vermelho\n  })()\n}}",
+  "isCanvas": false,
+  "isIndeterminate": false,
+  "isLoading": false,
+  "isVisible": "{{ \n  JS_Tendencias.getTendenciaAtingimento() >= 100 \n}}",
+  "key": "mevqfz83ch",
+  "leftColumn": 26,
+  "mobileBottomRow": 4,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 21,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "originalBottomRow": 8,
+  "originalTopRow": 4,
+  "parentColumnSpace": 5.9061737060546875,
+  "parentId": "m9q5qvnl0m",
+  "parentRowSpace": 10,
+  "progress": "{{ JS_Tendencias.getTendenciaAtingimento() }}",
+  "progressType": "linear",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 43,
+  "showResult": false,
+  "steps": "1",
+  "topRow": 4,
+  "topRowBeforeCollapse": 4,
+  "type": "PROGRESS_WIDGET",
+  "version": 1,
+  "widgetId": "s74in42r2r",
+  "widgetName": "Progress_MetaCopy1"
+}

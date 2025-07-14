@@ -1,0 +1,62 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 22,
+  "boxShadow": "none",
+  "defaultOptionValue": "",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": true,
+  "isVisible": true,
+  "key": "33too4mbsa",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelText": "Vendedor",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 18,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 12,
+  "mobileLeftColumn": 18,
+  "mobileRightColumn": 38,
+  "mobileTopRow": 5,
+  "needsErrorInfo": false,
+  "optionLabel": "nome_vendedor",
+  "optionValue": "id",
+  "parentColumnSpace": 14.505615234375,
+  "parentId": "al7qwpuwr5",
+  "parentRowSpace": 10,
+  "placeholderText": "Escolha o(s) vendedor(es)",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "serverSideFiltering": false,
+  "sourceData": "{{SelectVendedor.data}}\t",
+  "topRow": 15,
+  "type": "MULTI_SELECT_WIDGET_V2",
+  "version": 1,
+  "widgetId": "arhctc82hm",
+  "widgetName": "MultiSelect_Vendedor"
+}

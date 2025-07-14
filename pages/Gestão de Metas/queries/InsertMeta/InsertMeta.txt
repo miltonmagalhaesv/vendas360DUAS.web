@@ -1,0 +1,20 @@
+INSERT INTO metas_vendas (
+  colaborador_id,
+  loja_id,
+  mes,
+  ano,
+  tipo_meta,
+  meta_valor,
+  observacao,
+  criado_por_usuario
+)
+VALUES (
+  {{this.params.colaborador_id}},
+  {{this.params.loja_id}},
+  {{this.params.mes}},
+  {{this.params.ano}},
+  {{this.params.tipo_meta}},
+  {{this.params.meta_valor}},
+  {{this.params.observacao}},
+  {{appsmith.username}}
+);

@@ -1,0 +1,1 @@
+SELECT id, nome_vendedor FROM rh.colaboradores WHERE status = 'ativo' ORDER BY nome_vendedor

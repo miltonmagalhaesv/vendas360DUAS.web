@@ -1,0 +1,39 @@
+WITH loja_usuario AS (
+  SELECT 
+    nome_usuario,
+    nome_vendedor,
+    nome_loja
+  FROM vw_metas_vendedor
+  WHERE mes_ano = '{{ Select_Mes.selectedOptionValue }}'
+    AND nome_usuario = '{{ appsmith.store.colaborador_usuario }}'
+),
+vendas_filtradas AS (
+  SELECT 
+    vf.valor_liquido,
+    vf.data_lanca,
+    l.nome_loja
+  FROM public.vw_faturamento_vendas_analitico vf
+  JOIN loja_usuario l ON l.nome_vendedor = vf.vend
+  WHERE DATE_TRUNC('month', vf.data_lanca) = '{{ Select_Mes.selectedOptionValue }}'::date
+),
+ultima_data_venda AS (
+  SELECT 
+    MAX(data_lanca) AS ultima_data,
+    SUM(valor_liquido) AS total_vendido,
+    nome_loja
+  FROM vendas_filtradas
+  GROUP BY nome_loja
+),
+soma_pesos AS (
+  SELECT 
+    SUM(h.peso_dia) AS total_peso,
+    h.nome_loja
+  FROM public.vw_horarios_funcionamento_com_local h
+  JOIN ultima_data_venda u ON u.nome_loja = h.nome_loja
+  WHERE h.data <= u.ultima_data
+  GROUP BY h.nome_loja
+)
+SELECT 
+  ROUND(u.total_vendido::numeric / NULLIF(p.total_peso, 0), 2) AS valor_dia
+FROM ultima_data_venda u
+JOIN soma_pesos p ON u.nome_loja = p.nome_loja;

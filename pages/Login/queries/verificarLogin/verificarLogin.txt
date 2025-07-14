@@ -1,0 +1,4 @@
+SELECT id, nome, nome_usuario, perfil,pontos_venda_visualizacao
+FROM rh.colaboradores
+WHERE nome_usuario = {{ input_usuario.text }}
+  AND senha_hash = {{ input_senha.text }};

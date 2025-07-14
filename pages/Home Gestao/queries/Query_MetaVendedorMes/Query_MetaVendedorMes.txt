@@ -1,0 +1,4 @@
+SELECT meta_valor
+FROM vw_metas_vendedor
+WHERE mes_ano = '{{ Select_Mes.selectedOptionValue }}'::date
+  AND nome_usuario = '{{ appsmith.store.colaborador_usuario }}';

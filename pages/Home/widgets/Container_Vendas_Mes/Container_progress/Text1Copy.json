@@ -1,0 +1,63 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 12,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "0.875rem",
+  "fontStyle": "ITALIC",
+  "isLoading": false,
+  "isVisible": "{{ moment(Select_Mes.selectedOptionValue).isSame(moment(), 'month') }}",
+  "key": "u8x3525y9d",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 20,
+  "mobileLeftColumn": 14,
+  "mobileRightColumn": 30,
+  "mobileTopRow": 16,
+  "needsErrorInfo": false,
+  "originalBottomRow": 12,
+  "originalTopRow": 8,
+  "overflow": "NONE",
+  "parentColumnSpace": 6.84375,
+  "parentId": "s3q330rtqq",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "shouldTruncate": false,
+  "text": "{{\n  (() => {\n    const progresso = Query_VendasMes.data[0]?.total_vendido / Query_MetaVendedorMes.data[0]?.meta_valor;\n\n    if (progresso >= 1.2) return \"🚀 Você tá voando!\";\n    \n    if (progresso >= 1.1) {\n      const frases = [\n        \"🚀 Você tá voando!\",\n        \"💥 Passou da meta com estilo!\",\n        \"✨ Bateu e seguiu! Isso inspira.\",\n        \"🏅 Entrega acima da meta! Isso é consistência.\"\n      ];\n      return frases[Math.floor(Math.random() * frases.length)];\n    }\n\n    if (progresso >= 1.0) return \"🎯 Meta atingida! Excelente trabalho!\";\n    if (progresso >= 0.95) return \"💪 Tá quase! Só mais um empurrão!\";\n    if (progresso >= 0.90) return \"⚡ Força total na reta final!\";\n    \n    return \"🔥 A meta te espera! Bora bater!\";\n  })()\n}}",
+  "textAlign": "LEFT",
+  "textColor": "#231F20",
+  "topRow": 8,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "ky429ul75j",
+  "widgetName": "Text1Copy"
+}

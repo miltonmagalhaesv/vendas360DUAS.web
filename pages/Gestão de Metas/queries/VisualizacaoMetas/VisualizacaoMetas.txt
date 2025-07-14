@@ -1,0 +1,13 @@
+SELECT 
+  mv.id,
+  lt.nome AS nome_local_trabalho,
+  c.nome_vendedor AS nome_colaborador,
+  mv.mes,
+  mv.ano,
+  mv.meta_valor,
+  mv.tipo_meta,
+  mv.observacao
+FROM public.metas_vendas mv
+LEFT JOIN public.locais_trabalho lt ON mv.loja_id = lt.id
+LEFT JOIN rh.colaboradores c ON mv.colaborador_id = c.id
+ORDER BY mv.ano DESC, mv.mes DESC, nome_local_trabalho, nome_colaborador

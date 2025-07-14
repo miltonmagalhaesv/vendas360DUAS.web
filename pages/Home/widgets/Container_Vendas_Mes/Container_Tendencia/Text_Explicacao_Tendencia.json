@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 24,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "1rem",
+  "fontStyle": "ITALIC",
+  "isLoading": false,
+  "isVisible": false,
+  "key": "5glb6g4unq",
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 46,
+  "mobileLeftColumn": 2,
+  "mobileRightColumn": 18,
+  "mobileTopRow": 42,
+  "needsErrorInfo": false,
+  "originalBottomRow": 24,
+  "originalTopRow": 20,
+  "overflow": "NONE",
+  "parentColumnSpace": 6.3173828125,
+  "parentId": "m9q5qvnl0m",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "shouldTruncate": false,
+  "text": "{{\n  (() => {\n    const VV = Query_VendasMes.data[0]?.total_vendido || 0;\n    const DUP = Query_SomaPesoMes.data[0]?.total_peso_mes || 1;\n    const DUF = Query_PesoFuturo.data[0]?.total_peso_futuro || 0;\n    const meta = Query_MetaVendedorMes.data[0]?.meta_valor || 1;\n\n    const VD = VV / DUP;\n    const tendencia = VD * DUF + VV;\n\n    if (!meta || !VV || !DUP) return \"\";\n\n    let mensagens = [];\n\n    if (tendencia < meta * 0.85) {\n      mensagens = [\n        \"🕐 Ainda há tempo, mas é preciso reagir agora.\",\n        \"⚠️ Atenção: o ritmo atual pode te deixar distante da meta.\",\n        \"💡 Reveja suas estratégias, você pode virar o jogo.\",\n        \"🚨 Meta em risco — hora de agir com foco e atitude.\"\n      ];\n    } else if (tendencia < meta) {\n      mensagens = [\n        \"⚡ Tá quase! Um pouco mais de energia e você chega lá.\",\n        \"🟡 Você está a poucos passos da meta, mantenha o ritmo!\",\n        \"💪 Falta pouco! Continue acelerando.\",\n        \"🔄 Uma virada agora pode fazer toda a diferença.\"\n      ];\n    } else {\n      mensagens = [\n        \"🏆 Excelente! Se mantiver esse ritmo, vai além da meta.\",\n        \"🔥 Ótimo desempenho! Continue assim e os resultados virão.\",\n        \"💥 Você está indo muito bem! Siga firme.\",\n        \"🚀 Superar metas é o seu ritmo! Continue nessa pegada.\"\n      ];\n    }\n\n    const frase = mensagens[Math.floor(Math.random() * mensagens.length)];\n\n    return `<div style='text-align:center; font-size:13px; line-height:1.4;'>${frase}</div>`;\n  })()\n}}",
+  "textAlign": "CENTER",
+  "textColor": "#231F20",
+  "topRow": 20,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "5p2i8vxo2k",
+  "widgetName": "Text_Explicacao_Tendencia"
+}

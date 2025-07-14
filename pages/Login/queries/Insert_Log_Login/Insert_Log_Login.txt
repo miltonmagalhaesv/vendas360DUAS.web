@@ -1,0 +1,7 @@
+INSERT INTO logs_atividades (colaborador_id, nome_usuario, acao, data_hora)
+VALUES (
+  {{ verificarLogin.data[0].id }},
+  '{{ verificarLogin.data[0].nome_usuario }}',
+  'login',
+  now() AT TIME ZONE 'America/Recife'  -- ou 'America/Sao_Paulo'
+);

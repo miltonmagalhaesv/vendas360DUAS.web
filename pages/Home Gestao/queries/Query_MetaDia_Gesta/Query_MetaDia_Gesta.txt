@@ -1,0 +1,5 @@
+SELECT 
+  SUM(meta_valor) AS meta_valor
+FROM vw_metas_vendas_completo
+WHERE mes_ano = '{{ moment(DatePicker_ResumoDia.selectedDate).startOf("month").format("YYYY-MM-DD") }}'::date
+  AND nome_loja = ANY ({{ Select_Lojas.selectedOptionValues }});
