@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 11,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "0.875rem",
+  "fontStyle": "",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "12hz2pt3re",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 12,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 16,
+  "mobileTopRow": 8,
+  "needsErrorInfo": false,
+  "originalBottomRow": 11,
+  "originalTopRow": 6,
+  "overflow": "NONE",
+  "parentColumnSpace": 3.8916015625,
+  "parentId": "22eattohj5",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "shouldTruncate": false,
+  "text": "{{\n  (() => {\n    const atual = Number(Query_VendasMes_Gestao.data[0]?.total_vendido || 0);\n    const anterior = Number(FatPeriodoAnt.data[0]?.total_vendido_anterior || 0);\n    if (anterior === 0) return \"—\";\n    const variacaoAbs = atual - anterior;\n    const variacaoPerc = ((variacaoAbs) / anterior) * 100;\n    const valor = Math.abs(variacaoAbs).toLocaleString(\"pt-BR\", { minimumFractionDigits: 2, maximumFractionDigits: 2 });\n    const percentual = (variacaoPerc > 0 ? \"+\" : \"\") + variacaoPerc.toLocaleString(\"pt-BR\", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + \"%\";\n    const anoAnterior = new Date(DatePicker_Inicial.selectedDate).getFullYear() - 1;\n    return `<div style='display:flex;flex-direction:column;align-items:center;width:100%;'>\n        <span style='font-size:18px;font-weight:bold;color:#fff;'>R$ ${valor} <span style='font-size:16px;font-weight:normal;color:#fff;'>(${percentual})</span></span>\n        <span style='font-size:12px;color:#fff;'>Mesmo período do ano ${anoAnterior}</span>`;\n  })()\n}}",
+  "textAlign": "CENTER",
+  "textColor": "#ffffff",
+  "topRow": 6,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "jvnzpbj0la",
+  "widgetName": "Text_Fat_Comp"
+}

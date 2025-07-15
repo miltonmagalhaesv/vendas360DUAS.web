@@ -1,0 +1,12 @@
+SELECT 
+  ROUND(AVG(mensal.total_mes)::numeric, 2) AS media_mensal
+FROM (
+  SELECT 
+    TO_CHAR(data_lanca, 'YYYY-MM') AS mes,
+    SUM(valor_liquido) AS total_mes
+  FROM public.vw_faturamento_vendas_analitico
+  WHERE data_lanca >= '{{ moment().startOf("year").format("YYYY-MM-DD") }}'
+    AND data_lanca <= '{{ moment().subtract(1, "month").endOf("month").format("YYYY-MM-DD") }}'
+    AND ponto_venda = ANY ({{ Select_Lojas.selectedOptionValues }})
+  GROUP BY mes
+) AS mensal

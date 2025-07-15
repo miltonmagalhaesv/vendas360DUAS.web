@@ -1,5 +1,6 @@
 SELECT 
   COUNT(DISTINCT id_venda) AS qtd_vendas
 FROM public.vw_faturamento_vendas_analitico
-WHERE DATE_TRUNC('month', data_lanca) = '{{ Select_Mes.selectedOptionValue }}'::date
+WHERE data_lanca >= '{{ DatePicker_Inicial.selectedDate }}'
+  AND data_lanca <= '{{ DatePicker_Final.selectedDate }}'
   AND ponto_venda = ANY ({{ Select_Lojas.selectedOptionValues }})

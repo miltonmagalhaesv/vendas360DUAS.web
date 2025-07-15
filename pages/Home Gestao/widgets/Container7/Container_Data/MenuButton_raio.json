@@ -1,0 +1,170 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 4,
+  "boxShadow": "none",
+  "configureMenuItems": {
+    "config": {
+      "id": "config",
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Menu Item"
+    },
+    "id": "config",
+    "label": "Configure menu items"
+  },
+  "dynamicBindingPathList": [
+    {
+      "key": "menuColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "menuItems.menuItem1.onClick"
+    },
+    {
+      "key": "menuItems.menuItem2.onClick"
+    },
+    {
+      "key": "menuItems.menuItem3.onClick"
+    },
+    {
+      "key": "menuItems.menuItem9gsmm2ezop.onClick"
+    },
+    {
+      "key": "menuItems.menuItem95l2su2zwh.onClick"
+    },
+    {
+      "key": "menuItems.menuItem0fu6pvsbci.onClick"
+    },
+    {
+      "key": "menuItems.menuItemcwuar3ge54.onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "menuItems.menuItem1.onClick"
+    },
+    {
+      "key": "menuItems.menuItem2.onClick"
+    },
+    {
+      "key": "menuItems.menuItem3.onClick"
+    },
+    {
+      "key": "menuItems.menuItem9gsmm2ezop.onClick"
+    },
+    {
+      "key": "menuItems.menuItem95l2su2zwh.onClick"
+    },
+    {
+      "key": "menuItems.menuItem0fu6pvsbci.onClick"
+    },
+    {
+      "key": "menuItems.menuItemcwuar3ge54.onClick"
+    }
+  ],
+  "isCompact": false,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "gz22t41ifm",
+  "label": "⚡️",
+  "leftColumn": 55,
+  "menuColor": "{{appsmith.theme.colors.primaryColor}}",
+  "menuItems": {
+    "menuItem0fu6pvsbci": {
+      "id": "menuItem0fu6pvsbci",
+      "index": 5,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Últimos 3 meses",
+      "onClick": "{{JSRaioData.setUltimos3Meses()}}",
+      "textColor": "#553de9",
+      "widgetId": "l6ans4d6mk"
+    },
+    "menuItem1": {
+      "backgroundColor": "",
+      "id": "menuItem1",
+      "index": 0,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Hoje",
+      "onClick": "{{JSRaioData.setHoje()}}",
+      "textColor": "#553de9",
+      "widgetId": ""
+    },
+    "menuItem2": {
+      "id": "menuItem2",
+      "index": 1,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Ontem",
+      "onClick": "{{JSRaioData.setOntem()}}",
+      "textColor": "#553de9",
+      "widgetId": ""
+    },
+    "menuItem3": {
+      "id": "menuItem3",
+      "index": 2,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Última semana",
+      "onClick": "{{JSRaioData.setUltimaSemana()}}",
+      "textColor": "#553de9",
+      "widgetId": ""
+    },
+    "menuItem95l2su2zwh": {
+      "id": "menuItem95l2su2zwh",
+      "index": 4,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Último mês",
+      "onClick": "{{JSRaioData.setUltimoMes()}}",
+      "textColor": "#553de9",
+      "widgetId": "h94svfh4pq"
+    },
+    "menuItem9gsmm2ezop": {
+      "id": "menuItem9gsmm2ezop",
+      "index": 3,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Este mês",
+      "onClick": "{{JSRaioData.setEsteMes()}}",
+      "textColor": "#553de9",
+      "widgetId": "jzd4iepjq9"
+    },
+    "menuItemcwuar3ge54": {
+      "id": "menuItemcwuar3ge54",
+      "index": 6,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Este Ano",
+      "onClick": "{{JSRaioData.setEsteAno()}}",
+      "textColor": "#553de9",
+      "widgetId": "zqc2bh4xxw"
+    }
+  },
+  "menuItemsSource": "STATIC",
+  "menuVariant": "TERTIARY",
+  "mobileBottomRow": 11,
+  "mobileLeftColumn": 29,
+  "mobileRightColumn": 45,
+  "mobileTopRow": 7,
+  "needsErrorInfo": false,
+  "parentColumnSpace": 5.1407470703125,
+  "parentId": "6ox33zx6de",
+  "parentRowSpace": 10,
+  "placement": "START",
+  "renderMode": "CANVAS",
+  "rightColumn": 63,
+  "sourceData": [],
+  "topRow": 0,
+  "type": "MENU_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "qrcfe5qiy5",
+  "widgetName": "MenuButton_raio"
+}

@@ -1,0 +1,6 @@
+SELECT 
+  ROUND(SUM(valor_liquido)::numeric, 2) AS total_acumulado_ano
+FROM public.vw_faturamento_vendas_analitico
+WHERE data_lanca >= '{{ moment().startOf("year").format("YYYY-MM-DD") }}'
+  AND data_lanca <= '{{ moment().format("YYYY-MM-DD") }}'
+  AND ponto_venda = ANY ({{ Select_Lojas.selectedOptionValues }})
