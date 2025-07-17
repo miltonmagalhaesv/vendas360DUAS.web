@@ -5,6 +5,10 @@ export default {
     Query_VendasMes.clear(); Query_VendasMes.run();
     Query_QtdVendasMes.clear(); Query_QtdVendasMes.run();
     Query_VlrDia.clear(); Query_VlrDia.run();
+		GraficoVendasMes.clear();GraficoVendasMes.run();
+		FatPeriodoAnt.clear();FatPeriodoAnt.run();
+		VendasAcumuladoAno.clear();VendasAcumuladoAno.run();
+		VendaMediaAno.clear();VendaMediaAno.run();
 
     // Dados para cálculos de tendência
     Query_SomaPesoMes.clear(); Query_SomaPesoMes.run();
