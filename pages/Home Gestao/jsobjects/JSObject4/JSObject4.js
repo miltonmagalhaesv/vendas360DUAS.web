@@ -5,13 +5,6 @@ export default {
     Query_VendasMes.clear(); Query_VendasMes.run();
     Query_QtdVendasMes.clear(); Query_QtdVendasMes.run();
     Query_VlrDia.clear(); Query_VlrDia.run();
-		GraficoVendasMes.clear();GraficoVendasMes.run();
-		FatPeriodoAnt.clear();FatPeriodoAnt.run();
-		VendasAcumuladoAno.clear();VendasAcumuladoAno.run();
-		VendaMediaAno.clear();VendaMediaAno.run();
-		QtdVendasPeriodoAnt.clear();QtdVendasPeriodoAnt.run();
-		QtdVendasMedia.clear();QtdVendasMedia.run();
-		QtdVendasAcumulado.clear();QtdVendasAcumulado.run();
 
     // Dados para cálculos de tendência
     Query_SomaPesoMes.clear(); Query_SomaPesoMes.run();
@@ -23,6 +16,13 @@ export default {
     Query_VlrDia_Gestao.clear(); Query_VlrDia_Gestao.run();
 		VendasMes_PDV.clear();VendasMes_PDV.run();
 		MetasMes_PDV.clear();MetasMes_PDV.run();
+		GraficoVendasMes.clear();GraficoVendasMes.run();
+		FatPeriodoAnt.clear();FatPeriodoAnt.run();
+		VendasAcumuladoAno.clear();VendasAcumuladoAno.run();
+		VendaMediaAno.clear();VendaMediaAno.run();
+		QtdVendasPeriodoAnt.clear();QtdVendasPeriodoAnt.run();
+		QtdVendasMedia.clear();QtdVendasMedia.run();
+		QtdVendasAcumulado.clear();QtdVendasAcumulado.run();
   },
 
   btn_loginonClick: () => {
