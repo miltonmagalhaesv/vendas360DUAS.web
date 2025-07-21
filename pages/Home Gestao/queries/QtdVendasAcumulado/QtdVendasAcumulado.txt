@@ -1,0 +1,6 @@
+SELECT 
+  COUNT(DISTINCT id_venda) AS qtd_vendas_acumulado_ano
+FROM public.vw_faturamento_vendas_analitico
+WHERE data_lanca >= '{{ moment().startOf("year").format("YYYY-MM-DD") }}'
+  AND data_lanca <= '{{ moment().format("YYYY-MM-DD") }}'
+  AND ponto_venda = ANY ({{ Select_Lojas.selectedOptionValues }})

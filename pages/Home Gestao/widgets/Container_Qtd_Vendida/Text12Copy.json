@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 17,
+  "bottomRow": 18,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -11,6 +11,9 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "text"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -21,7 +24,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "12hz2pt3re",
-  "leftColumn": 33,
+  "leftColumn": 32,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -30,7 +33,7 @@
   "mobileRightColumn": 16,
   "mobileTopRow": 8,
   "needsErrorInfo": false,
-  "originalBottomRow": 17,
+  "originalBottomRow": 18,
   "originalTopRow": 13,
   "overflow": "NONE",
   "parentColumnSpace": 3.8916015625,
@@ -38,10 +41,10 @@
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 63,
+  "rightColumn": 62,
   "shouldTruncate": false,
-  "text": "media ano",
-  "textAlign": "LEFT",
+  "text": "{{\n  \"<div style='display:flex; flex-direction:column; align-items:center; line-height:1.2;'>\\\n     <span style='font-size:16px; font-weight:bold;'>\" +\n     (QtdVendasMedia.data[0]?.media_mensal || 0) +\n     \"</span>\\\n     <span style='font-size:12px;'>Média mensal </span>\\\n   </div>\"\n}}",
+  "textAlign": "CENTER",
   "textColor": "#231F20",
   "topRow": 13,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",

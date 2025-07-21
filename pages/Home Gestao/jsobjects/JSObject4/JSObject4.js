@@ -9,6 +9,9 @@ export default {
 		FatPeriodoAnt.clear();FatPeriodoAnt.run();
 		VendasAcumuladoAno.clear();VendasAcumuladoAno.run();
 		VendaMediaAno.clear();VendaMediaAno.run();
+		QtdVendasPeriodoAnt.clear();QtdVendasPeriodoAnt.run();
+		QtdVendasMedia.clear();QtdVendasMedia.run();
+		QtdVendasAcumulado.clear();QtdVendasAcumulado.run();
 
     // Dados para cálculos de tendência
     Query_SomaPesoMes.clear(); Query_SomaPesoMes.run();
