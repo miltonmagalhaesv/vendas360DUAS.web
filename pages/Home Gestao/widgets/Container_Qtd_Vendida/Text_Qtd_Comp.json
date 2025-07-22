@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 11,
+  "bottomRow": 5,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -24,7 +24,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "12hz2pt3re",
-  "leftColumn": 0,
+  "leftColumn": 31,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -33,8 +33,8 @@
   "mobileRightColumn": 16,
   "mobileTopRow": 8,
   "needsErrorInfo": false,
-  "originalBottomRow": 11,
-  "originalTopRow": 7,
+  "originalBottomRow": 5,
+  "originalTopRow": 0,
   "overflow": "NONE",
   "parentColumnSpace": 3.8916015625,
   "parentId": "6fbzazdntu",
@@ -43,13 +43,13 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "shouldTruncate": false,
-  "text": "{{ QtdVendasPeriodoAnt.data[0]?.qtd_vendas_anterior }}",
+  "text": "<div style=\"display:flex; flex-direction:column; align-items:center; width:100%;\">\n  <span style=\"font-size:14px; font-weight:bold;\">{{ QtdVendasPeriodoAnt.data[0]?.qtd_vendas_anterior }}<span style=\"font-size:16px; font-weight:normal; color:{{ ( (Number(Query_QtdVendasMes_Gestao.data[0]?.qtd_vendas || 0) - Number(QtdVendasPeriodoAnt.data[0]?.qtd_vendas_anterior || 0)) / Number(QtdVendasPeriodoAnt.data[0]?.qtd_vendas_anterior || 1) )*100 >= 0 ? '#16B364' : '#F04438' }};\"> <span style=\"font-size:12px;font-weight:bold;\">({{ ((Number(Query_QtdVendasMes_Gestao.data[0]?.qtd_vendas || 0) - Number(QtdVendasPeriodoAnt.data[0]?.qtd_vendas_anterior || 0)) / Number(QtdVendasPeriodoAnt.data[0]?.qtd_vendas_anterior || 1) * 100 ).toLocaleString(\"pt-BR\", {minimumFractionDigits: 2, maximumFractionDigits: 2}) }}%)<span style=\"font-size:11px;color:#231F20; margin-top:2px;font-weight:normal\">\nPeríodo anterior</span>\n</div>",
   "textAlign": "CENTER",
   "textColor": "#231F20",
-  "topRow": 7,
+  "topRow": 0,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
   "widgetId": "29hx36egsk",
-  "widgetName": "Text12CopyCopy"
+  "widgetName": "Text_Qtd_Comp"
 }

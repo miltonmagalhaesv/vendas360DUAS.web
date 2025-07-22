@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 5,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "0.875rem",
+  "fontStyle": "",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "12hz2pt3re",
+  "leftColumn": 30,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 12,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 16,
+  "mobileTopRow": 8,
+  "needsErrorInfo": false,
+  "originalBottomRow": 4,
+  "originalTopRow": 0,
+  "overflow": "NONE",
+  "parentColumnSpace": 3.8916015625,
+  "parentId": "ydkfvns2jj",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "shouldTruncate": false,
+  "text": "<div style=\"display:flex; flex-direction:column; align-items:center; width:100%;\">\n  <span style=\"font-size:14px; font-weight:bold;\">{{(\n        Number(PMPeriodoAnt.data[0]?.total_vendido_anterior || 0) && Number(PMPeriodoAnt.data[0]?.qtd_itens_anterior || 0)\n      )\n        ? (Number(PMPeriodoAnt.data[0]?.total_vendido_anterior || 0) / Number(PMPeriodoAnt.data[0]?.qtd_itens_anterior || 1)).toLocaleString(\"pt-BR\", { style: \"currency\", currency: \"BRL\" })\n        : \"R$ 0,00\"\n    }}<span style=\"font-size:16px; font-weight:normal; color:{{(((Number(PM.data[0]?.total_vendido || 0) / Number(PM.data[0]?.qtd_itens || 1))\n          -\n          (Number(PMPeriodoAnt.data[0]?.total_vendido_anterior || 0) / Number(PMPeriodoAnt.data[0]?.qtd_itens_anterior || 1))\n        )\n        /\n        (Number(PMPeriodoAnt.data[0]?.total_vendido_anterior || 0) / Number(PMPeriodoAnt.data[0]?.qtd_itens_anterior || 1) || 1)\n      ) * 100 >= 0 ? '#16B364' : '#F04438'\n    }};\"><span style=\"font-size:12px;font-weight:bold;\"> ({{\n          (\n            (\n              (Number(PM.data[0]?.total_vendido || 0) / Number(PM.data[0]?.qtd_itens || 1))\n              -\n              (Number(PMPeriodoAnt.data[0]?.total_vendido_anterior || 0) / Number(PMPeriodoAnt.data[0]?.qtd_itens_anterior || 1))\n            )\n            /\n            (Number(PMPeriodoAnt.data[0]?.total_vendido_anterior || 0) / Number(PMPeriodoAnt.data[0]?.qtd_itens_anterior || 1) || 1)\n            * 100\n          ).toLocaleString(\"pt-BR\", { minimumFractionDigits: 2, maximumFractionDigits: 2 })\n        }}%)</span></span></span>\n  <span style=\"font-size:11px;color:#231F20; margin-top:2px;font-weight:normal\">Período anterior</span></div>",
+  "textAlign": "CENTER",
+  "textColor": "#231F20",
+  "topRow": 0,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "lr1n4yo3rr",
+  "widgetName": "Text_PM_Comp"
+}

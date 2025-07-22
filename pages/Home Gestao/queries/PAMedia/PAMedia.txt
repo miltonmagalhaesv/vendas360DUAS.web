@@ -1,0 +1,19 @@
+SELECT 
+  ROUND(AVG(pa_mensal), 2) AS pa_medio_ano
+FROM (
+  SELECT 
+    TO_CHAR(data_lanca, 'YYYY-MM') AS mes,
+    AVG(qtd_itens_venda) AS pa_mensal
+  FROM (
+    SELECT 
+      id_venda,
+      COUNT(*) AS qtd_itens_venda,
+      data_lanca
+    FROM public.vw_faturamento_vendas_analitico
+    WHERE data_lanca >= '{{ moment().startOf("year").format("YYYY-MM-DD") }}'
+      AND data_lanca <= '{{ moment().subtract(1, "month").endOf("month").format("YYYY-MM-DD") }}'
+      AND ponto_venda = ANY ({{ Select_Lojas.selectedOptionValues }})
+    GROUP BY id_venda, data_lanca
+  ) vendas
+  GROUP BY mes
+) meses

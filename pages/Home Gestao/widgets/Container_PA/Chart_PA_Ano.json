@@ -3,12 +3,11 @@
   "allowScroll": false,
   "animateLoading": true,
   "borderRadius": "0.375rem",
-  "bottomRow": 31,
+  "bottomRow": 13,
   "boxShadow": "none",
   "chartData": {
-    "lpb3d47ouy": {
-      "color": "#553de9",
-      "data": "{{\n  GraficoVendasMes.data.map(item => ({\n    x: item.mes,\n    y: Number(item.total_mes)\n  }))\n}}",
+    "8psrr55nrc": {
+      "data": "{{\n  GraficoPA.data.map(item => ({\n    x: item.mes,\n    y: Number(item.pa_mes)\n  }))\n}}",
       "seriesName": ""
     }
   },
@@ -73,39 +72,37 @@
       "key": "fontFamily"
     },
     {
-      "key": "chartData.lpb3d47ouy.data"
+      "key": "chartData.8psrr55nrc.data"
     }
   ],
-  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [],
   "flexVerticalAlignment": "start",
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
   "isLoading": false,
   "isVisible": true,
-  "key": "2wekgt5vg7",
+  "key": "si2pm4126i",
   "labelOrientation": "auto",
-  "leftColumn": 1,
+  "leftColumn": 0,
   "minWidth": 450,
-  "mobileBottomRow": 78,
-  "mobileLeftColumn": 0,
-  "mobileRightColumn": 9,
-  "mobileTopRow": 46,
+  "mobileBottomRow": 83,
+  "mobileLeftColumn": 5,
+  "mobileRightColumn": 29,
+  "mobileTopRow": 62,
   "needsErrorInfo": true,
-  "originalBottomRow": 31,
-  "originalTopRow": 13,
-  "parentColumnSpace": 17.9375,
-  "parentId": "22eattohj5",
+  "originalBottomRow": 13,
+  "originalTopRow": 5,
+  "parentColumnSpace": 18.671875,
+  "parentId": "ke94slymrh",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 63,
-  "setAdaptiveYMin": false,
+  "rightColumn": 64,
   "showDataPointLabel": false,
-  "topRow": 13,
+  "topRow": 5,
   "type": "CHART_WIDGET",
   "version": 1,
-  "widgetId": "skpghakkti",
-  "widgetName": "Chart_Vendas_Ano",
+  "widgetId": "kyms07s8ol",
+  "widgetName": "Chart_PA_Ano",
   "xAxisName": "",
   "yAxisName": ""
 }

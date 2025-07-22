@@ -1,0 +1,12 @@
+SELECT 
+  ROUND(AVG(tm_mensal), 2) AS media_tm_ano
+FROM (
+  SELECT 
+    TO_CHAR(data_lanca, 'YYYY-MM') AS mes,
+    SUM(valor_liquido)::numeric / NULLIF(COUNT(DISTINCT id_venda),0) AS tm_mensal
+  FROM public.vw_faturamento_vendas_analitico
+  WHERE data_lanca >= '{{ moment().startOf("year").format("YYYY-MM-DD") }}'
+    AND data_lanca <= '{{ moment().subtract(1, "month").endOf("month").format("YYYY-MM-DD") }}'
+    AND ponto_venda = ANY ({{ Select_Lojas.selectedOptionValues }})
+  GROUP BY mes
+) tms

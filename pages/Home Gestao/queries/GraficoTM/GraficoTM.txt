@@ -1,0 +1,9 @@
+SELECT 
+  TO_CHAR(data_lanca, 'YYYY-MM') AS mes,
+  ROUND(SUM(valor_liquido)::numeric / NULLIF(COUNT(DISTINCT id_venda),0), 2) AS tm_mes
+FROM public.vw_faturamento_vendas_analitico
+WHERE data_lanca >= '{{ moment().startOf("year").format("YYYY-MM-DD") }}'
+  AND data_lanca <= '{{ moment().format("YYYY-MM-DD") }}'
+  AND ponto_venda = ANY ({{ Select_Lojas.selectedOptionValues }})
+GROUP BY mes
+ORDER BY mes

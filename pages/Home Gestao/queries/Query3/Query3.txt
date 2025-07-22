@@ -1,0 +1,1 @@
+SELECT * FROM oltp."tb_cliente" LIMIT 10;

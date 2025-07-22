@@ -26,6 +26,6 @@
     "fullyQualifiedName": "JSObject4.btn_loginonClick",
     "name": "btn_loginonClick",
     "pageId": "Home Gestao",
-    "userSetOnLoad": false
+    "userSetOnLoad": true
   }
 }

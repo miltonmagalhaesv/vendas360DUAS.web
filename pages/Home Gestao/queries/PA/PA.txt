@@ -1,0 +1,12 @@
+SELECT 
+  ROUND(AVG(qtd_itens_venda), 2) AS pa_medio
+FROM (
+  SELECT 
+    id_venda,
+    COUNT(*) AS qtd_itens_venda
+  FROM public.vw_faturamento_vendas_analitico
+  WHERE data_lanca >= '{{ DatePicker_Inicial.selectedDate }}'
+    AND data_lanca <= '{{ DatePicker_Final.selectedDate }}'
+    AND ponto_venda = ANY ({{ Select_Lojas.selectedOptionValues }})
+  GROUP BY id_venda
+) vendas

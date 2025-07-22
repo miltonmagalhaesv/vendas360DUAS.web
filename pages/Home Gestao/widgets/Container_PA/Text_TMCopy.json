@@ -11,6 +11,9 @@
     },
     {
       "key": "textColor"
+    },
+    {
+      "key": "text"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -21,7 +24,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "u8x3525y9d",
-  "leftColumn": 0,
+  "leftColumn": 1,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -31,19 +34,19 @@
   "mobileTopRow": 11,
   "needsErrorInfo": false,
   "originalBottomRow": 5,
-  "originalTopRow": 1,
+  "originalTopRow": 0,
   "overflow": "NONE",
   "parentColumnSpace": 6.53125,
   "parentId": "ke94slymrh",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 39,
+  "rightColumn": 35,
   "shouldTruncate": false,
-  "text": "PA",
+  "text": "<div style=\"display:flex; flex-direction:column; align-items:center; width:100%;\">\n  <span style=\"font-size:18px; font-weight:bold;\">{{ PA.data[0]?.pa_medio || 0 }} </span><span style=\"font-size:12px;font-weight:bold;\">PA</span></div>",
   "textAlign": "CENTER",
   "textColor": "{{appsmith.theme.colors.primaryColor}}",
-  "topRow": 1,
+  "topRow": 0,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

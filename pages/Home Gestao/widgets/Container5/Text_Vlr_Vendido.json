@@ -40,7 +40,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 63,
   "shouldTruncate": false,
-  "text": "{{ \n  \"<div style='display:flex; flex-direction:column; align-items:center; line-height:1.2;'>\\\n     <span style='font-size:24px; font-weight:bold;'>\" +\n     (Query_VendasMes_Gestao.data[0]?.total_vendido \n       ? Number(Query_VendasMes_Gestao.data[0].total_vendido).toLocaleString(\"pt-BR\", { style: \"currency\", currency: \"BRL\" }) \n       : \"R$ 0,00\") +\n     \"</span>\\\n     <span style='font-size:12px;'>Valor Vendido</span>\\\n   </div>\"\n}}",
+  "text": "{{ \n  \"<div style='display:flex; flex-direction:column; align-items:center; line-height:1.2;'>\\\n     <span style='font-size:24px; font-weight:bold;'>\" +\n     (Query_VendasMes_Gestao.data[0]?.total_vendido \n       ? Number(Query_VendasMes_Gestao.data[0].total_vendido).toLocaleString(\"pt-BR\", { style: \"currency\", currency: \"BRL\" }) \n       : \"R$ 0,00\") +\n     \"</span>\\\n     <span style='font-size:12px;'>Faturamento</span>\\\n   </div>\"\n}}",
   "textAlign": "CENTER",
   "textColor": "#ffffff",
   "topRow": 0,

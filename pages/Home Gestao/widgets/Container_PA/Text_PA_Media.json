@@ -11,6 +11,9 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "text"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -30,23 +33,23 @@
   "mobileRightColumn": 16,
   "mobileTopRow": 8,
   "needsErrorInfo": false,
-  "originalBottomRow": 18,
-  "originalTopRow": 14,
+  "originalBottomRow": 21,
+  "originalTopRow": 13,
   "overflow": "NONE",
   "parentColumnSpace": 3.8916015625,
-  "parentId": "a7829obqsp",
+  "parentId": "ke94slymrh",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 23,
+  "rightColumn": 62,
   "shouldTruncate": false,
-  "text": "acum ano",
-  "textAlign": "LEFT",
+  "text": "<div style=\"display:flex; flex-direction:column; align-items:center; width:100%;\">\n  <span style=\"font-size:16px; font-weight:bold;\">{{ PAMedia.data[0]?.pa_medio_ano || 0 }}</span><span style=\"font-size:12px;\">Média mensal</span>\n</div>",
+  "textAlign": "CENTER",
   "textColor": "#231F20",
-  "topRow": 14,
+  "topRow": 13,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "lk94j9c9li",
-  "widgetName": "Text12Copy2"
+  "widgetId": "1dtnjj7nv9",
+  "widgetName": "Text_PA_Media"
 }

@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 17,
+  "bottomRow": 18,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -11,6 +11,9 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "text"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -21,7 +24,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "12hz2pt3re",
-  "leftColumn": 33,
+  "leftColumn": 17,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -30,23 +33,23 @@
   "mobileRightColumn": 16,
   "mobileTopRow": 8,
   "needsErrorInfo": false,
-  "originalBottomRow": 17,
+  "originalBottomRow": 21,
   "originalTopRow": 13,
   "overflow": "NONE",
   "parentColumnSpace": 3.8916015625,
-  "parentId": "ke94slymrh",
+  "parentId": "ydkfvns2jj",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 63,
+  "rightColumn": 47,
   "shouldTruncate": false,
-  "text": "media ano",
-  "textAlign": "LEFT",
+  "text": "<div style=\"display:flex; flex-direction:column; align-items:center; width:100%;\">\n  <span style=\"font-size:16px; font-weight:bold;\">{{\n      PMMedia.data[0]?.pm_media_ano\n        ? Number(PMMedia.data[0]?.pm_media_ano).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })\n        : \"R$ 0,00\"\n    }}</span><span style=\"font-size:12px;\">Média mensal</span>\n</div>",
+  "textAlign": "CENTER",
   "textColor": "#231F20",
   "topRow": 13,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "1dtnjj7nv9",
-  "widgetName": "Text12CopyCopy2Copy"
+  "widgetId": "xa0wy7v051",
+  "widgetName": "Text_PM_Media"
 }

@@ -1,0 +1,7 @@
+SELECT 
+  COALESCE(SUM(valor_liquido),0) AS total_vendido_anterior,
+  COALESCE(COUNT(DISTINCT id_venda),0) AS qtd_vendas_anterior
+FROM public.vw_faturamento_vendas_analitico
+WHERE data_lanca >= '{{ JSFatPeriodoAnt.periodoAnterior().de }}'
+  AND data_lanca <= '{{ JSFatPeriodoAnt.periodoAnterior().ate }}'
+  AND ponto_venda = ANY ({{ Select_Lojas.selectedOptionValues }})

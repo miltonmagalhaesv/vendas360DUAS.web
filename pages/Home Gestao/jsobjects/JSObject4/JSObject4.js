@@ -23,6 +23,15 @@ export default {
 		QtdVendasPeriodoAnt.clear();QtdVendasPeriodoAnt.run();
 		QtdVendasMedia.clear();QtdVendasMedia.run();
 		QtdVendasAcumulado.clear();QtdVendasAcumulado.run();
+		GraficoQtdVendas.clear();GraficoQtdVendas.run();
+		TMPeriodoAnt.clear();TMPeriodoAnt.run();
+		TMMedio.clear();TMMedio.run();
+		GraficoTM.clear();GraficoTM.run();
+		PA.clear();PA.run();
+		PAPeriodoAnt.clear();PAPeriodoAnt.run();
+		GraficoPA.clear();GraficoPA.run();
+		PAMedia.clear();PAMedia.run();
+		
   },
 
   btn_loginonClick: () => {

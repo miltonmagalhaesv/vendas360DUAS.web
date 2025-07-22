@@ -1,0 +1,7 @@
+SELECT 
+  COALESCE(SUM(valor_liquido), 0) AS total_vendido,
+  COUNT(*) AS qtd_itens -- cada linha é um item
+FROM public.vw_faturamento_vendas_analitico
+WHERE data_lanca >= '{{ DatePicker_Inicial.selectedDate }}'
+  AND data_lanca <= '{{ DatePicker_Final.selectedDate }}'
+  AND ponto_venda = ANY ({{ Select_Lojas.selectedOptionValues }})
