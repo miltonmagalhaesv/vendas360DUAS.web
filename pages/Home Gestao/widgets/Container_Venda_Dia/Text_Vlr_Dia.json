@@ -41,7 +41,7 @@
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 41,
+  "rightColumn": 40,
   "shouldTruncate": false,
   "text": "{{\n  (() => {\n    const VV = Query_VendasMes_Gestao.data[0]?.total_vendido ?? 0;\n    const DUP = Query_SomaPesoMes_Gestao.data[0]?.total_peso_mes ?? 1;\n    const VD = DUP > 0 ? VV / DUP : 0;\n\n    return \"<div style='display:flex; flex-direction:column; align-items:center; line-height:1.2;'>\\\n              <span style='font-size:16px; font-weight:bold;'>\" +\n              VD.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) +\n              \"</span>\\\n              <span style='font-size:12px;'>Venda/dia</span>\\\n            </div>\";\n  })()\n}}",
   "textAlign": "CENTER",

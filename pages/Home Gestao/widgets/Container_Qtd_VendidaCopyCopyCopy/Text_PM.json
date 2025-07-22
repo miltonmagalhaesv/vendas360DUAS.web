@@ -43,7 +43,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 30,
   "shouldTruncate": false,
-  "text": "<div style=\"display:flex; flex-direction:column; align-items:center; width:100%;\">\n  <span style=\"font-size:16px; font-weight:bold;\">{{(Number(PM.data[0]?.total_vendido || 0) && Number(PM.data[0]?.qtd_itens || 0)\n      )\n        ? (Number(PM.data[0]?.total_vendido || 0) / Number(PM.data[0]?.qtd_itens || 1)).toLocaleString(\"pt-BR\", { style: \"currency\", currency: \"BRL\" })\n        : \"R$ 0,00\"\n    }} </span>\n  <span style=\"font-size:12px;\">PM</span>\n</div>",
+  "text": "<div style=\"display:flex; flex-direction:column; align-items:center; width:100%;\">\n  <span style=\"font-size:18px; font-weight:bold;\">{{(Number(PM.data[0]?.total_vendido || 0) && Number(PM.data[0]?.qtd_itens || 0)\n      )\n        ? (Number(PM.data[0]?.total_vendido || 0) / Number(PM.data[0]?.qtd_itens || 1)).toLocaleString(\"pt-BR\", { style: \"currency\", currency: \"BRL\" })\n        : \"R$ 0,00\"\n    }} </span>\n  <span style=\"font-size:12px;font-weight:bold;\">PM</span>\n</div>",
   "textAlign": "CENTER",
   "textColor": "{{appsmith.theme.colors.primaryColor}}",
   "topRow": 0,
