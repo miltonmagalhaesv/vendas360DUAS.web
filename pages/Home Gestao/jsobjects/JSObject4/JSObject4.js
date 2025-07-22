@@ -31,7 +31,10 @@ export default {
 		PAPeriodoAnt.clear();PAPeriodoAnt.run();
 		GraficoPA.clear();GraficoPA.run();
 		PAMedia.clear();PAMedia.run();
-		
+		PM.clear();PM.run();
+		PMMedia.clear();PMMedia.run();
+		PMPeriodoAnt.clear();PMPeriodoAnt.run();
+		GraficoPM.clear();GraficoPM.run();
   },
 
   btn_loginonClick: () => {
