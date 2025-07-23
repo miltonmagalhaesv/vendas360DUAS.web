@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 37,
+  "bottomRow": 36,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -46,7 +46,7 @@
   "text": "{{ \n  \"<div style='display:flex; flex-direction:column; align-items:center; line-height:1.2;'>\\\n     <span style='font-size:16px; font-weight:bold;'>\" +\n     (VendasAcumuladoAno.data[0]?.total_acumulado_ano \n       ? Number(VendasAcumuladoAno.data[0].total_acumulado_ano).toLocaleString(\"pt-BR\", { style: \"currency\", currency: \"BRL\" }) \n       : \"R$ 0,00\") +\n     \"</span>\\\n     <span style='font-size:12px;'>Acumulado do Ano</span>\\\n   </div>\"\n}}",
   "textAlign": "CENTER",
   "textColor": "#ffffff",
-  "topRow": 32,
+  "topRow": 31,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
