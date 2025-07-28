@@ -28,7 +28,7 @@
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "hug",
-  "rightColumn": 2,
+  "rightColumn": 5,
   "tooltip": "<div style=\"background:#553DE9;\"><p style=\"text-align: center;font-size:16px;color:#ffff\"><b>Faturamento Líquido</b></div>\n<br><p style=\"text-align: justify;\">\nSoma de todas as vendas menos as devoluções do período selecionado.<br>\n<br>\n<b>Variações exibidas:</b><br>\n\t<u>•\tPeríodo anterior:</u> Mostra o faturamento líquido do mesmo período imediatamente anterior, permitindo comparar a evolução das vendas.<br>\n\t<u>•\tAcumulado do ano:</u> Total de faturamento líquido de janeiro até a data atual, para avaliar o desempenho anual.<br>\n\t<u>•\tMédia anual:</u> Média mensal do faturamento líquido no ano, útil para acompanhar a regularidade das vendas.",
   "topRow": 0,
   "type": "ICON_BUTTON_WIDGET",

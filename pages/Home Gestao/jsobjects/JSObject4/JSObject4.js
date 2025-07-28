@@ -12,7 +12,7 @@ export default {
 		// Dados de gestão
 		Query_MetaMes_Gestao.clear(); Query_MetaMes_Gestao.run();
     Query_VendasMes_Gestao.clear(); Query_VendasMes_Gestao.run();
-    Query_QtdVendasMes_Gestao.clear(); Query_QtdVendasMes_Gestao.run();
+		Query_QtdVendasMes_Gestao.clear();Query_QtdVendasMes_Gestao.run();
     Query_VlrDia_Gestao.clear(); Query_VlrDia_Gestao.run();
 		VendasMes_PDV.clear();VendasMes_PDV.run();
 		MetasMes_PDV.clear();MetasMes_PDV.run();
@@ -20,6 +20,7 @@ export default {
 		KPI_Periodo_Anterior.clear();KPI_Periodo_Anterior.run();
 		KPI_Acumulado_Ano.clear();KPI_Acumulado_Ano.run();
 		KPI_Media_Ano.clear();KPI_Media_Ano.run();
+		GraficoVendasMes.clear();GraficoVendasMes.run();
 		
 		
   },
