@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 11,
+  "bottomRow": 13,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -33,7 +33,7 @@
   "mobileRightColumn": 16,
   "mobileTopRow": 8,
   "needsErrorInfo": false,
-  "originalBottomRow": 12,
+  "originalBottomRow": 13,
   "originalTopRow": 7,
   "overflow": "NONE",
   "parentColumnSpace": 3.8916015625,
@@ -43,7 +43,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 63,
   "shouldTruncate": false,
-  "text": "{{\n  (() => {\n    const atual = Number(Query_VendasMes_Gestao.data[0]?.total_vendido || 0);\n    const anterior = Number(FatPeriodoAnt.data[0]?.total_vendido_anterior || 0);\n    if (anterior === 0) return \"—\";\n    const variacaoPerc = ((atual - anterior) / anterior) * 100;\n    const percentual = (variacaoPerc > 0 ? \"+\" : \"\") +\n      variacaoPerc.toLocaleString(\"pt-BR\", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + \"%\";\n    // COR DINÂMICA: verde se positivo ou zero, vermelho se negativo\n    const cor = variacaoPerc >= 0 ? \"#28a745\" : \"#ff0000\";\n    return `<div style='display:flex;flex-direction:column;align-items:center;width:100%;'>\n<span style='font-size:18px;font-weight:bold;color:#fff;'>R$ ${anterior.toLocaleString(\"pt-BR\", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} <span style='font-size:16px;font-weight:bold;color:${cor};'>(${percentual})</span></span><span style='font-size:12px;color:#fff;'>Mesmo período do mês anterior</span>\n    </div>`;\n  })()\n}}",
+  "text": "<div style=\"display:flex; flex-direction:column; align-items:center; width:100%;\">\n  <span style=\"font-size:18px; font-weight:bold;\">{{ Number(KPI_Periodo_Anterior.data[0]?.faturamento_liquido || 0).toLocaleString(\"pt-BR\", { style: \"currency\", currency: \"BRL\" }) }}<span style=\"font-size:px; font-weight:bold; color:{{ \n      (\n        ( Number(KPI_Periodo_Atual.data[0]?.faturamento_liquido || 0) -\n          Number(KPI_Periodo_Anterior.data[0]?.faturamento_liquido || 0)\n        ) /\n        (Number(KPI_Periodo_Anterior.data[0]?.faturamento_liquido || 1)) * 100 >= 0\n        ? '#16B364'\n        : '#F04438'\n      )\n    }};\"> <span style=\"font-size:12px;font-weight:bold;\">({{ (\n(Number(KPI_Periodo_Atual.data[0]?.faturamento_liquido || 0) -\n              Number(KPI_Periodo_Anterior.data[0]?.faturamento_liquido || 0)\n            ) /\n            (Number(KPI_Periodo_Anterior.data[0]?.faturamento_liquido || 1)) * 100\n          ).toLocaleString(\"pt-BR\", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) }} %)<span style=\"font-size:12px;color:#fff; margin-top:2px;font-weight:normal\">\n    Período anterior\n</div>",
   "textAlign": "CENTER",
   "textColor": "#ffffff",
   "topRow": 7,

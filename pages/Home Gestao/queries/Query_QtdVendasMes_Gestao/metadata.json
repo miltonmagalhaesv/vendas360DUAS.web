@@ -27,7 +27,7 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": true,
+    "executeOnLoad": false,
     "name": "Query_QtdVendasMes_Gestao",
     "pageId": "Home Gestao",
     "userSetOnLoad": false

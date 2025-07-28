@@ -1,0 +1,33 @@
+SELECT
+  ROUND(AVG(mensal.faturamento_liquido)::numeric, 2) AS media_faturamento,
+  ROUND(AVG(mensal.ticket_medio)::numeric, 2) AS media_ticket_medio,
+  ROUND(AVG(mensal.pa)::numeric, 2) AS media_pa,
+  ROUND(AVG(mensal.pm)::numeric, 2) AS media_pm,
+  ROUND(AVG(mensal.indice_devolucao)::numeric, 2) AS media_indice_devolucao
+FROM (
+  SELECT
+    TO_CHAR(data_lanca, 'YYYY-MM') AS mes,
+    SUM(CASE WHEN oper = 'S - Venda' THEN valor_liquido ELSE 0 END)
+      + SUM(CASE WHEN oper = 'DS - Devolução de Venda' THEN valor_liquido ELSE 0 END) AS faturamento_liquido,
+    CASE WHEN COUNT(DISTINCT CASE WHEN oper = 'S - Venda' THEN id_venda END) > 0
+      THEN (SUM(CASE WHEN oper = 'S - Venda' THEN valor_liquido ELSE 0 END)::numeric /
+            COUNT(DISTINCT CASE WHEN oper = 'S - Venda' THEN id_venda END)::numeric)
+      ELSE 0 END AS ticket_medio,
+    CASE WHEN COUNT(DISTINCT CASE WHEN oper = 'S - Venda' THEN id_venda END) > 0
+      THEN (SUM(CASE WHEN oper = 'S - Venda' THEN qtde_item ELSE 0 END)::numeric /
+            COUNT(DISTINCT CASE WHEN oper = 'S - Venda' THEN id_venda END)::numeric)
+      ELSE 0 END AS pa,
+    CASE WHEN SUM(CASE WHEN oper = 'S - Venda' THEN qtde_item ELSE 0 END) > 0
+      THEN (SUM(CASE WHEN oper = 'S - Venda' THEN valor_liquido ELSE 0 END)::numeric /
+            SUM(CASE WHEN oper = 'S - Venda' THEN qtde_item ELSE 0 END)::numeric)
+      ELSE 0 END AS pm,
+    CASE WHEN SUM(CASE WHEN oper = 'S - Venda' THEN qtde_item ELSE 0 END) > 0
+      THEN (SUM(CASE WHEN oper = 'DS - Devolução de Venda' THEN qtde_item ELSE 0 END)::numeric * 100 /
+            SUM(CASE WHEN oper = 'S - Venda' THEN qtde_item ELSE 0 END)::numeric)
+      ELSE 0 END AS indice_devolucao
+  FROM public.vw_resumo_vend_devo
+  WHERE data_lanca >= '{{ moment().startOf("year").format("YYYY-MM-DD") }}'
+    AND data_lanca <= '{{ moment().subtract(1, "month").endOf("month").format("YYYY-MM-DD") }}'
+    AND ponto_venda = ANY ({{ Select_Lojas.selectedOptionValues }})
+  GROUP BY mes
+) AS mensal

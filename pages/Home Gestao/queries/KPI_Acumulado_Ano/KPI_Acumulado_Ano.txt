@@ -1,0 +1,34 @@
+SELECT
+  COALESCE(SUM(CASE WHEN oper = 'S - Venda' THEN valor_liquido ELSE 0 END), 0) AS valor_vendas,
+  COALESCE(SUM(CASE WHEN oper = 'DS - Devolução de Venda' THEN valor_liquido ELSE 0 END), 0) AS valor_devolucoes,
+  COUNT(DISTINCT CASE WHEN oper = 'S - Venda' THEN id_venda END) AS qtd_vendas,
+  COUNT(DISTINCT CASE WHEN oper = 'DS - Devolução de Venda' THEN id_venda END) AS qtd_devolucoes,
+  COALESCE(SUM(CASE WHEN oper = 'S - Venda' THEN qtde_item ELSE 0 END), 0) AS qtde_itens_vendas,
+  COALESCE(SUM(CASE WHEN oper = 'DS - Devolução de Venda' THEN qtde_item ELSE 0 END), 0) AS qtde_itens_devolucao,
+  (COALESCE(SUM(CASE WHEN oper = 'S - Venda' THEN valor_liquido ELSE 0 END), 0)
+   + COALESCE(SUM(CASE WHEN oper = 'DS - Devolução de Venda' THEN valor_liquido ELSE 0 END), 0)
+  ) AS faturamento_liquido,
+  CASE WHEN COUNT(DISTINCT CASE WHEN oper = 'S - Venda' THEN id_venda END) > 0
+    THEN ROUND(
+      (COALESCE(SUM(CASE WHEN oper = 'S - Venda' THEN valor_liquido ELSE 0 END), 0)::numeric /
+       COUNT(DISTINCT CASE WHEN oper = 'S - Venda' THEN id_venda END)::numeric), 2)
+    ELSE 0 END AS ticket_medio,
+  CASE WHEN COUNT(DISTINCT CASE WHEN oper = 'S - Venda' THEN id_venda END) > 0
+    THEN ROUND(
+      (SUM(CASE WHEN oper = 'S - Venda' THEN qtde_item ELSE 0 END)::numeric /
+       COUNT(DISTINCT CASE WHEN oper = 'S - Venda' THEN id_venda END)::numeric), 2)
+    ELSE 0 END AS pa,
+  CASE WHEN SUM(CASE WHEN oper = 'S - Venda' THEN qtde_item ELSE 0 END) > 0
+    THEN ROUND(
+      (SUM(CASE WHEN oper = 'S - Venda' THEN valor_liquido ELSE 0 END)::numeric /
+       SUM(CASE WHEN oper = 'S - Venda' THEN qtde_item ELSE 0 END)::numeric), 2)
+    ELSE 0 END AS pm,
+  CASE WHEN SUM(CASE WHEN oper = 'S - Venda' THEN qtde_item ELSE 0 END) > 0
+    THEN ROUND(
+      (SUM(CASE WHEN oper = 'DS - Devolução de Venda' THEN qtde_item ELSE 0 END)::numeric * 100 /
+       SUM(CASE WHEN oper = 'S - Venda' THEN qtde_item ELSE 0 END)::numeric), 2)
+    ELSE 0 END AS indice_devolucao
+FROM public.vw_resumo_vend_devo
+WHERE data_lanca >= '{{ moment().startOf("year").format("YYYY-MM-DD") }}'
+  AND data_lanca <= '{{ moment().format("YYYY-MM-DD") }}'
+  AND ponto_venda = ANY ({{ Select_Lojas.selectedOptionValues }})

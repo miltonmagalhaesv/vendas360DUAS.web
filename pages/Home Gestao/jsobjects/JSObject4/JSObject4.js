@@ -16,25 +16,8 @@ export default {
     Query_VlrDia_Gestao.clear(); Query_VlrDia_Gestao.run();
 		VendasMes_PDV.clear();VendasMes_PDV.run();
 		MetasMes_PDV.clear();MetasMes_PDV.run();
-		GraficoVendasMes.clear();GraficoVendasMes.run();
-		FatPeriodoAnt.clear();FatPeriodoAnt.run();
-		VendasAcumuladoAno.clear();VendasAcumuladoAno.run();
-		VendaMediaAno.clear();VendaMediaAno.run();
-		QtdVendasPeriodoAnt.clear();QtdVendasPeriodoAnt.run();
-		QtdVendasMedia.clear();QtdVendasMedia.run();
-		QtdVendasAcumulado.clear();QtdVendasAcumulado.run();
-		GraficoQtdVendas.clear();GraficoQtdVendas.run();
-		TMPeriodoAnt.clear();TMPeriodoAnt.run();
-		TMMedio.clear();TMMedio.run();
-		GraficoTM.clear();GraficoTM.run();
-		PA.clear();PA.run();
-		PAPeriodoAnt.clear();PAPeriodoAnt.run();
-		GraficoPA.clear();GraficoPA.run();
-		PAMedia.clear();PAMedia.run();
-		PM.clear();PM.run();
-		PMMedia.clear();PMMedia.run();
-		PMPeriodoAnt.clear();PMPeriodoAnt.run();
-		GraficoPM.clear();GraficoPM.run();
+		KPI_Periodo_Atual.clear();KPI_Periodo_Atual.run();
+		
   },
 
   btn_loginonClick: () => {

@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "68750378005e0954974296b0_c15e9688-5778-481f-9fd8-0dcf7f6e521d",
-  "id": "Home Gestao_Query3",
+  "gitSyncId": "68750378005e0954974296b0_d0a6e2d9-646f-4c3f-9fdc-6792890a4796",
+  "id": "Home Gestao_aaaTESTE",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT * FROM oltp.\"tb_cliente\" LIMIT 10;",
+      "body": "SELECT *\nFROM public.vw_resumo_vend_devo\nWHERE data_lanca = '2025-07-23'\n  AND ponto_venda = 'DUAS PARNAMIRIM'",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,8 +22,9 @@
       "name": "BD DUAS",
       "pluginId": "postgres-plugin"
     },
+    "dynamicBindingPathList": [],
     "executeOnLoad": false,
-    "name": "Query3",
+    "name": "aaaTESTE",
     "pageId": "Home Gestao",
     "userSetOnLoad": false
   }

@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 5,
+  "bottomRow": 90,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -24,7 +24,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "u8x3525y9d",
-  "leftColumn": 0,
+  "leftColumn": 35,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -33,23 +33,23 @@
   "mobileRightColumn": 17,
   "mobileTopRow": 11,
   "needsErrorInfo": false,
-  "originalBottomRow": 5,
-  "originalTopRow": 0,
+  "originalBottomRow": 90,
+  "originalTopRow": 85,
   "overflow": "NONE",
   "parentColumnSpace": 6.53125,
-  "parentId": "ke94slymrh",
+  "parentId": "0",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 33,
+  "rightColumn": 43,
   "shouldTruncate": false,
-  "text": "{{\n  \"<div style='display:flex; flex-direction:column; align-items:center; line-height:1.2;'>\\\n     <span style='font-size:18px; font-weight:bold;'>\" +\n     (KPI_Periodo_Atual.data[0]?.pa \n       ? Number(KPI_Periodo_Atual.data[0]?.pa).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) \n       : '0,00') +\n     \"</span>\\\n     <span style='font-size:10px;font-weight:bold'>PA</span>\\\n   </div>\"\n}}",
+  "text": "{{\n  \"<div style='display:flex; flex-direction:column; align-items:center; line-height:1.2;'>\\\n     <span style='font-size:18px; font-weight:bold;'>\" +\n     (KPI_Periodo_Atual.data[0]?.valor_vendas \n       ? Number(KPI_Periodo_Atual.data[0]?.valor_vendas).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) \n       : 'R$ 0,00') +\n     \"</span>\\\n     <span style='font-size:12px;font-weight:bold'>Valor de Vendas</span>\\\n   </div>\"\n}}",
   "textAlign": "CENTER",
   "textColor": "{{appsmith.theme.colors.primaryColor}}",
-  "topRow": 0,
+  "topRow": 85,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "wv549cn7o7",
-  "widgetName": "Text_TMCopy"
+  "widgetId": "g7cqy8dm1a",
+  "widgetName": "Text_Vlr_Vendas"
 }

@@ -27,7 +27,7 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": true,
+    "executeOnLoad": false,
     "name": "PAPeriodoAnt",
     "pageId": "Home Gestao",
     "userSetOnLoad": false

@@ -1,0 +1,4 @@
+SELECT *
+FROM public.vw_resumo_vend_devo
+WHERE data_lanca = '2025-07-23'
+  AND ponto_venda = 'DUAS PARNAMIRIM'
