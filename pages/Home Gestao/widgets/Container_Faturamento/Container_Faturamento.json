@@ -1,0 +1,95 @@
+{
+  "animateLoading": true,
+  "backgroundColor": "{{appsmith.theme.colors.primaryColor}}",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 61,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "children": [
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 410,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "1kpzhhrmwt",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 100,
+      "minWidth": 450,
+      "mobileBottomRow": 100,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 126.34765625,
+      "mobileTopRow": 0,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "72c0na7wtt",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 126.34765625,
+      "topRow": 0,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "22eattohj5",
+      "widgetName": "Canvas7"
+    }
+  ],
+  "containerStyle": "card",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "backgroundColor"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicTriggerPathList": [],
+  "flexVerticalAlignment": "stretch",
+  "isCanvas": true,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "nced0x8aiq",
+  "leftColumn": 11,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 10,
+  "minWidth": 450,
+  "mobileBottomRow": 26,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 16,
+  "needsErrorInfo": false,
+  "originalBottomRow": 61,
+  "originalTopRow": 20,
+  "parentColumnSpace": 6.3173828125,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 32,
+  "shouldScrollContents": false,
+  "topRow": 20,
+  "type": "CONTAINER_WIDGET",
+  "version": 1,
+  "widgetId": "72c0na7wtt",
+  "widgetName": "Container_Faturamento"
+}

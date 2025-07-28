@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 4,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "textColor"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "Roboto",
+  "fontSize": "1rem",
+  "fontStyle": "",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "u8x3525y9d",
+  "leftColumn": 41,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 15,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 17,
+  "mobileTopRow": 11,
+  "needsErrorInfo": false,
+  "originalBottomRow": 4,
+  "originalTopRow": 0,
+  "overflow": "NONE",
+  "parentColumnSpace": 6.53125,
+  "parentId": "mgbef1dqb9",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "shouldTruncate": false,
+  "text": "{{\n  \"<div style='display:flex; flex-direction:column; align-items:center; line-height:1.2;'>\\\n     <span style='font-size:16px; font-weight:bold; color:#F04438;'>\" +\n     (KPI_Periodo_Atual.data[0]?.qtd_devolucoes || 0) +\n     \"</span>\\\n     <span style='font-size:10px;font-weight:bold'>Qtd Devoluções</div>\"\n}}",
+  "textAlign": "CENTER",
+  "textColor": "{{appsmith.theme.colors.primaryColor}}",
+  "topRow": 0,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "7akfdbbami",
+  "widgetName": "Text_Qtd_Devolucao"
+}

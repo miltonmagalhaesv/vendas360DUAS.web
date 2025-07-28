@@ -27,7 +27,7 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": true,
+    "executeOnLoad": false,
     "name": "PMMedia",
     "pageId": "Home Gestao",
     "userSetOnLoad": false

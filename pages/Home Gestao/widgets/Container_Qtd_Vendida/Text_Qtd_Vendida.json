@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 5,
+  "bottomRow": 4,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -24,7 +24,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "u8x3525y9d",
-  "leftColumn": 7,
+  "leftColumn": 42,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -33,7 +33,7 @@
   "mobileRightColumn": 17,
   "mobileTopRow": 11,
   "needsErrorInfo": false,
-  "originalBottomRow": 5,
+  "originalBottomRow": 4,
   "originalTopRow": 0,
   "overflow": "NONE",
   "parentColumnSpace": 6.53125,
@@ -41,9 +41,9 @@
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 33,
+  "rightColumn": 63,
   "shouldTruncate": false,
-  "text": "{{\n  \"<div style='display:flex; flex-direction:column; align-items:center; line-height:1.2;'>\\\n     <span style='font-size:18px; font-weight:bold;'>\" +\n     (KPI_Periodo_Atual.data[0]?.qtd_vendas || 0) +\n     \"</span>\\\n     <span style='font-size:10px;font-weight:bold'>Qtd de Vendas</span>\\\n   </div>\"\n}}",
+  "text": "{{\n  \"<div style='display:flex; flex-direction:column; align-items:center; line-height:1.2;'>\\\n     <span style='font-size:16px; font-weight:bold;'>\" +\n     (KPI_Periodo_Atual.data[0]?.qtd_vendas || 0) +\n     \"</span>\\\n     <span style='font-size:10px;font-weight:bold'>Qtd Vendas</span>\\\n   </div>\"\n}}",
   "textAlign": "CENTER",
   "textColor": "{{appsmith.theme.colors.primaryColor}}",
   "topRow": 0,

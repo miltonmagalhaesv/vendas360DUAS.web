@@ -1,0 +1,43 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 4,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "TERTIARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "buttonColor"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "iconName": "info-sign",
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "psgi12w3nh",
+  "leftColumn": 0,
+  "minWidth": 50,
+  "mobileBottomRow": 25,
+  "mobileLeftColumn": 16,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 21,
+  "needsErrorInfo": false,
+  "originalBottomRow": 69,
+  "originalTopRow": 65,
+  "parentColumnSpace": 2.7705078125,
+  "parentId": "ydkfvns2jj",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 9,
+  "tooltip": "<div style=\"background:#553DE9;\"><p style=\"text-align: center;font-size:16px;color:#ffff\"><b>Preço Médio (PM)</b></div>\n<br><p style=\"text-align: justify;\">\n<b><u></b></u> Valor médio dos itens vendidos, calculado dividindo o total vendido pelo número de itens vendidos.<br>\n<br>\n<b>Variações exibidas:</b><br>\n\t<u>•\tPeríodo anterior:</u> PM do mesmo período anterior.<br>\n\t<u>•\tMédia anual:</u> Média mensal do preço médio no ano.",
+  "topRow": 0,
+  "type": "ICON_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "q3b04p60kg",
+  "widgetName": "IconButton_PM"
+}

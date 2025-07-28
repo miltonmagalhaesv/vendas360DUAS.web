@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 18,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "0.875rem",
+  "fontStyle": "",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "12hz2pt3re",
+  "leftColumn": 42,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 12,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 16,
+  "mobileTopRow": 8,
+  "needsErrorInfo": false,
+  "originalBottomRow": 23,
+  "originalTopRow": 18,
+  "overflow": "NONE",
+  "parentColumnSpace": 3.8916015625,
+  "parentId": "6fbzazdntu",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "shouldTruncate": false,
+  "text": "{{\n  \"<div style='display:flex; flex-direction:column; align-items:center; line-height:1.2;'>\\\n     <span style='font-size:14px; font-weight:bold;'>\" +\n     (KPI_Acumulado_Ano.data[0]?.qtd_vendas || 0) +\n     \"</span>\\\n     <span style='font-size:10px;font-weight:normal;'>Acumulado anual</span>\\\n   </div>\"\n}}",
+  "textAlign": "CENTER",
+  "textColor": "#231F20",
+  "topRow": 14,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "omybikwen0",
+  "widgetName": "Text_qtd_vendas_acum"
+}

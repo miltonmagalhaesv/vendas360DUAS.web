@@ -1,0 +1,40 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 4,
+  "boxShadow": "none",
+  "buttonColor": "#ffffff",
+  "buttonVariant": "TERTIARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "iconName": "info-sign",
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "psgi12w3nh",
+  "leftColumn": 0,
+  "minWidth": 50,
+  "mobileBottomRow": 25,
+  "mobileLeftColumn": 16,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 21,
+  "needsErrorInfo": false,
+  "originalBottomRow": 69,
+  "originalTopRow": 65,
+  "parentColumnSpace": 2.7705078125,
+  "parentId": "of0jrnnop9",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 3,
+  "tooltip": "<p style=\"text-align: justify;\"><b>Itens Vendidos:</b> Quantidade total de itens vendidos no período.\n<br>\n<b>Itens Devolvidos:</b> Total de itens devolvidos no período.\n<br>\n<b>Índice de Devolução:</b> Percentual de itens devolvidos em relação ao total de itens vendidos no período.\n",
+  "topRow": 0,
+  "type": "ICON_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "ru95iiiluo",
+  "widgetName": "IconButton_Itens"
+}

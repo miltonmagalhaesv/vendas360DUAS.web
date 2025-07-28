@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 9,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "0.875rem",
+  "fontStyle": "",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "12hz2pt3re",
+  "leftColumn": 40,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 12,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 16,
+  "mobileTopRow": 8,
+  "needsErrorInfo": false,
+  "originalBottomRow": 9,
+  "originalTopRow": 5,
+  "overflow": "NONE",
+  "parentColumnSpace": 3.8916015625,
+  "parentId": "mgbef1dqb9",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "shouldTruncate": false,
+  "text": "{{\n  \"<div style='display:flex; flex-direction:column; align-items:center; width:100%;'>\\\n    <span style='font-size:14px; font-weight:bold; color:#ff;'>\" +\n      (KPI_Periodo_Anterior.data[0]?.qtd_devolucoes\n        ? Number(KPI_Periodo_Anterior.data[0]?.qtd_devolucoes)\n        : \"0\"\n      ) +\n      \"<span style='font-size:12px; font-weight:bold; color:\" +\n      (\n        (\n          Number(KPI_Periodo_Atual.data[0]?.qtd_devolucoes || 0) - Number(KPI_Periodo_Anterior.data[0]?.qtd_devolucoes || 0)\n        ) /\n        (Number(KPI_Periodo_Anterior.data[0]?.qtd_devolucoes || 1)) * 100 >= 0\n        ? '#F04438' : '#16B364'\n      ) +\n      \";'>\" +\n      \" (\" +\n      (\n        (\n          Number(KPI_Periodo_Atual.data[0]?.qtd_devolucoes || 0) - Number(KPI_Periodo_Anterior.data[0]?.qtd_devolucoes || 0)\n        ) /\n        (Number(KPI_Periodo_Anterior.data[0]?.qtd_devolucoes || 1)) * 100\n      ).toLocaleString('pt-BR', { minimumFractionDigits: 0, maximumFractionDigits: 0 }) +\n      \"%)</span></span>\\\n    <span style='font-size:10px; color:#231F20; margin-top:2px; font-weight:normal;'>Período anterior</span>\\\n  </div>\"\n}}",
+  "textAlign": "CENTER",
+  "textColor": "#231F20",
+  "topRow": 5,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "rxhwx9dai3",
+  "widgetName": "Text_qtd_devolucao_comp"
+}

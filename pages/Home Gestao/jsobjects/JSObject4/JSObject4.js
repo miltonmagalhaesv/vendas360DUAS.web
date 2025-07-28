@@ -17,6 +17,10 @@ export default {
 		VendasMes_PDV.clear();VendasMes_PDV.run();
 		MetasMes_PDV.clear();MetasMes_PDV.run();
 		KPI_Periodo_Atual.clear();KPI_Periodo_Atual.run();
+		KPI_Periodo_Anterior.clear();KPI_Periodo_Anterior.run();
+		KPI_Acumulado_Ano.clear();KPI_Acumulado_Ano.run();
+		KPI_Media_Ano.clear();KPI_Media_Ano.run();
+		
 		
   },
 

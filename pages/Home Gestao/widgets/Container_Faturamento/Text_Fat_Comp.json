@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 13,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "0.875rem",
+  "fontStyle": "",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "12hz2pt3re",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 12,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 16,
+  "mobileTopRow": 8,
+  "needsErrorInfo": false,
+  "originalBottomRow": 13,
+  "originalTopRow": 7,
+  "overflow": "NONE",
+  "parentColumnSpace": 3.8916015625,
+  "parentId": "22eattohj5",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "shouldTruncate": false,
+  "text": "<div style=\"display:flex; flex-direction:column; align-items:center; width:100%;\">\n  <span style=\"font-size:18px; font-weight:bold;\">{{ Number(KPI_Periodo_Anterior.data[0]?.faturamento_liquido || 0).toLocaleString(\"pt-BR\", { style: \"currency\", currency: \"BRL\" }) }}<span style=\"font-size:px; font-weight:bold; color:{{ \n      (\n        ( Number(KPI_Periodo_Atual.data[0]?.faturamento_liquido || 0) -\n          Number(KPI_Periodo_Anterior.data[0]?.faturamento_liquido || 0)\n        ) /\n        (Number(KPI_Periodo_Anterior.data[0]?.faturamento_liquido || 1)) * 100 >= 0\n        ? '#16B364'\n        : '#F04438'\n      )\n    }};\"> <span style=\"font-size:12px;font-weight:bold;\">({{ (\n(Number(KPI_Periodo_Atual.data[0]?.faturamento_liquido || 0) -\n              Number(KPI_Periodo_Anterior.data[0]?.faturamento_liquido || 0)\n            ) /\n            (Number(KPI_Periodo_Anterior.data[0]?.faturamento_liquido || 1)) * 100\n          ).toLocaleString(\"pt-BR\", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) }} %)<span style=\"font-size:12px;color:#fff; margin-top:2px;font-weight:normal\">\nPeríodo anterior\n</div>",
+  "textAlign": "CENTER",
+  "textColor": "#ffffff",
+  "topRow": 7,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "jvnzpbj0la",
+  "widgetName": "Text_Fat_Comp"
+}

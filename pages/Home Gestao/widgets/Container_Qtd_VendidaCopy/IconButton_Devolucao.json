@@ -1,0 +1,43 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 4,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "TERTIARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "buttonColor"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "iconName": "info-sign",
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "psgi12w3nh",
+  "leftColumn": 0,
+  "minWidth": 50,
+  "mobileBottomRow": 25,
+  "mobileLeftColumn": 16,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 21,
+  "needsErrorInfo": false,
+  "originalBottomRow": 69,
+  "originalTopRow": 65,
+  "parentColumnSpace": 2.7705078125,
+  "parentId": "mgbef1dqb9",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 4,
+  "tooltip": "<div style=\"background:#553DE9;\"><p style=\"text-align: center;font-size:16px;color:#ffff\"><b>Quadro de Devoluções (Valor e Quantidade)</b></div>\n<br><p style=\"text-align: justify;\">\n\nO quadro de devoluções mostra o volume de devoluções ocorridas no(s) ponto(s) selecionado(s), tanto em valor quanto em quantidade de devoluções.<br>\n<br>\n\t<u>•\tValor de Devoluções:</u> Soma total em reais das devoluções registradas no período.<br>\n\t<u>•\tQuantidade de Devoluções:</u> Número de devoluções realizadas.<br>\n\t<u>•\tPeríodo anterior:</u> Resultado do mesmo período anterior, para análise comparativa.<br>\n\t<u>•\tAcumulado do ano:</u> Soma das devoluções (valor e quantidade) desde o início do ano.<br>\n\t<u>•\tMédia anual: Média mensal de devoluções ao longo do ano.",
+  "topRow": 0,
+  "type": "ICON_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "sctm1d3yhd",
+  "widgetName": "IconButton_Devolucao"
+}

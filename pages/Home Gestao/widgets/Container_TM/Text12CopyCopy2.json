@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 18,
+  "bottomRow": 15,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -33,8 +33,8 @@
   "mobileRightColumn": 16,
   "mobileTopRow": 8,
   "needsErrorInfo": false,
-  "originalBottomRow": 18,
-  "originalTopRow": 13,
+  "originalBottomRow": 15,
+  "originalTopRow": 10,
   "overflow": "NONE",
   "parentColumnSpace": 3.8916015625,
   "parentId": "a7829obqsp",
@@ -43,10 +43,10 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "shouldTruncate": false,
-  "text": "{{\n  \"<div style='display:flex; flex-direction:column; align-items:center; line-height:1.2;'>\\\n     <span style='font-size:16px; font-weight:bold;'>\" +\n     (TMMedio.data[0]?.media_tm_ano \n         ? Number(TMMedio.data[0].media_tm_ano).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })\n         : \"R$ 0,00\"\n     ) +\n     \"</span>\\\n     <span style='font-size:12px;'>Média mensal</span>\\\n   </div>\"\n}}",
+  "text": "{{\n  \"<div style='display:flex; flex-direction:column; align-items:center; line-height:1.2;'>\\\n     <span style='font-size:18px; font-weight:bold;'>\\\n<span style=\\\"font-size:10px; vertical-align:0.4em; margin-right:1px;\\\">R$ </span>\" +\n     (KPI_Acumulado_Ano.data[0]?.ticket_medio\n        ? Number(KPI_Acumulado_Ano.data[0].ticket_medio).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })\n        : \"0,00\"\n     ) +\n     \"</span>\\\n     <span style='font-size:10px;font-weight:normal;'>Média Anual</span>\\\n   </div>\"\n}}",
   "textAlign": "CENTER",
   "textColor": "#231F20",
-  "topRow": 13,
+  "topRow": 10,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

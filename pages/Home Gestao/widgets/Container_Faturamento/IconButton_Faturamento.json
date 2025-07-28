@@ -1,0 +1,38 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 4,
+  "boxShadow": "none",
+  "buttonColor": "#ffffff",
+  "buttonVariant": "TERTIARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "iconName": "info-sign",
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "psgi12w3nh",
+  "leftColumn": 0,
+  "minWidth": 50,
+  "mobileBottomRow": 25,
+  "mobileLeftColumn": 16,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 21,
+  "needsErrorInfo": false,
+  "parentColumnSpace": 2.7705078125,
+  "parentId": "22eattohj5",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 2,
+  "tooltip": "<div style=\"background:#553DE9;\"><p style=\"text-align: center;font-size:16px;color:#ffff\"><b>Faturamento Líquido</b></div>\n<br><p style=\"text-align: justify;\">\nSoma de todas as vendas menos as devoluções do período selecionado.<br>\n<br>\n<b>Variações exibidas:</b><br>\n\t<u>•\tPeríodo anterior:</u> Mostra o faturamento líquido do mesmo período imediatamente anterior, permitindo comparar a evolução das vendas.<br>\n\t<u>•\tAcumulado do ano:</u> Total de faturamento líquido de janeiro até a data atual, para avaliar o desempenho anual.<br>\n\t<u>•\tMédia anual:</u> Média mensal do faturamento líquido no ano, útil para acompanhar a regularidade das vendas.",
+  "topRow": 0,
+  "type": "ICON_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "49numyfobo",
+  "widgetName": "IconButton_Faturamento"
+}
