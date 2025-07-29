@@ -1,0 +1,62 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 13,
+  "boxShadow": "none",
+  "defaultOptionValue": "GREEN",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": true,
+  "isVisible": true,
+  "key": "z0ib3wbc55",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelText": "Mês da Meta",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 2,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 21,
+  "mobileLeftColumn": 2,
+  "mobileRightColumn": 22,
+  "mobileTopRow": 14,
+  "needsErrorInfo": false,
+  "optionLabel": "label",
+  "optionValue": "value",
+  "parentColumnSpace": 14.505615234375,
+  "parentId": "al7qwpuwr5",
+  "parentRowSpace": 10,
+  "placeholderText": "Selecione o Mês",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 14,
+  "serverSideFiltering": false,
+  "sourceData": "{{[\n  { \"label\": \"Janeiro\", \"value\": 1 },\n  { \"label\": \"Fevereiro\", \"value\": 2 },\n  { \"label\": \"Março\", \"value\": 3 },\n  { \"label\": \"Abril\", \"value\": 4 },\n  { \"label\": \"Maio\", \"value\": 5 },\n  { \"label\": \"Junho\", \"value\": 6 },\n  { \"label\": \"Julho\", \"value\": 7 },\n  { \"label\": \"Agosto\", \"value\": 8 },\n  { \"label\": \"Setembro\", \"value\": 9 },\n  { \"label\": \"Outubro\", \"value\": 10 },\n  { \"label\": \"Novembro\", \"value\": 11 },\n  { \"label\": \"Dezembro\", \"value\": 12 }\n]}}",
+  "topRow": 6,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "ui7wtvu1s9",
+  "widgetName": "Select_Mes"
+}

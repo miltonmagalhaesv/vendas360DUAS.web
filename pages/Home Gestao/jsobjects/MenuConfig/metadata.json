@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "68750378005e0954974296b0_6c838df4-000a-4473-8500-856baa5c4b8d",
+  "id": "Home Gestao_MenuConfig",
+  "unpublishedCollection": {
+    "name": "MenuConfig",
+    "pageId": "Home Gestao",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "menu",
+        "value": "[{\n  label: \"Home\",\n  icon: \"home\",\n  page: \"Home\"\n}, {\n  label: \"Análises\",\n  icon: \"bar-chart\",\n  page: \"Analises\"\n}, {\n  label: \"Metas\",\n  icon: \"target\",\n  subMenu: [{\n    label: \"Ver Metas\",\n    page: \"VerMetas\"\n  }, {\n    label: \"Análise de Metas\",\n    page: \"AnaliseMetas\"\n  }, {\n    label: \"Cadastrar Meta\",\n    page: \"CadastrarMeta\"\n  }]\n}]"
+      }
+    ]
+  }
+}

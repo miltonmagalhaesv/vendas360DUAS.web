@@ -1,0 +1,13 @@
+SELECT 
+  mv.loja_id,
+  lt.nome AS nome_local_trabalho,
+  mv.mes,
+  mv.ano,
+  SUM(mv.meta_valor) AS meta_total,
+  COUNT(DISTINCT mv.colaborador_id) AS qtd_vendedores,
+  STRING_AGG(DISTINCT c.nome_vendedor, ', ') AS vendedores
+FROM public.metas_vendas mv
+LEFT JOIN public.locais_trabalho lt ON mv.loja_id = lt.id
+LEFT JOIN rh.colaboradores c ON mv.colaborador_id = c.id
+GROUP BY mv.loja_id, lt.nome, mv.mes, mv.ano
+ORDER BY mv.ano DESC, mv.mes DESC, nome_local_trabalho

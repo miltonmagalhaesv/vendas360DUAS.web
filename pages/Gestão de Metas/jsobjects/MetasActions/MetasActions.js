@@ -40,5 +40,15 @@ export default {
     );
     showAlert('Metas salvas com sucesso!', 'success');
     closeModal('ModalCadastroMeta');
+  },
+limparCamposMeta() {
+    // Use try/catch para não dar erro mesmo que algum método não exista
+    try { MultiSelect_Vendedor.setValue([]); } catch(e){}
+    try { Select_PDV.setValue(""); } catch(e){}
+    try { Select_Mes.setValue(""); } catch(e){}
+    try { Select_Ano.setValue(""); } catch(e){}
+    try { Select_Tipo_Meta.setValue(""); } catch(e){}
+    try { Input_Valor_Meta.setText(""); } catch(e){}
+    try { Input_Observacao.setText(""); } catch(e){}
   }
 }

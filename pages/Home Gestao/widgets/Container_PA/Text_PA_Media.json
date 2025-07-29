@@ -43,7 +43,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 63,
   "shouldTruncate": false,
-  "text": "{{\n  \"<div style='display:flex; flex-direction:column; align-items:center; line-height:1.2;'>\\\n     <span style='font-size:16px; font-weight:bold;'>\" +\n     (KPI_Acumulado_Ano.data[0]?.pa\n        ? Number(KPI_Acumulado_Ano.data[0].pa).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })\n        : \"0,00\"\n     ) +\n     \"</span>\\\n     <span style='font-size:10px;font-weight:normal;'>Média Anual</span>\\\n   </div>\"\n}}",
+  "text": "{{\n  \"<div style='display:flex; flex-direction:column; align-items:center; line-height:1.2;'>\\\n     <span style='font-size:16px; font-weight:bold;'>\" +\n     (KPI_Media_Ano.data[0]?.pa\n        ? Number(KPI_Media_Ano.data[0].pa).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })\n        : \"0,00\"\n     ) +\n     \"</span>\\\n     <span style='font-size:10px;font-weight:normal;'>Média Anual</span>\\\n   </div>\"\n}}",
   "textAlign": "CENTER",
   "textColor": "#231F20",
   "topRow": 10,

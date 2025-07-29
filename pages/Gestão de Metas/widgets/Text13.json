@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 194,
+  "bottomRow": 21,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -11,45 +11,42 @@
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "text"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [],
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
-  "fontSize": "0.875rem",
-  "fontStyle": "ITALIC",
+  "fontSize": "1rem",
+  "fontStyle": "",
   "isLoading": false,
   "isVisible": true,
-  "key": "llsli8daw7",
-  "leftColumn": 0,
+  "key": "4uux76rzp8",
+  "leftColumn": 11,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 19,
-  "mobileLeftColumn": 12,
-  "mobileRightColumn": 28,
-  "mobileTopRow": 15,
+  "mobileBottomRow": 21,
+  "mobileLeftColumn": 11,
+  "mobileRightColumn": 27,
+  "mobileTopRow": 17,
   "needsErrorInfo": false,
-  "originalBottomRow": 194,
-  "originalTopRow": 189,
+  "originalBottomRow": 22,
+  "originalTopRow": 17,
   "overflow": "NONE",
-  "parentColumnSpace": 6.84375,
+  "parentColumnSpace": 17.9375,
   "parentId": "0",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 12,
+  "rightColumn": 35,
   "shouldTruncate": false,
-  "text": "Última atualização: {{ moment.utc(getUltimaImportacao.data[0]?.data_impo).format(\"DD/MM/YYYY [às] HH:mm\") }}",
-  "textAlign": "CENTER",
+  "text": "<div style=\" align-items:center; gap:8px; font-size:14px;\">  <span style=\"color:#553de9; font-weight:bold;\">Metas</span<span style=\"color:#ff;\"> › </span <span style=\"color:#231F20;\">Planejamento de Metas</span>\n</div>",
+  "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 189,
+  "topRow": 17,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "ywpxmgxl5g",
-  "widgetName": "Text9Copy"
+  "widgetId": "va9a0250tk",
+  "widgetName": "Text13"
 }
