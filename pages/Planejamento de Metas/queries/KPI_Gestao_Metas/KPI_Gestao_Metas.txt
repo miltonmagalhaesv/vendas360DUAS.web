@@ -1,0 +1,82 @@
+WITH vendas_ano AS (
+  SELECT
+    -- Faturamento Líquido (vendas + devoluções)
+    (
+      COALESCE(SUM(CASE WHEN oper = 'S - Venda' THEN valor_liquido ELSE 0 END), 0)
+      + 
+      COALESCE(SUM(CASE WHEN oper = 'DS - Devolução de Venda' THEN valor_liquido ELSE 0 END), 0)
+    ) AS faturamento_liquido_acumulado_ano,
+
+    COALESCE(SUM(CASE WHEN oper = 'S - Venda' THEN valor_liquido ELSE 0 END), 0) AS valor_vendas,
+    COUNT(DISTINCT CASE WHEN oper = 'S - Venda' THEN id_venda END) AS qtd_vendas,
+    COALESCE(SUM(CASE WHEN oper = 'S - Venda' THEN qtde_item ELSE 0 END), 0) AS qtde_itens_vendas,
+    COALESCE(SUM(CASE WHEN oper = 'DS - Devolução de Venda' THEN valor_liquido ELSE 0 END), 0) AS valor_devolucoes,
+    COUNT(DISTINCT CASE WHEN oper = 'DS - Devolução de Venda' THEN id_venda END) AS qtd_devolucoes,
+    COALESCE(SUM(CASE WHEN oper = 'DS - Devolução de Venda' THEN qtde_item ELSE 0 END), 0) AS qtde_itens_devolucao,
+
+    -- Ticket Médio (TM) - CORRIGIDO COM CAST
+    CASE WHEN COUNT(DISTINCT CASE WHEN oper = 'S - Venda' THEN id_venda END) > 0
+      THEN (
+        COALESCE(SUM(CASE WHEN oper = 'S - Venda' THEN valor_liquido ELSE 0 END), 0)::numeric /
+        COUNT(DISTINCT CASE WHEN oper = 'S - Venda' THEN id_venda END)::numeric)
+      ELSE 0 END AS ticket_medio,
+
+    -- Peças por atendimento (PA) - CORRIGIDO COM CAST
+    CASE WHEN COUNT(DISTINCT CASE WHEN oper = 'S - Venda' THEN id_venda END) > 0
+      THEN (
+        SUM(CASE WHEN oper = 'S - Venda' THEN qtde_item ELSE 0 END)::numeric /
+        COUNT(DISTINCT CASE WHEN oper = 'S - Venda' THEN id_venda END)::numeric)
+      ELSE 0 END AS pa,
+
+    -- Preço Médio (PM) - CORRIGIDO COM CAST
+    CASE WHEN SUM(CASE WHEN oper = 'S - Venda' THEN qtde_item ELSE 0 END) > 0
+      THEN (
+        SUM(CASE WHEN oper = 'S - Venda' THEN valor_liquido ELSE 0 END)::numeric /
+        SUM(CASE WHEN oper = 'S - Venda' THEN qtde_item ELSE 0 END)::numeric)
+      ELSE 0 END AS pm,
+
+    -- Índice de devolução (%) - CORRIGIDO COM CAST
+    CASE WHEN SUM(CASE WHEN oper = 'S - Venda' THEN qtde_item ELSE 0 END) > 0
+      THEN (
+        SUM(CASE WHEN oper = 'DS - Devolução de Venda' THEN qtde_item ELSE 0 END)::numeric * 100 /
+        SUM(CASE WHEN oper = 'S - Venda' THEN qtde_item ELSE 0 END)::numeric)
+      ELSE 0 END AS indice_devolucao,
+
+    -- Quantidade de clientes diferentes
+    COUNT(DISTINCT CASE WHEN oper = 'S - Venda' THEN codi_clie END) AS clientes_diferentes
+
+  FROM public.vw_resumo_vend_devo
+  WHERE data_lanca >= '{{ moment().startOf("year").format("YYYY-MM-DD") }}'
+    AND data_lanca <= '{{ moment().format("YYYY-MM-DD") }}'
+    AND ponto_venda = ANY ({{ Select_Lojas.selectedOptionValues }})
+),
+
+metas_ano AS (
+  SELECT
+    COALESCE(SUM(meta_valor),0) AS meta_acumulada
+  FROM public.vw_metas_vendas_completo
+  WHERE ano = EXTRACT(YEAR FROM CURRENT_DATE)
+    AND nome_loja = ANY ({{ Select_Lojas.selectedOptionValues }})
+)
+
+SELECT
+  v.faturamento_liquido_acumulado_ano,
+  v.valor_vendas,
+  v.qtd_vendas,
+  v.qtde_itens_vendas,
+  v.valor_devolucoes,
+  v.qtd_devolucoes,
+  v.qtde_itens_devolucao,
+  ROUND(v.ticket_medio, 2) as ticket_medio,
+  ROUND(v.pa, 2) as pa,
+  ROUND(v.pm, 2) as pm,
+  ROUND(v.indice_devolucao, 2) as indice_devolucao,
+  v.clientes_diferentes,
+  m.meta_acumulada,
+
+  -- Percentual de atingimento acumulado - CORRIGIDO COM CAST
+  CASE WHEN m.meta_acumulada > 0
+    THEN ROUND((100 * v.faturamento_liquido_acumulado_ano / m.meta_acumulada)::numeric, 2)
+    ELSE 0 END AS perc_atingimento_acumulado
+
+FROM vendas_ano v, metas_ano m

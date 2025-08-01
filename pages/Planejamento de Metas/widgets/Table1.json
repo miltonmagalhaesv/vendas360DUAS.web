@@ -1,0 +1,186 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 114,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "cachedTableData": {},
+  "canFreezeColumn": false,
+  "childStylesheet": {
+    "button": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "editActions": {
+      "discardBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "discardButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "saveBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "saveButtonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "iconButton": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "menuButton": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "menuColor": "{{appsmith.theme.colors.primaryColor}}"
+    }
+  },
+  "columnOrder": [
+    "Indicador",
+    "Total"
+  ],
+  "columnUpdatedAt": 1754049815022,
+  "columnWidthMap": {
+    "Jul": 187,
+    "Jun": 172,
+    "Mai": 181
+  },
+  "compactMode": "DEFAULT",
+  "customIsLoading": false,
+  "customIsLoadingValue": "",
+  "defaultPageSize": 0,
+  "defaultSelectedRowIndex": 0,
+  "defaultSelectedRowIndices": [
+    0
+  ],
+  "delimiter": ",",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.Indicador.computedValue"
+    },
+    {
+      "key": "primaryColumns.Total.computedValue"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "tableData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "enableClientSideSearch": true,
+  "endOfData": false,
+  "flexVerticalAlignment": "start",
+  "horizontalAlignment": "LEFT",
+  "inlineEditingSaveOption": "ROW_LEVEL",
+  "isLoading": false,
+  "isSortable": false,
+  "isVisible": true,
+  "isVisibleDownload": true,
+  "isVisibleFilters": false,
+  "isVisiblePagination": false,
+  "isVisibleSearch": false,
+  "key": "ne24ud3lso",
+  "label": "Data",
+  "leftColumn": 13,
+  "minWidth": 450,
+  "mobileBottomRow": 106,
+  "mobileLeftColumn": 14,
+  "mobileRightColumn": 48,
+  "mobileTopRow": 91,
+  "needsErrorInfo": false,
+  "originalBottomRow": 114,
+  "originalTopRow": 93,
+  "parentColumnSpace": 17.9375,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "primaryColumnId": "Indicador",
+  "primaryColumns": {
+    "Indicador": {
+      "alias": "Indicador",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"Indicador\"]))}}",
+      "currencyCode": "USD",
+      "customAlias": "",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "BOLD",
+      "horizontalAlignment": "LEFT",
+      "id": "Indicador",
+      "index": 0,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Indicador",
+      "notation": "standard",
+      "originalId": "Indicador",
+      "sticky": "left",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "Total": {
+      "alias": "Total",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"Total\"]))}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "Total",
+      "index": 4,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Total",
+      "notation": "standard",
+      "originalId": "Total",
+      "sticky": "right",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    }
+  },
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "searchKey": "",
+  "tableData": "{{\n  (() => {\n    const data = qry_AtingimentoMensal.data;\n    const meses = [\"Jan\", \"Fev\", \"Mar\", \"Abr\", \"Mai\", \"Jun\", \"Jul\", \"Ago\", \"Set\", \"Out\", \"Nov\", \"Dez\"];\n    \n    // Inicializa as linhas da tabela\n    const faturado = { \"Indicador\": \"Faturado\" };\n    const meta = { \"Indicador\": \"Meta\" };\n    const diferenca = { \"Indicador\": \"Diferença\" };\n\n    let totalFaturado = 0;\n    let totalMeta = 0;\n\n    data.forEach(item => {\n      const mesIndex = parseInt(item.mes_ano.split('-')[1], 10) - 1;\n      const nomeMes = meses[mesIndex];\n      \n      faturado[nomeMes] = item.faturamento_liquido.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });\n      meta[nomeMes] = item.meta_valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });\n      \n      const diffValor = item.faturamento_liquido - item.meta_valor;\n      diferenca[nomeMes] = `${diffValor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} (${item.perc_atingimento}%)`;\n\n      totalFaturado += item.faturamento_liquido;\n      totalMeta += item.meta_valor;\n    });\n\n    // Adiciona a coluna Total\n    faturado[\"Total\"] = totalFaturado.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });\n    meta[\"Total\"] = totalMeta.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });\n    const totalDiff = totalFaturado - totalMeta;\n    const totalPerc = totalMeta > 0 ? ((totalFaturado * 100) / totalMeta).toFixed(2) : 0;\n    diferenca[\"Total\"] = `${totalDiff.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} (${totalPerc}%)`;\n\n    return [faturado, meta, diferenca];\n  })()\n}}\n",
+  "textSize": "0.875rem",
+  "topRow": 93,
+  "totalRecordsCount": 0,
+  "type": "TABLE_WIDGET_V2",
+  "variant": "VARIANT3",
+  "version": 2,
+  "verticalAlignment": "CENTER",
+  "widgetId": "zwzentossc",
+  "widgetName": "Table1"
+}

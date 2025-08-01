@@ -1,0 +1,3 @@
+SELECT DISTINCT ponto_venda
+FROM vw_faturamento_vendas_analitico
+ORDER BY ponto_venda;

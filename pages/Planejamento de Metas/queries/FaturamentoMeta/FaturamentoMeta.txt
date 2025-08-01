@@ -1,0 +1,15 @@
+SELECT
+  TO_CHAR(v.data_lanca, 'YYYY-MM') AS mes_ano,
+  v.ponto_venda AS nome_loja,
+  SUM(v.valor_liquido) AS faturamento_liquido,
+  COALESCE(SUM(m.meta_valor), 0) AS meta
+FROM public.vw_resumo_vend_devo v
+LEFT JOIN public.vw_metas_vendas_completo m
+  ON m.nome_loja = v.ponto_venda
+  AND m.ano = EXTRACT(YEAR FROM v.data_lanca)
+  AND m.mes = EXTRACT(MONTH FROM v.data_lanca)
+WHERE v.data_lanca >= '{{ moment().startOf("year").format("YYYY-MM-DD") }}'
+  AND v.data_lanca <= '{{ moment().format("YYYY-MM-DD") }}'
+  AND v.ponto_venda = ANY ({{ Select_Lojas.selectedOptionValues }})
+GROUP BY TO_CHAR(v.data_lanca, 'YYYY-MM'), v.ponto_venda
+ORDER BY mes_ano, nome_loja

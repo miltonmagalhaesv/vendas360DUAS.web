@@ -1,0 +1,64 @@
+{
+  "backgroundColor": "#FFFFFF",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 46,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "defaultModel": "",
+  "dynamicBindingPathList": [
+    {
+      "key": "theme"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicTriggerPathList": [
+    {
+      "key": "onResetClick"
+    }
+  ],
+  "events": [
+    "onResetClick"
+  ],
+  "isCanvas": false,
+  "isLoading": false,
+  "isSearchWildcard": true,
+  "isVisible": true,
+  "key": "as1zhssgh9",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 40,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 13,
+  "mobileTopRow": 10,
+  "needsErrorInfo": false,
+  "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
+  "parentColumnSpace": 14.5419921875,
+  "parentId": "vavu6kxxfw",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 20,
+  "srcDoc": {
+    "css": ".chart-container {\n  width: 100%;\n  height: 360px;\n  background: #fff;\n  border-radius: var(--appsmith-theme-borderRadius);\n  box-shadow: var(--appsmith-theme-boxShadow);\n  padding: 24px;\n  box-sizing: border-box;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n#barLineChart {\n  width: 100% !important;\n  height: 320px !important;\n}",
+    "html": "<!-- Chart.js CDN -->\n<script src=\"https://cdn.jsdelivr.net/npm/chart.js\"></script>\n\n<div class=\"chart-container\">\n  <canvas id=\"barLineChart\"></canvas>\n</div>\n",
+    "js": "// Exemplo de fallback caso appsmith.model.data não esteja disponível:\nconst dados = appsmith && appsmith.model && appsmith.model.data && appsmith.model.data.length ? appsmith.model.data : [{\n  mes_ano_label: \"2024-01\",\n  faturamento_liquido: 54000,\n  meta: 50000\n}, {\n  mes_ano_label: \"2024-02\",\n  faturamento_liquido: 47000,\n  meta: 52000\n}, {\n  mes_ano_label: \"2024-03\",\n  faturamento_liquido: 60000,\n  meta: 55000\n}, {\n  mes_ano_label: \"2024-04\",\n  faturamento_liquido: 53000,\n  meta: 54000\n}, {\n  mes_ano_label: \"2024-05\",\n  faturamento_liquido: 59000,\n  meta: 60000\n}];\nconst meses = dados.map(item => item.mes_ano_label);\nconst faturamento = dados.map(item => Number(item.faturamento_liquido));\nconst meta = dados.map(item => Number(item.meta));\nconst ctx = document.getElementById('barLineChart').getContext('2d');\n\n// Destroi o gráfico existente se re-carregar\nif (window.barLineChartInstance) {\n  window.barLineChartInstance.destroy();\n}\nwindow.barLineChartInstance = new Chart(ctx, {\n  type: 'bar',\n  data: {\n    labels: meses,\n    datasets: [{\n      label: 'Faturamento',\n      data: faturamento,\n      backgroundColor: '#5B54FA',\n      borderRadius: 7,\n      barThickness: 32,\n      order: 2\n    }, {\n      label: 'Meta',\n      data: meta,\n      type: 'line',\n      borderColor: '#F04438',\n      backgroundColor: '#F0443877',\n      fill: false,\n      tension: 0.25,\n      borderWidth: 3,\n      pointRadius: 5,\n      pointBackgroundColor: '#F04438',\n      order: 1\n    }]\n  },\n  options: {\n    responsive: true,\n    plugins: {\n      legend: {\n        position: 'top'\n      },\n      tooltip: {\n        callbacks: {\n          label: function (context) {\n            let valor = context.parsed.y || context.raw || 0;\n            return (context.dataset.label || '') + ': R$ ' + valor.toLocaleString('pt-BR', {\n              minimumFractionDigits: 0\n            });\n          }\n        }\n      }\n    },\n    scales: {\n      y: {\n        beginAtZero: true,\n        ticks: {\n          callback: function (valor) {\n            return 'R$ ' + valor.toLocaleString('pt-BR', {\n              minimumFractionDigits: 0\n            });\n          }\n        }\n      }\n    }\n  }\n});"
+  },
+  "theme": "{{appsmith.theme}}",
+  "topRow": 10,
+  "type": "CUSTOM_WIDGET",
+  "uncompiledSrcDoc": {
+    "css": ".chart-container {\n  width: 100%;\n  height: 360px;\n  background: #fff;\n  border-radius: var(--appsmith-theme-borderRadius);\n  box-shadow: var(--appsmith-theme-boxShadow);\n  padding: 24px;\n  box-sizing: border-box;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n#barLineChart {\n  width: 100% !important;\n  height: 320px !important;\n}\n",
+    "html": "<!-- Chart.js CDN -->\n<script src=\"https://cdn.jsdelivr.net/npm/chart.js\"></script>\n\n<div class=\"chart-container\">\n  <canvas id=\"barLineChart\"></canvas>\n</div>\n",
+    "js": "// Exemplo de fallback caso appsmith.model.data não esteja disponível:\nconst dados = (appsmith && appsmith.model && appsmith.model.data && appsmith.model.data.length)\n  ? appsmith.model.data\n  : [\n      { mes_ano_label: \"2024-01\", faturamento_liquido: 54000, meta: 50000 },\n      { mes_ano_label: \"2024-02\", faturamento_liquido: 47000, meta: 52000 },\n      { mes_ano_label: \"2024-03\", faturamento_liquido: 60000, meta: 55000 },\n      { mes_ano_label: \"2024-04\", faturamento_liquido: 53000, meta: 54000 },\n      { mes_ano_label: \"2024-05\", faturamento_liquido: 59000, meta: 60000 }\n    ];\n\nconst meses = dados.map(item => item.mes_ano_label);\nconst faturamento = dados.map(item => Number(item.faturamento_liquido));\nconst meta = dados.map(item => Number(item.meta));\n\nconst ctx = document.getElementById('barLineChart').getContext('2d');\n\n// Destroi o gráfico existente se re-carregar\nif (window.barLineChartInstance) {\n  window.barLineChartInstance.destroy();\n}\n\nwindow.barLineChartInstance = new Chart(ctx, {\n  type: 'bar',\n  data: {\n    labels: meses,\n    datasets: [\n      {\n        label: 'Faturamento',\n        data: faturamento,\n        backgroundColor: '#5B54FA',\n        borderRadius: 7,\n        barThickness: 32,\n        order: 2,\n      },\n      {\n        label: 'Meta',\n        data: meta,\n        type: 'line',\n        borderColor: '#F04438',\n        backgroundColor: '#F0443877',\n        fill: false,\n        tension: 0.25,\n        borderWidth: 3,\n        pointRadius: 5,\n        pointBackgroundColor: '#F04438',\n        order: 1,\n      }\n    ]\n  },\n  options: {\n    responsive: true,\n    plugins: {\n      legend: { position: 'top' },\n      tooltip: {\n        callbacks: {\n          label: function(context) {\n            let valor = context.parsed.y || context.raw || 0;\n            return (context.dataset.label || '') + ': R$ ' + valor.toLocaleString('pt-BR', { minimumFractionDigits: 0 });\n          }\n        }\n      }\n    },\n    scales: {\n      y: {\n        beginAtZero: true,\n        ticks: {\n          callback: function(valor) {\n            return 'R$ ' + valor.toLocaleString('pt-BR', { minimumFractionDigits: 0 });\n          }\n        }\n      }\n    }\n  }\n});\n"
+  },
+  "version": 1,
+  "widgetId": "a8zhsrblhe",
+  "widgetName": "Custom1"
+}
