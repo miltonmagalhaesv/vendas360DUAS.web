@@ -1,0 +1,16 @@
+SELECT 
+        c.id_campanha,
+        c.nome_campanha,
+        c.data_inicio,
+        c.data_fim,
+        c.status_campanha,
+        COUNT(cc.id_contato_campanha) as total_clientes_selecionados,
+        COUNT(CASE WHEN cc.status_envio NOT IN ('Não Iniciado') THEN 1 END) as mensagens_enviadas,
+        COUNT(CASE WHEN cc.status_envio IN ('Respondido', 'Concluído') THEN 1 END) as respostas_recebidas,
+        COUNT(CASE WHEN cc.resultado_interacao = 'Venda Realizada' THEN 1 END) as vendas_realizadas,
+        COALESCE(SUM(cc.valor_venda_gerada), 0) as valor_total_vendas
+    FROM crm.campanhas c
+    LEFT JOIN crm.contatos_campanha cc ON c.id_campanha = cc.id_campanha
+    WHERE c.status_campanha = 'Ativa'
+    GROUP BY c.id_campanha, c.nome_campanha, c.data_inicio, c.data_fim, c.status_campanha
+    ORDER BY c.data_criacao DESC;

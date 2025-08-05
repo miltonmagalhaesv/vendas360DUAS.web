@@ -1,24 +1,23 @@
 {
-  "gitSyncId": "68750378005e0954974296b0_11f3b2f6-809e-4772-843a-2058f881189b",
+  "gitSyncId": "68750378005e0954974296b0_8307514c-5850-49f1-b73c-92ce25650422",
   "unpublishedPage": {
-    "customSlug": "",
     "isHidden": false,
     "layouts": [
       {
         "dsl": {
           "backgroundColor": "none",
-          "bottomRow": 2560,
+          "bottomRow": 470,
           "canExtend": true,
           "containerStyle": "none",
           "detachFromLayout": true,
           "dynamicBindingPathList": [],
           "leftColumn": 0,
-          "minHeight": 610,
+          "minHeight": 460,
           "parentColumnSpace": 1,
           "parentRowSpace": 1,
           "rightColumn": 1224,
           "snapColumns": 64,
-          "snapRows": 59,
+          "snapRows": 44,
           "topRow": 0,
           "type": "CANVAS_WIDGET",
           "version": 92,
@@ -27,7 +26,7 @@
         }
       }
     ],
-    "name": "Home Gestao",
-    "slug": "home-gestao"
+    "name": "CRM - Dash",
+    "slug": "crm-dash"
   }
 }

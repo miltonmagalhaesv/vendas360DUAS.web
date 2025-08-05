@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 12,
+  "bottomRow": 8,
   "boxShadow": "none",
   "configureMenuItems": {
     "config": {
@@ -15,42 +15,30 @@
   },
   "dynamicBindingPathList": [
     {
+      "key": "menuColor"
+    },
+    {
       "key": "borderRadius"
     }
   ],
-  "dynamicPropertyPathList": [
-    {
-      "key": "menuItems.menuItem3.onClick"
-    },
-    {
-      "key": "menuItems.menuItemtrhk201cvw.onClick"
-    }
-  ],
-  "dynamicTriggerPathList": [
-    {
-      "key": "menuItems.menuItem3.onClick"
-    },
-    {
-      "key": "menuItems.menuItemtrhk201cvw.onClick"
-    }
-  ],
+  "dynamicTriggerPathList": [],
   "iconAlign": "left",
-  "iconName": "selection",
+  "iconName": "grouped-bar-chart",
   "isCompact": false,
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
   "key": "ec7ov5xkq8",
-  "label": "Metas",
+  "label": "Análises",
   "leftColumn": 0,
-  "menuColor": "#553de9",
+  "menuColor": "{{appsmith.theme.colors.primaryColor}}",
   "menuItems": {
     "menuItem1": {
       "id": "menuItem1",
-      "index": 0,
+      "index": 2,
       "isDisabled": false,
       "isVisible": true,
-      "label": "Ver Metas",
+      "label": "Produtos",
       "widgetId": ""
     },
     "menuItem2": {
@@ -58,26 +46,16 @@
       "index": 1,
       "isDisabled": false,
       "isVisible": true,
-      "label": "Análise de Metas",
+      "label": "Vendedor",
       "widgetId": ""
     },
     "menuItem3": {
       "id": "menuItem3",
-      "index": 2,
+      "index": 0,
       "isDisabled": false,
       "isVisible": true,
-      "label": "Planejamento de Metas",
-      "onClick": "{{navigateTo('Planejamento de Metas')}}",
+      "label": "Ponto de Venda",
       "widgetId": ""
-    },
-    "menuItemtrhk201cvw": {
-      "id": "menuItemtrhk201cvw",
-      "index": 3,
-      "isDisabled": false,
-      "isVisible": true,
-      "label": "Peso do dia",
-      "onClick": "{{navigateTo('Peso do dia')}}",
-      "widgetId": "cvbyfyiuyy"
     }
   },
   "menuItemsSource": "STATIC",
@@ -88,15 +66,15 @@
   "mobileTopRow": 10,
   "needsErrorInfo": false,
   "parentColumnSpace": 17.9375,
-  "parentId": "ez9vojlqgh",
+  "parentId": "4nuzxc8pqm",
   "parentRowSpace": 10,
   "placement": "START",
   "renderMode": "CANVAS",
-  "rightColumn": 60,
+  "rightColumn": 64,
   "sourceData": [],
-  "topRow": 8,
+  "topRow": 4,
   "type": "MENU_BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "6429xes0xg",
-  "widgetName": "MenuButton_Meta"
+  "widgetId": "cvhim61tm2",
+  "widgetName": "MenuButton_Analises"
 }

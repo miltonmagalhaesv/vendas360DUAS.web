@@ -1,0 +1,7 @@
+SELECT 
+    COALESCE(SUM(valor_venda_gerada), 0) as total_vendas_geradas,
+    COUNT(CASE WHEN valor_venda_gerada > 0 THEN 1 END) as total_vendas_realizadas
+FROM crm.contatos_campanha cc
+JOIN crm.campanhas c ON cc.id_campanha = c.id_campanha
+WHERE c.status_campanha = 'Ativa'
+  AND resultado_interacao = 'Venda Realizada';

@@ -1,13 +1,12 @@
 {
-  "gitSyncId": "68750378005e0954974296b0_11f3b2f6-809e-4772-843a-2058f881189b",
+  "gitSyncId": "68750378005e0954974296b0_dac76bc1-cd55-4b52-8fb0-472d40503b25",
   "unpublishedPage": {
-    "customSlug": "",
     "isHidden": false,
     "layouts": [
       {
         "dsl": {
           "backgroundColor": "none",
-          "bottomRow": 2560,
+          "bottomRow": 600,
           "canExtend": true,
           "containerStyle": "none",
           "detachFromLayout": true,
@@ -27,7 +26,7 @@
         }
       }
     ],
-    "name": "Home Gestao",
-    "slug": "home-gestao"
+    "name": "CRM - Seleção de Clientes",
+    "slug": "crm-selecao-de-clientes"
   }
 }

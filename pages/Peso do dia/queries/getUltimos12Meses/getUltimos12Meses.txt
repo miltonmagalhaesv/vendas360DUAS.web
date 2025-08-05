@@ -1,0 +1,21 @@
+SELECT 
+  to_char(mes, 'YYYY-MM') AS value,
+  CASE extract(month from mes)
+    WHEN 1 THEN 'Janeiro'
+    WHEN 2 THEN 'Fevereiro'
+    WHEN 3 THEN 'Março'
+    WHEN 4 THEN 'Abril'
+    WHEN 5 THEN 'Maio'
+    WHEN 6 THEN 'Junho'
+    WHEN 7 THEN 'Julho'
+    WHEN 8 THEN 'Agosto'
+    WHEN 9 THEN 'Setembro'
+    WHEN 10 THEN 'Outubro'
+    WHEN 11 THEN 'Novembro'
+    WHEN 12 THEN 'Dezembro'
+  END || '/ ' || extract(year from mes) AS label
+FROM (
+  SELECT date_trunc('month', current_date) - (INTERVAL '1 month' * g) AS mes
+  FROM generate_series(0, 11) g
+) ultimos_meses
+ORDER BY mes DESC;

@@ -1,0 +1,6 @@
+SELECT COUNT(DISTINCT cc.id_cliente) as clientes_contatados_hoje
+FROM crm.contatos_campanha cc
+JOIN crm.campanhas c ON cc.id_campanha = c.id_campanha
+WHERE c.status_campanha = 'Ativa'
+  AND DATE(cc.data_ultimo_contato) = CURRENT_DATE
+  AND cc.status_envio NOT IN ('Não Iniciado');

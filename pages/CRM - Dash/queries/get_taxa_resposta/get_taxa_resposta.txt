@@ -1,0 +1,11 @@
+SELECT 
+    CASE 
+        WHEN COUNT(*) = 0 THEN 0
+        ELSE ROUND(
+            (COUNT(CASE WHEN status_envio IN ('Respondido', 'Concluído') THEN 1 END) * 100.0) / 
+            COUNT(CASE WHEN status_envio NOT IN ('Não Iniciado') THEN 1 END), 2
+        )
+    END as taxa_resposta_percentual
+FROM crm.contatos_campanha cc
+JOIN crm.campanhas c ON cc.id_campanha = c.id_campanha
+WHERE c.status_campanha = 'Ativa';

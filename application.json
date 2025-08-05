@@ -48,6 +48,18 @@
     {
       "id": "Home Gestao Copy",
       "isDefault": false
+    },
+    {
+      "id": "CRM - Dash",
+      "isDefault": false
+    },
+    {
+      "id": "CRM - Seleção de Clientes",
+      "isDefault": false
+    },
+    {
+      "id": "Peso do dia",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {

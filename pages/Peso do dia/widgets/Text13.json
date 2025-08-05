@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 35,
+  "bottomRow": 11,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -11,45 +11,42 @@
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "text"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [],
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
   "fontSize": "1rem",
-  "fontStyle": "BOLD",
+  "fontStyle": "",
   "isLoading": false,
   "isVisible": true,
-  "key": "8hl0wg24f8",
-  "leftColumn": 1,
+  "key": "4uux76rzp8",
+  "leftColumn": 10,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 20,
-  "mobileLeftColumn": 1,
-  "mobileRightColumn": 17,
-  "mobileTopRow": 16,
+  "mobileBottomRow": 21,
+  "mobileLeftColumn": 11,
+  "mobileRightColumn": 27,
+  "mobileTopRow": 17,
   "needsErrorInfo": false,
-  "originalBottomRow": 35,
-  "originalTopRow": 16,
+  "originalBottomRow": 22,
+  "originalTopRow": 17,
   "overflow": "NONE",
-  "parentColumnSpace": 14.609375,
-  "parentId": "nw5pcys3y9",
+  "parentColumnSpace": 17.9375,
+  "parentId": "0",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 64,
+  "rightColumn": 33,
   "shouldTruncate": false,
-  "text": "{{ JS_ResumoMetaDia.gerarResumoMeta() }}",
+  "text": "<div style=\" align-items:center; gap:8px; font-size:14px;\">  <span style=\"color:#553de9; font-weight:bold;\">Metas</span<span style=\"color:#ff;\"> › </span <span style=\"color:#231F20;\">Peso do dia</span>\n</div>",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 16,
+  "topRow": 7,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "ygmxrbmdra",
-  "widgetName": "Text_Explicacao_Resumo_Dia"
+  "widgetId": "mvszf1sein",
+  "widgetName": "Text13"
 }

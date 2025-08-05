@@ -1,0 +1,3 @@
+SELECT COUNT(*) as total_campanhas_ativas
+FROM crm.campanhas 
+WHERE status_campanha = 'Ativa';

@@ -1,0 +1,36 @@
+SELECT DISTINCT
+    c.codigo_do_cliente,
+    c.nome_razao_social,
+    c.email,
+    c.telefone_celular,
+		c.telefone_principal,
+		c.data_cadastro,
+    MAX(hv.data_venda) as ultima_compra,
+    COUNT(DISTINCT hv.id_venda) as total_compras,
+    SUM(hv.valor_total) as valor_total_gasto,
+    STRING_AGG(DISTINCT p.nome_produto, ', ') as produtos_comprados,
+    STRING_AGG(DISTINCT p.categoria, ', ') as categorias_compradas,
+    -- Verificar se já está em alguma campanha ativa
+    CASE 
+        WHEN EXISTS (
+            SELECT 1 FROM crm.contatos_campanha cc2 
+            JOIN crm.campanhas camp2 ON cc2.id_campanha = camp2.id_campanha 
+            WHERE cc2.id_cliente = c.id_cliente 
+            AND camp2.status_campanha = 'Ativa'
+        ) THEN 'Em Campanha Ativa'
+        ELSE 'Disponível'
+    END as status_campanha_atual
+FROM oltp.tb_cliente c
+JOIN historico_vendas hv ON c.id_cliente = hv.id_cliente
+JOIN produtos p ON hv.id_produto = p.id_produto
+WHERE 1=1
+    -- Filtros dinâmicos (deixe em branco por enquanto)
+    AND ({{categoria_filtro}} = '' OR p.categoria = {{categoria_filtro}})
+    AND ({{produto_filtro}} = '' OR p.nome_produto ILIKE '%' || {{produto_filtro}} || '%')
+    AND ({{data_inicio_filtro}} IS NULL OR hv.data_venda >= {{data_inicio_filtro}})
+    AND ({{data_fim_filtro}} IS NULL OR hv.data_venda <= {{data_fim_filtro}})
+    AND c.telefone IS NOT NULL -- Garantir que tem WhatsApp
+    AND c.telefone != ''
+GROUP BY c.id_cliente, c.nome_cliente, c.email, c.telefone
+ORDER BY valor_total_gasto DESC, ultima_compra DESC
+LIMIT 1000;

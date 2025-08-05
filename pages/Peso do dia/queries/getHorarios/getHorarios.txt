@@ -1,0 +1,5 @@
+SELECT *
+FROM public.vw_locais_com_horarios
+WHERE local_id = {{ Select_PDV.selectedOptionValue }}
+  AND to_char(data, 'YYYY-MM') = {{ Select_Mes.selectedOptionValue }}
+ORDER BY data DESC, abre;

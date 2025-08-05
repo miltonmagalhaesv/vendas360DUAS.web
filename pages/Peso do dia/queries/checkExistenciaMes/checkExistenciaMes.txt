@@ -1,0 +1,4 @@
+SELECT COUNT(*) AS registros
+FROM public.horarios_funcionamento
+WHERE local_trabalho_id = {{ Select_PDV.selectedOptionValue }}
+  AND to_char(data, 'YYYY-MM') = {{ Select_Mes.selectedOptionValue }};
