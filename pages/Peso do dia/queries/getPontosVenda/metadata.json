@@ -23,9 +23,9 @@
       "pluginId": "postgres-plugin"
     },
     "dynamicBindingPathList": [],
-    "executeOnLoad": true,
     "name": "getPontosVenda",
     "pageId": "Peso do dia",
+    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": false
   }
 }

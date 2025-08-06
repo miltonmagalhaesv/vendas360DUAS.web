@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "name": "Insert_Log_TrocaMes",
     "pageId": "Home Gestao Copy",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

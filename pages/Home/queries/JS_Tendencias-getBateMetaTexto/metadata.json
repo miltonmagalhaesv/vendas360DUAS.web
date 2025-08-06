@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "JS_Tendencias.getBateMetaTexto",
     "name": "getBateMetaTexto",
     "pageId": "Home",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

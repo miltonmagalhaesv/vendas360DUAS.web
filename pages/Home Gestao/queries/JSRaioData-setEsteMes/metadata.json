@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "JSRaioData.setEsteMes",
     "name": "setEsteMes",
     "pageId": "Home Gestao",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

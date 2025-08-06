@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "JSImportacao.formatarDataImportacao",
     "name": "formatarDataImportacao",
     "pageId": "Home Gestao",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

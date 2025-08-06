@@ -23,9 +23,9 @@
       "pluginId": "postgres-plugin"
     },
     "dynamicBindingPathList": [],
-    "executeOnLoad": true,
     "name": "get_taxa_resposta",
     "pageId": "CRM - Dash",
+    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": false
   }
 }

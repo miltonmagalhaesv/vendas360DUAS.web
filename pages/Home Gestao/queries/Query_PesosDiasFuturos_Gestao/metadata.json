@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "name": "Query_PesosDiasFuturos_Gestao",
     "pageId": "Home Gestao",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

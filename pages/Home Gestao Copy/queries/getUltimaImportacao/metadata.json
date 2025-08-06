@@ -23,9 +23,9 @@
       "pluginId": "postgres-plugin"
     },
     "dynamicBindingPathList": [],
-    "executeOnLoad": true,
     "name": "getUltimaImportacao",
     "pageId": "Home Gestao Copy",
+    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": false
   }
 }

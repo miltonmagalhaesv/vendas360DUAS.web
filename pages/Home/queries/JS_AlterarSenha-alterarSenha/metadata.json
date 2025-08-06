@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "JS_AlterarSenha.alterarSenha",
     "name": "alterarSenha",
     "pageId": "Home",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

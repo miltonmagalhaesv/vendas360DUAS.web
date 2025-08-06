@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": true,
     "name": "KPI_Gestao_Metas",
     "pageId": "Planejamento de Metas",
+    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": false
   }
 }

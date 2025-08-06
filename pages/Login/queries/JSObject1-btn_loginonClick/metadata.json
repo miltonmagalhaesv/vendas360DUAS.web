@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "JSObject1.btn_loginonClick",
     "name": "btn_loginonClick",
     "pageId": "Login",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

@@ -23,9 +23,9 @@
       "pluginId": "postgres-plugin"
     },
     "dynamicBindingPathList": [],
-    "executeOnLoad": false,
     "name": "aaaTESTE",
     "pageId": "Home Gestao",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

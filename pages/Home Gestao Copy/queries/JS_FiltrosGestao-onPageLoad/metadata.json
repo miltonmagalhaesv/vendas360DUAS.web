@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": true,
     "fullyQualifiedName": "JS_FiltrosGestao.onPageLoad",
     "name": "onPageLoad",
     "pageId": "Home Gestao Copy",
+    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": true
   }
 }

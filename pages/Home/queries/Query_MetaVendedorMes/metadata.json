@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "name": "Query_MetaVendedorMes",
     "pageId": "Home",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": true
   }
 }

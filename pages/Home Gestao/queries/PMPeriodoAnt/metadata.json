@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "name": "PMPeriodoAnt",
     "pageId": "Home Gestao",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

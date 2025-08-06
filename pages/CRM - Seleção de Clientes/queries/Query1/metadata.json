@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "name": "Query1",
     "pageId": "CRM - Seleção de Clientes",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

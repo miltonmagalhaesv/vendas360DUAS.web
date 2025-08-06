@@ -22,9 +22,9 @@
       "name": "BD DUAS",
       "pluginId": "postgres-plugin"
     },
-    "executeOnLoad": false,
     "name": "Query1",
     "pageId": "Planejamento de Metas",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

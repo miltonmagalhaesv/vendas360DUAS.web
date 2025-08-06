@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": true,
     "fullyQualifiedName": "JSObject4.atualizarDadosDoMes",
     "name": "atualizarDadosDoMes",
     "pageId": "Home Gestao",
+    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": true
   }
 }

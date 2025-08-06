@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "MetasActions.salvarMetas",
     "name": "salvarMetas",
     "pageId": "Planejamento de Metas",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

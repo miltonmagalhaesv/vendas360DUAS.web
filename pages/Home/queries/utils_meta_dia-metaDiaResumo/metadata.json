@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "utils_meta_dia.metaDiaResumo",
     "name": "metaDiaResumo",
     "pageId": "Home",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

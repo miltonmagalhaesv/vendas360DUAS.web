@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "JS_TendenciaGestao.getTendenciaVenda",
     "name": "getTendenciaVenda",
     "pageId": "Home Gestao Copy",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

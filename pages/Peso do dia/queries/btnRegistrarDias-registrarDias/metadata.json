@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "btnRegistrarDias.registrarDias",
     "name": "registrarDias",
     "pageId": "Peso do dia",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

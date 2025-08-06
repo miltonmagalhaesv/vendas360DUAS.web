@@ -16,9 +16,9 @@
       "name": "customer contact form",
       "pluginId": "twilio-1.2-plugin"
     },
-    "executeOnLoad": false,
     "name": "Api1",
     "pageId": "CRM - Dash",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

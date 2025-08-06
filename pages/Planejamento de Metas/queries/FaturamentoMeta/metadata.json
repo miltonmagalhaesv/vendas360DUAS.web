@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "name": "FaturamentoMeta",
     "pageId": "Planejamento de Metas",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

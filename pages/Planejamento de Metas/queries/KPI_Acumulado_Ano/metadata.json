@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "name": "KPI_Acumulado_Ano",
     "pageId": "Planejamento de Metas",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

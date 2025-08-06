@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "MetasActions.limparCamposMeta",
     "name": "limparCamposMeta",
     "pageId": "Planejamento de Metas",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

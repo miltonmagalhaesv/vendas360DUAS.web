@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "JS_ResumoMetaDia.gerarResumoMeta",
     "name": "gerarResumoMeta",
     "pageId": "Home Gestao Copy",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

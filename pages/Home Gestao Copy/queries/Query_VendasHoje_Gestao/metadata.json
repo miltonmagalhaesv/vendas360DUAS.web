@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": true,
     "name": "Query_VendasHoje_Gestao",
     "pageId": "Home Gestao Copy",
+    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": false
   }
 }

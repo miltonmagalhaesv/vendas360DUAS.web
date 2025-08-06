@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "name": "Insert_Log_Logout",
     "pageId": "Home",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

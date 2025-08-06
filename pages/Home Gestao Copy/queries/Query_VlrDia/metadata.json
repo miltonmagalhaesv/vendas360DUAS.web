@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "name": "Query_VlrDia",
     "pageId": "Home Gestao Copy",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }
