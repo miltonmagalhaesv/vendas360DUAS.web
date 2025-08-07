@@ -1,0 +1,5 @@
+SELECT DISTINCT marca
+FROM public.vw_analise_marcas
+WHERE tipo_movimento = 'Venda'
+  AND EXTRACT(YEAR FROM data_lanca) = EXTRACT(YEAR FROM CURRENT_DATE)
+ORDER BY marca;

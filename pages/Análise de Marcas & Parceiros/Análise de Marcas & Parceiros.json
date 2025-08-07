@@ -1,23 +1,23 @@
 {
-  "gitSyncId": "68750378005e0954974296b0_dac76bc1-cd55-4b52-8fb0-472d40503b25",
+  "gitSyncId": "68750378005e0954974296b0_811b09bd-d154-4ac1-9eeb-040b7df1e97b",
   "unpublishedPage": {
     "isHidden": false,
     "layouts": [
       {
         "dsl": {
           "backgroundColor": "none",
-          "bottomRow": 690,
+          "bottomRow": 600,
           "canExtend": true,
           "containerStyle": "none",
           "detachFromLayout": true,
           "dynamicBindingPathList": [],
           "leftColumn": 0,
-          "minHeight": 610,
+          "minHeight": 460,
           "parentColumnSpace": 1,
           "parentRowSpace": 1,
           "rightColumn": 1224,
           "snapColumns": 64,
-          "snapRows": 59,
+          "snapRows": 44,
           "topRow": 0,
           "type": "CANVAS_WIDGET",
           "version": 94,
@@ -26,7 +26,7 @@
         }
       }
     ],
-    "name": "CRM - Seleção de Clientes",
-    "slug": "crm-selecao-de-clientes"
+    "name": "Análise de Marcas & Parceiros",
+    "slug": "analise-de-marcas-parceiros"
   }
 }

@@ -60,6 +60,10 @@
     {
       "id": "Peso do dia",
       "isDefault": false
+    },
+    {
+      "id": "Análise de Marcas & Parceiros",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {

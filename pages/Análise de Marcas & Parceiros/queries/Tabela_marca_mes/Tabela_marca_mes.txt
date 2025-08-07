@@ -1,0 +1,27 @@
+SELECT
+  EXTRACT(YEAR FROM data_lanca) AS ano,
+  EXTRACT(MONTH FROM data_lanca) AS mes,
+  marca,
+  tipo_movimento,
+  COUNT(DISTINCT docu) AS qtde_documentos,
+  SUM(valor_item_nf) AS valor_total
+FROM
+  public.vw_analise_marcas
+WHERE
+  (
+    -- Filtro de mês/ano (value tipo "2025-08")
+    ({{Select_Mes.selectedOptionValue}} IS NULL)
+    OR (
+      EXTRACT(YEAR FROM data_lanca)::text || '-' ||
+      LPAD(EXTRACT(MONTH FROM data_lanca)::text, 2, '0') = {{Select_Mes.selectedOptionValue}}
+    )
+  )
+  AND (
+    -- Filtro MultiSelect_Marca (permite todos, um, vários ou nenhum)
+    array_length({{MultiSelect_Marca.selectedOptionValues}}::text[], 1) = 0
+    OR marca = ANY({{MultiSelect_Marca.selectedOptionValues}}::text[])
+  )
+GROUP BY
+  ano, mes, marca, tipo_movimento
+ORDER BY
+  ano DESC, mes DESC, marca, tipo_movimento;

@@ -1,0 +1,9 @@
+SELECT
+  marca,
+  SUM(valor_item_nf) AS valor_total
+FROM
+  public.vw_analise_marcas
+GROUP BY
+  marca
+ORDER BY
+  valor_total DESC;
