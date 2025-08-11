@@ -1,8 +1,7 @@
 {
   "animateLoading": true,
-  "borderRadius": "0px",
-  "bottomRow": 256,
-  "bottomRowBeforeCollapse": 256,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 5,
   "boxShadow": "none",
   "buttonVariant": "PRIMARY",
   "childStylesheet": {
@@ -11,6 +10,9 @@
     }
   },
   "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
     {
       "key": "groupButtons.groupButton1.buttonColor"
     },
@@ -21,7 +23,6 @@
       "key": "groupButtons.groupButton3.buttonColor"
     }
   ],
-  "dynamicTriggerPathList": [],
   "groupButtons": {
     "groupButton1": {
       "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
@@ -106,28 +107,25 @@
   },
   "isCanvas": false,
   "isLoading": false,
-  "isVisible": false,
-  "key": "k7oks0ooyu",
-  "leftColumn": 0,
+  "isVisible": true,
+  "key": "ehykns6qxz",
+  "leftColumn": 19,
   "minWidth": 450,
-  "mobileBottomRow": 146,
-  "mobileLeftColumn": 8,
-  "mobileRightColumn": 32,
-  "mobileTopRow": 142,
+  "mobileBottomRow": 5,
+  "mobileLeftColumn": 19,
+  "mobileRightColumn": 43,
+  "mobileTopRow": 1,
   "needsErrorInfo": false,
   "orientation": "horizontal",
-  "originalBottomRow": 256,
-  "originalTopRow": 252,
-  "parentColumnSpace": 6.84375,
-  "parentId": "0",
+  "parentColumnSpace": 12.8603515625,
+  "parentId": "dyzrceibqf",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 64,
-  "topRow": 252,
-  "topRowBeforeCollapse": 252,
+  "rightColumn": 43,
+  "topRow": 1,
   "type": "BUTTON_GROUP_WIDGET",
   "version": 1,
-  "widgetId": "277bvtioyy",
+  "widgetId": "4u8tw6bbyf",
   "widgetName": "ButtonGroup1"
 }

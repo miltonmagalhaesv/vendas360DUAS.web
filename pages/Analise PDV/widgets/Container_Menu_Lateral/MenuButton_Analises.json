@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 4,
+  "bottomRow": 8,
   "boxShadow": "none",
   "configureMenuItems": {
     "config": {
@@ -21,25 +21,50 @@
       "key": "borderRadius"
     }
   ],
-  "dynamicPropertyPathList": [],
-  "dynamicTriggerPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "menuItems.menuItem3.onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "menuItems.menuItem3.onClick"
+    }
+  ],
   "iconAlign": "left",
-  "iconName": "home",
+  "iconName": "grouped-bar-chart",
   "isCompact": false,
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
   "key": "ec7ov5xkq8",
-  "label": "Home",
+  "label": "Análises",
   "leftColumn": 0,
   "menuColor": "{{appsmith.theme.colors.primaryColor}}",
   "menuItems": {
+    "menuItem1": {
+      "id": "menuItem1",
+      "index": 2,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Produtos",
+      "widgetId": ""
+    },
     "menuItem2": {
       "id": "menuItem2",
+      "index": 1,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Vendedor",
+      "widgetId": ""
+    },
+    "menuItem3": {
+      "id": "menuItem3",
       "index": 0,
       "isDisabled": false,
       "isVisible": true,
-      "label": "Second Menu Item",
+      "label": "Ponto de Venda",
+      "onClick": "{{navigateTo('Analise PDV'')}}",
       "widgetId": ""
     }
   },
@@ -51,15 +76,15 @@
   "mobileTopRow": 10,
   "needsErrorInfo": false,
   "parentColumnSpace": 17.9375,
-  "parentId": "ez9vojlqgh",
+  "parentId": "fv2yjws5rm",
   "parentRowSpace": 10,
   "placement": "START",
   "renderMode": "CANVAS",
-  "rightColumn": 63,
+  "rightColumn": 62,
   "sourceData": [],
-  "topRow": 0,
+  "topRow": 4,
   "type": "MENU_BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "ig6g1f2yty",
-  "widgetName": "MenuButton_Home"
+  "widgetId": "je7q0rhdlq",
+  "widgetName": "MenuButton_Analises"
 }

@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n  marca,\n  SUM(valor_item_nf) AS valor_total\nFROM\n  public.vw_analise_marcas\nGROUP BY\n  marca\nORDER BY\n  valor_total DESC;",
+      "body": "SELECT\n  marca,\n  SUM(valor_item_nf) AS valor_total,\n  'R$ ' || REPLACE(REPLACE(REPLACE(\n      TO_CHAR(SUM(valor_item_nf), 'FM9G999G999G999G990D00')\n    , ',', 'X'), '.', ','), 'X', '.') AS valor_total_fmt\nFROM public.vw_analise_marcas\nWHERE\n  ( {{ !Select_Ano.selectedOptionValue }}\n    OR EXTRACT(YEAR FROM data_lanca) = {{ Number(Select_Ano.selectedOptionValue) }} )\nGROUP BY marca\nORDER BY SUM(valor_item_nf) DESC;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,10 +22,14 @@
       "name": "BD DUAS",
       "pluginId": "postgres-plugin"
     },
-    "dynamicBindingPathList": [],
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      }
+    ],
     "name": "grafico_com_DUAS",
     "pageId": "Análise de Marcas & Parceiros",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": false
   }
 }

@@ -1,0 +1,44 @@
+WITH base AS (
+  SELECT
+    EXTRACT(YEAR FROM m.data_lanca) AS ano,
+    EXTRACT(MONTH FROM m.data_lanca) AS mes,
+    m.marca,
+    m.tipo_movimento,
+    m.valor_item_nf
+  FROM public.vw_analise_marcas m
+  WHERE
+    -- Filtro de Mês/Ano (opcional, vindo do Appsmith)
+    (
+      (COALESCE({{Select_Mes.selectedOptionValue}}, '') = '') OR
+      (EXTRACT(YEAR FROM m.data_lanca)::text || '-' || LPAD(EXTRACT(MONTH FROM m.data_lanca)::text, 2, '0') = {{Select_Mes.selectedOptionValue}})
+    )
+    -- Filtro de Marca (opcional, vindo do Appsmith)
+    AND (
+      {{ MultiSelect_Marca.selectedOptionValues.length }} = 0 OR
+      m.marca = ANY({{ MultiSelect_Marca.selectedOptionValues }})
+    )
+),
+agg AS (
+  SELECT
+    ano,
+    mes,
+    marca,
+    SUM(CASE WHEN tipo_movimento = 'Venda' THEN valor_item_nf ELSE 0 END) AS valor_vendido,
+    SUM(CASE WHEN tipo_movimento = 'Devolução' THEN valor_item_nf ELSE 0 END) AS valor_devolvido,
+    SUM(valor_item_nf) AS valor_referencia
+  FROM base
+  GROUP BY ano, mes, marca
+)
+SELECT
+  LPAD(a.mes::text, 2, '0') || '/' || a.ano::text AS mes_ano,
+  a.marca,
+  a.valor_vendido,
+  a.valor_devolvido,
+  a.valor_referencia,
+  cp.comissao AS perc_comissao,
+  ROUND((a.valor_referencia * cp.comissao)::numeric, 2) AS valor_comissao
+FROM agg a
+-- INNER JOIN filtra as marcas que não têm comissão registrada
+INNER JOIN public.comissao_parceiro cp ON cp.marca = a.marca
+ORDER BY
+  mes_ano DESC, valor_referencia DESC;

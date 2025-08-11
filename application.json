@@ -64,6 +64,10 @@
     {
       "id": "Análise de Marcas & Parceiros",
       "isDefault": false
+    },
+    {
+      "id": "Analise PDV",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {

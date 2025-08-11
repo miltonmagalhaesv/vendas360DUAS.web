@@ -1,0 +1,1 @@
+SELECT * FROM crm."campanhas" LIMIT 10;

@@ -1,0 +1,18 @@
+WITH vendas AS (
+  SELECT
+    id_venda,
+    date_trunc('day', data_lanca)::date AS dia,
+    vend AS vendedor,
+    SUM(valor_liquido) AS total_da_venda
+  FROM public.vw_resumo_vend_devo
+  WHERE oper = 'S - Venda'
+  GROUP BY id_venda, dia, vendedor
+)
+SELECT
+  dia,
+  vendedor,
+  COUNT(*) AS qtd_vendas
+FROM vendas
+WHERE total_da_venda > 900
+GROUP BY dia, vendedor
+ORDER BY dia ASC, vendedor;

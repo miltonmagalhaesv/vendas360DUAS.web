@@ -1,11 +1,13 @@
 SELECT
   marca,
-  SUM(valor_item_nf) AS valor_total
-FROM
-  public.vw_analise_marcas
+  SUM(valor_item_nf) AS valor_total,
+  'R$ ' || REPLACE(REPLACE(REPLACE(
+      TO_CHAR(SUM(valor_item_nf), 'FM9G999G999G999G990D00')
+    , ',', 'X'), '.', ','), 'X', '.') AS valor_total_fmt
+FROM public.vw_analise_marcas
 WHERE
   marca <> 'DUAS'
-GROUP BY
-  marca
-ORDER BY
-  valor_total DESC;
+  AND ( {{ !Select_Ano.selectedOptionValue }}
+        OR EXTRACT(YEAR FROM data_lanca) = {{ Number(Select_Ano.selectedOptionValue) }} )
+GROUP BY marca
+ORDER BY SUM(valor_item_nf) DESC;

@@ -1,0 +1,9 @@
+SELECT
+  date_trunc('month', data_lanca)::date AS mes,
+  ponto_venda,
+  COUNT(DISTINCT id_venda) AS qtd_vendas
+FROM public.vw_resumo_vend_devo
+WHERE oper = 'S - Venda'
+  AND valor_liquido > 900
+GROUP BY 1, 2
+ORDER BY 1, 2;

@@ -1,23 +1,23 @@
 {
-  "gitSyncId": "68750378005e0954974296b0_811b09bd-d154-4ac1-9eeb-040b7df1e97b",
+  "gitSyncId": "68750378005e0954974296b0_e8be5c50-2857-429a-b862-7bd960890989",
   "unpublishedPage": {
     "isHidden": false,
     "layouts": [
       {
         "dsl": {
           "backgroundColor": "none",
-          "bottomRow": 1830,
+          "bottomRow": 1250,
           "canExtend": true,
           "containerStyle": "none",
           "detachFromLayout": true,
           "dynamicBindingPathList": [],
           "leftColumn": 0,
-          "minHeight": 460,
+          "minHeight": 900,
           "parentColumnSpace": 1,
           "parentRowSpace": 1,
           "rightColumn": 1224,
           "snapColumns": 64,
-          "snapRows": 44,
+          "snapRows": 88,
           "topRow": 0,
           "type": "CANVAS_WIDGET",
           "version": 94,
@@ -26,7 +26,7 @@
         }
       }
     ],
-    "name": "Análise de Marcas & Parceiros",
-    "slug": "analise-de-marcas-parceiros"
+    "name": "Analise PDV",
+    "slug": "analise-pdv"
   }
 }

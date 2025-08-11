@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 4,
+  "bottomRow": 12,
   "boxShadow": "none",
   "configureMenuItems": {
     "config": {
@@ -15,51 +15,73 @@
   },
   "dynamicBindingPathList": [
     {
-      "key": "menuColor"
-    },
-    {
       "key": "borderRadius"
     }
   ],
-  "dynamicPropertyPathList": [],
-  "dynamicTriggerPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "menuItems.menuItem3.onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "menuItems.menuItem3.onClick"
+    }
+  ],
   "iconAlign": "left",
-  "iconName": "home",
+  "iconName": "selection",
   "isCompact": false,
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
   "key": "ec7ov5xkq8",
-  "label": "Home",
+  "label": "Metas",
   "leftColumn": 0,
-  "menuColor": "{{appsmith.theme.colors.primaryColor}}",
+  "menuColor": "#553de9",
   "menuItems": {
-    "menuItem2": {
-      "id": "menuItem2",
+    "menuItem1": {
+      "id": "menuItem1",
       "index": 0,
       "isDisabled": false,
       "isVisible": true,
-      "label": "Second Menu Item",
+      "label": "Ver Metas",
+      "widgetId": ""
+    },
+    "menuItem2": {
+      "id": "menuItem2",
+      "index": 1,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Análise de Metas",
+      "widgetId": ""
+    },
+    "menuItem3": {
+      "id": "menuItem3",
+      "index": 2,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Planejamento de Metas",
+      "onClick": "",
       "widgetId": ""
     }
   },
   "menuItemsSource": "STATIC",
-  "menuVariant": "PRIMARY",
+  "menuVariant": "TERTIARY",
   "mobileBottomRow": 14,
   "mobileLeftColumn": 0,
   "mobileRightColumn": 10,
   "mobileTopRow": 10,
   "needsErrorInfo": false,
   "parentColumnSpace": 17.9375,
-  "parentId": "ez9vojlqgh",
+  "parentId": "fv2yjws5rm",
   "parentRowSpace": 10,
   "placement": "START",
   "renderMode": "CANVAS",
-  "rightColumn": 63,
+  "rightColumn": 60,
   "sourceData": [],
-  "topRow": 0,
+  "topRow": 8,
   "type": "MENU_BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "ig6g1f2yty",
-  "widgetName": "MenuButton_Home"
+  "widgetId": "8t3ncfz2j4",
+  "widgetName": "MenuButton_Meta"
 }

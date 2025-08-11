@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n  EXTRACT(YEAR FROM data_lanca) AS ano,\n  EXTRACT(MONTH FROM data_lanca) AS mes,\n  marca,\n  tipo_movimento,\n  COUNT(DISTINCT docu) AS qtde_documentos,\n  SUM(valor_item_nf) AS valor_total\nFROM\n  public.vw_analise_marcas\nWHERE\n  (\n    -- Filtro de mês/ano (value tipo \"2025-08\")\n    ({{Select_Mes.selectedOptionValue}} IS NULL)\n    OR (\n      EXTRACT(YEAR FROM data_lanca)::text || '-' ||\n      LPAD(EXTRACT(MONTH FROM data_lanca)::text, 2, '0') = {{Select_Mes.selectedOptionValue}}\n    )\n  )\n  AND (\n    -- Filtro MultiSelect_Marca (permite todos, um, vários ou nenhum)\n    array_length({{MultiSelect_Marca.selectedOptionValues}}::text[], 1) = 0\n    OR marca = ANY({{MultiSelect_Marca.selectedOptionValues}}::text[])\n  )\nGROUP BY\n  ano, mes, marca, tipo_movimento\nORDER BY\n  ano DESC, mes DESC, marca, tipo_movimento;",
+      "body": "SELECT\n  (CASE EXTRACT(MONTH FROM data_lanca)\n      WHEN 1 THEN 'Janeiro'\n      WHEN 2 THEN 'Fevereiro'\n      WHEN 3 THEN 'Março'\n      WHEN 4 THEN 'Abril'\n      WHEN 5 THEN 'Maio'\n      WHEN 6 THEN 'Junho'\n      WHEN 7 THEN 'Julho'\n      WHEN 8 THEN 'Agosto'\n      WHEN 9 THEN 'Setembro'\n      WHEN 10 THEN 'Outubro'\n      WHEN 11 THEN 'Novembro'\n      WHEN 12 THEN 'Dezembro'\n   END\n   || '/' ||\n   EXTRACT(YEAR FROM data_lanca)::text\n  ) AS mes_ano,\n  marca,\n\n  COUNT(DISTINCT CASE WHEN tipo_movimento = 'Venda' THEN docu END) AS qtd_venda,\n  SUM(CASE WHEN tipo_movimento = 'Venda' THEN valor_item_nf ELSE 0 END) AS vlr_venda,\n  COUNT(DISTINCT CASE WHEN tipo_movimento = 'Devolução' THEN docu END) AS qtd_devolucao,\n  SUM(CASE WHEN tipo_movimento = 'Devolução' THEN valor_item_nf ELSE 0 END) AS vlr_devolucao,\n  SUM(CASE WHEN tipo_movimento = 'Venda' THEN valor_item_nf ELSE 0 END)\n  + SUM(CASE WHEN tipo_movimento = 'Devolução' THEN valor_item_nf ELSE 0 END)\n    AS vlr_faturado\n\nFROM\n  public.vw_analise_marcas\nWHERE\n  (\n    (COALESCE({{Select_Mes.selectedOptionValue}}, '') = '')\n    OR (\n      EXTRACT(YEAR FROM data_lanca)::text || '-' ||\n      LPAD(EXTRACT(MONTH FROM data_lanca)::text, 2, '0') = {{Select_Mes.selectedOptionValue}}\n    )\n  )\n  AND (\n    {{MultiSelect_Marca.selectedOptionValues.length}} = 0\n    OR marca = ANY({{MultiSelect_Marca.selectedOptionValues}})\n  )\nGROUP BY\n  mes_ano, marca\nORDER BY\n  mes_ano DESC, marca;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -29,7 +29,7 @@
     ],
     "name": "Tabela_marca_mes",
     "pageId": "Análise de Marcas & Parceiros",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": false
   }
 }

@@ -1,27 +1,46 @@
 SELECT
-  EXTRACT(YEAR FROM data_lanca) AS ano,
-  EXTRACT(MONTH FROM data_lanca) AS mes,
+  (CASE EXTRACT(MONTH FROM data_lanca)
+      WHEN 1 THEN 'Janeiro'
+      WHEN 2 THEN 'Fevereiro'
+      WHEN 3 THEN 'Março'
+      WHEN 4 THEN 'Abril'
+      WHEN 5 THEN 'Maio'
+      WHEN 6 THEN 'Junho'
+      WHEN 7 THEN 'Julho'
+      WHEN 8 THEN 'Agosto'
+      WHEN 9 THEN 'Setembro'
+      WHEN 10 THEN 'Outubro'
+      WHEN 11 THEN 'Novembro'
+      WHEN 12 THEN 'Dezembro'
+   END
+   || '/' ||
+   EXTRACT(YEAR FROM data_lanca)::text
+  ) AS mes_ano,
   marca,
-  tipo_movimento,
-  COUNT(DISTINCT docu) AS qtde_documentos,
-  SUM(valor_item_nf) AS valor_total
+
+  COUNT(DISTINCT CASE WHEN tipo_movimento = 'Venda' THEN docu END) AS qtd_venda,
+  SUM(CASE WHEN tipo_movimento = 'Venda' THEN valor_item_nf ELSE 0 END) AS vlr_venda,
+  COUNT(DISTINCT CASE WHEN tipo_movimento = 'Devolução' THEN docu END) AS qtd_devolucao,
+  SUM(CASE WHEN tipo_movimento = 'Devolução' THEN valor_item_nf ELSE 0 END) AS vlr_devolucao,
+  SUM(CASE WHEN tipo_movimento = 'Venda' THEN valor_item_nf ELSE 0 END)
+  + SUM(CASE WHEN tipo_movimento = 'Devolução' THEN valor_item_nf ELSE 0 END)
+    AS vlr_faturado
+
 FROM
   public.vw_analise_marcas
 WHERE
   (
-    -- Filtro de mês/ano (value tipo "2025-08")
-    ({{Select_Mes.selectedOptionValue}} IS NULL)
+    (COALESCE({{Select_Mes.selectedOptionValue}}, '') = '')
     OR (
       EXTRACT(YEAR FROM data_lanca)::text || '-' ||
       LPAD(EXTRACT(MONTH FROM data_lanca)::text, 2, '0') = {{Select_Mes.selectedOptionValue}}
     )
   )
   AND (
-    -- Filtro MultiSelect_Marca (permite todos, um, vários ou nenhum)
-    array_length({{MultiSelect_Marca.selectedOptionValues}}::text[], 1) = 0
-    OR marca = ANY({{MultiSelect_Marca.selectedOptionValues}}::text[])
+    {{MultiSelect_Marca.selectedOptionValues.length}} = 0
+    OR marca = ANY({{MultiSelect_Marca.selectedOptionValues}})
   )
 GROUP BY
-  ano, mes, marca, tipo_movimento
+  mes_ano, marca
 ORDER BY
-  ano DESC, mes DESC, marca, tipo_movimento;
+  mes_ano DESC, marca;
