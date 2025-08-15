@@ -4,7 +4,8 @@ WITH base AS (
     EXTRACT(MONTH FROM m.data_lanca) AS mes,
     m.marca,
     m.tipo_movimento,
-    m.valor_item_nf
+    m.valor_item_nf,
+    m.desc_item
   FROM public.vw_analise_marcas m
   WHERE
     -- Filtro de Mês/Ano (opcional, vindo do Appsmith)
@@ -25,7 +26,8 @@ agg AS (
     marca,
     SUM(CASE WHEN tipo_movimento = 'Venda' THEN valor_item_nf ELSE 0 END) AS valor_vendido,
     SUM(CASE WHEN tipo_movimento = 'Devolução' THEN valor_item_nf ELSE 0 END) AS valor_devolvido,
-    SUM(valor_item_nf) AS valor_referencia
+    SUM(valor_item_nf) AS valor_referencia,
+    SUM(desc_item) AS total_desconto
   FROM base
   GROUP BY ano, mes, marca
 )
@@ -35,6 +37,7 @@ SELECT
   a.valor_vendido,
   a.valor_devolvido,
   a.valor_referencia,
+  a.total_desconto,
   cp.comissao AS perc_comissao,
   ROUND((a.valor_referencia * cp.comissao)::numeric, 2) AS valor_comissao
 FROM agg a

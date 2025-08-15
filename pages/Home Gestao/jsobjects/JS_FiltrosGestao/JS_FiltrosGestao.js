@@ -12,6 +12,10 @@ export default {
     Query_PesoFuturo_Gestao.run();
     Query_MetaDia_Gestao.run();
     Query_VendasHoje_Gestao.run();
+		KPI_Acumulado_Ano.run();
+		KPI_Media_Ano.run();
+		KPI_Periodo_Anterior.run();
+		KPI_Periodo_Atual.run()
   },
 
   onPageLoad: () => {

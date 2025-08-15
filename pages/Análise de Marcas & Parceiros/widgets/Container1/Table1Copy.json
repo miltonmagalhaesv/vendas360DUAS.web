@@ -36,11 +36,12 @@
     "marca",
     "valor_vendido",
     "valor_devolvido",
+    "total_desconto",
     "valor_referencia",
     "perc_comissao",
     "valor_comissao"
   ],
-  "columnUpdatedAt": 1754679673124,
+  "columnUpdatedAt": 1755124410132,
   "columnWidthMap": {
     "marca": 127,
     "mes_ano": 114,
@@ -92,6 +93,9 @@
     },
     {
       "key": "primaryColumns.mes_ano.computedValue"
+    },
+    {
+      "key": "primaryColumns.total_desconto.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -219,6 +223,40 @@
       "label": "% Repasse",
       "notation": "standard",
       "originalId": "perc_comissao",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "total_desconto": {
+      "alias": "total_desconto",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "currency",
+      "computedValue": "{{(() => { const tableData = Table1Copy.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"total_desconto\"])) : total_desconto })()}}",
+      "currencyCode": "BRL",
+      "decimals": 2,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "total_desconto",
+      "index": 5,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Desconto",
+      "notation": "standard",
+      "originalId": "total_desconto",
       "sticky": "",
       "textColor": "",
       "textSize": "0.875rem",

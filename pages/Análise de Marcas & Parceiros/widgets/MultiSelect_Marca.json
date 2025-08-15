@@ -55,7 +55,7 @@
   "mobileRightColumn": 34,
   "mobileTopRow": 5,
   "needsErrorInfo": false,
-  "onOptionChange": "{{Tabela_marca_mes.run()}}{{Query_Comissoes.data}}",
+  "onOptionChange": "{{ \n  Tabela_marca_mes.run(); \n  Query_Comissoes.run(); \n}}",
   "optionLabel": "label",
   "optionValue": "value",
   "parentColumnSpace": 17.9375,

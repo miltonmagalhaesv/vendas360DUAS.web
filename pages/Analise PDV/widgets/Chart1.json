@@ -3,11 +3,11 @@
   "allowScroll": false,
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 60,
+  "bottomRow": 78,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "chartData": {
     "a8yb5ad4vs": {
-      "data": "{{\n  (() => {\n    const rows = Vendas900_DiarioLoja.data || [];\n    const byLoja = _.groupBy(rows, r => r.ponto_venda);\n    return Object.keys(byLoja).map(nomeLoja => ({\n      name: nomeLoja,\n      data: byLoja[nomeLoja].map(r => ({\n        x: r.dia,            // eixo do tempo\n        y: Number(r.qtd_vendas) // contagem >R$900\n      }))\n    }));\n  })()\n}}",
+      "data": "{{\n(() => {\n  const rows = Vendas900_DiarioLoja.data || [];   // << confirmar que é \"||\"\n  if (!Array.isArray(rows) || rows.length === 0) return [];\n\n  // detecta o campo de data que veio do SQL\n  const xKey = ['dia','mes','periodo','data'].find(k => k in rows[0]) || 'dia';\n  const yKey = 'qtd_vendas';\n\n  const byLoja = _.groupBy(rows, r => r.ponto_venda);\n  return Object.keys(byLoja).map(loja => ({\n    seriesName: loja || 'Sem loja',\n    data: byLoja[loja]\n      .filter(r => r[xKey] != null && r[yKey] != null)\n      .sort((a,b) => new Date(a[xKey]) - new Date(b[xKey]))\n      .map(r => ({\n        x: String(r[xKey]).slice(0,10),        // garante 'YYYY-MM-DD'\n        y: Number(r[yKey]) || 0\n      }))\n  }));\n})()\n}}",
       "seriesName": "2023"
     }
   },
@@ -102,7 +102,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 30,
   "showDataPointLabel": false,
-  "topRow": 28,
+  "topRow": 19,
   "type": "CHART_WIDGET",
   "version": 1,
   "widgetId": "kbj6t6qili",

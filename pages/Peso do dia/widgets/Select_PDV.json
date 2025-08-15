@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 20,
+  "bottomRow": 19,
   "boxShadow": "none",
   "defaultOptionValue": "GREEN",
   "dynamicBindingPathList": [
@@ -62,7 +62,7 @@
   "rightColumn": 26,
   "serverSideFiltering": false,
   "sourceData": "{{ getPontosVenda.data.map(p => ({ label: p.nome, value: p.id })) }}",
-  "topRow": 13,
+  "topRow": 12,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "hh7x9u44ir",
