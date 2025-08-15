@@ -15,7 +15,8 @@ export default {
 		KPI_Acumulado_Ano.run();
 		KPI_Media_Ano.run();
 		KPI_Periodo_Anterior.run();
-		KPI_Periodo_Atual.run()
+		KPI_Periodo_Atual.run();
+		GraficoVendasMes.run()
   },
 
   onPageLoad: () => {
