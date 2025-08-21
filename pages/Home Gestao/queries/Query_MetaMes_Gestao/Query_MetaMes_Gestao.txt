@@ -1,5 +1,6 @@
 SELECT 
   SUM(meta_valor) AS meta_valor
 FROM vw_metas_vendas_completo
-WHERE mes_ano = '{{ Select_Mes.selectedOptionValue }}'::date
+WHERE mes_ano >= '{{ DatePicker_Inicial.selectedDate }}'
+  AND mes_ano <= '{{ DatePicker_Final.selectedDate }}'
   AND nome_loja = ANY ({{Select_Lojas.selectedOptionValues }});

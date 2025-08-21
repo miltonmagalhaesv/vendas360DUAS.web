@@ -2,10 +2,10 @@ WITH pesos_por_data AS (
   SELECT 
     data,
     AVG(peso_dia) AS peso_medio
-  FROM vw_horarios_funcionamento_com_local
-  WHERE nome_loja = ANY ({{ Select_Lojas.selectedOptionValues }})
-    AND EXTRACT(MONTH FROM data) = EXTRACT(MONTH FROM '{{ Select_Mes.selectedOptionValue }}'::date)
-    AND EXTRACT(YEAR FROM data) = EXTRACT(YEAR FROM '{{ Select_Mes.selectedOptionValue }}'::date)
+  FROM public.vw_locais_com_horarios
+  WHERE nome = ANY ({{ Select_Lojas.selectedOptionValues }})
+    AND data = '{{ DatePicker_Inicial.selectedDate }}'
+  AND data = '{{ DatePicker_Final.selectedDate }}'
     AND data <= CURRENT_DATE
   GROUP BY data
 )

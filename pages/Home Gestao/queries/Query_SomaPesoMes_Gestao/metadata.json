@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "WITH pesos_por_data AS (\n  SELECT \n    data,\n    AVG(peso_dia) AS peso_medio\n  FROM vw_horarios_funcionamento_com_local\n  WHERE nome_loja = ANY ({{ Select_Lojas.selectedOptionValues }})\n    AND EXTRACT(MONTH FROM data) = EXTRACT(MONTH FROM '{{ Select_Mes.selectedOptionValue }}'::date)\n    AND EXTRACT(YEAR FROM data) = EXTRACT(YEAR FROM '{{ Select_Mes.selectedOptionValue }}'::date)\n    AND data <= CURRENT_DATE\n  GROUP BY data\n)\nSELECT \n  ROUND(SUM(peso_medio), 2) AS total_peso_mes\nFROM pesos_por_data;",
+      "body": "WITH pesos_por_data AS (\n  SELECT \n    data,\n    AVG(peso_dia) AS peso_medio\n  FROM public.vw_locais_com_horarios\n  WHERE nome = ANY ({{ Select_Lojas.selectedOptionValues }})\n    AND data = '{{ DatePicker_Inicial.selectedDate }}'\n  AND data = '{{ DatePicker_Final.selectedDate }}'\n    AND data <= CURRENT_DATE\n  GROUP BY data\n)\nSELECT \n  ROUND(SUM(peso_medio), 2) AS total_peso_mes\nFROM pesos_por_data;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

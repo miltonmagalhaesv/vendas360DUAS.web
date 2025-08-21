@@ -1,14 +1,12 @@
 WITH pesos_por_data AS (
   SELECT 
-    data,
-    AVG(peso_dia) AS peso_medio
-  FROM vw_horarios_funcionamento_com_local
-  WHERE nome_loja = ANY ({{ Select_Lojas.selectedOptionValues }})
-    AND EXTRACT(MONTH FROM data) = EXTRACT(MONTH FROM '{{ Select_Mes.selectedOptionValue }}'::date)
-    AND EXTRACT(YEAR FROM data) = EXTRACT(YEAR FROM '{{ Select_Mes.selectedOptionValue }}'::date)
-    AND data > CURRENT_DATE
-  GROUP BY data
+    h.data::date AS dia,
+    AVG(h.peso_dia) AS peso_medio
+  FROM public.vw_locais_com_horarios h
+  WHERE
+    h.nome = ANY ({{ Select_Lojas.selectedOptionValues }})
+    AND h.data::date >= {{ DatePicker_Inicial.selectedDate }}::date
+    AND h.data::date <= {{ DatePicker_Final.selectedDate }}::date
+  GROUP BY h.data::date
 )
-SELECT 
-  ROUND(SUM(peso_medio), 2) AS total_peso_futuro
-FROM pesos_por_data;
+SELECT ROUND(COALESCE(SUM(CASE WHEN dia > current_date THEN peso_medio ELSE 0 END), 0), 2) AS total_peso_futuro;
