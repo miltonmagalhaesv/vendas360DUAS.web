@@ -3,10 +3,14 @@
   "borderRadius": "0.375rem",
   "bottomRow": 4,
   "boxShadow": "none",
-  "buttonColor": "#ffffff",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "SECONDARY",
   "disabledWhenInvalid": false,
-  "dynamicBindingPathList": [],
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "iconAlign": "left",
   "isDefaultClickDisabled": true,

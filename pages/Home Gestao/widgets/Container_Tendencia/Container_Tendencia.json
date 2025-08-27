@@ -1,15 +1,15 @@
 {
   "animateLoading": true,
   "backgroundColor": "",
-  "borderColor": "",
+  "borderColor": "{{appsmith.theme.colors.backgroundColor}}",
   "borderRadius": "0.375rem",
-  "borderWidth": "0\t",
-  "bottomRow": 151,
+  "borderWidth": "1",
+  "bottomRow": 185,
   "boxShadow": "none",
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 400,
+      "bottomRow": 1010,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -54,6 +54,9 @@
   "dynamicBindingPathList": [
     {
       "key": "isVisible"
+    },
+    {
+      "key": "borderColor"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -68,7 +71,7 @@
   "isLoading": false,
   "isVisible": "{{\n  (() => {\n    const mesSelecionado = moment(Select_Mes.selectedOptionValue).format(\"MM/YYYY\");\n    const mesAtual = moment().format(\"MM/YYYY\");\n    return mesSelecionado === mesAtual;\n  })()\n}}",
   "key": "2nob2dho66",
-  "leftColumn": 12,
+  "leftColumn": 11,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 10,
   "minWidth": 450,
@@ -77,8 +80,8 @@
   "mobileRightColumn": 9,
   "mobileTopRow": 47,
   "needsErrorInfo": false,
-  "originalBottomRow": 151,
-  "originalTopRow": 111,
+  "originalBottomRow": 185,
+  "originalTopRow": 84,
   "parentColumnSpace": 6.53125,
   "parentId": "0",
   "parentRowSpace": 10,
@@ -86,7 +89,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "shouldScrollContents": true,
-  "topRow": 111,
+  "topRow": 84,
   "type": "CONTAINER_WIDGET",
   "version": 1,
   "widgetId": "x690jqqiiy",

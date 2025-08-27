@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 194,
+  "bottomRow": 193,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -24,7 +24,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "llsli8daw7",
-  "leftColumn": 0,
+  "leftColumn": 17,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -33,7 +33,7 @@
   "mobileRightColumn": 28,
   "mobileTopRow": 15,
   "needsErrorInfo": false,
-  "originalBottomRow": 194,
+  "originalBottomRow": 193,
   "originalTopRow": 189,
   "overflow": "NONE",
   "parentColumnSpace": 6.84375,
@@ -41,7 +41,7 @@
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 12,
+  "rightColumn": 42,
   "shouldTruncate": false,
   "text": "Última atualização: {{ moment.utc(getUltimaImportacao.data[0]?.data_impo).format(\"DD/MM/YYYY [às] HH:mm\") }}",
   "textAlign": "CENTER",
