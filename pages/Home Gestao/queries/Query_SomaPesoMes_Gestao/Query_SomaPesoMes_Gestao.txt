@@ -1,14 +1,31 @@
-WITH pesos_por_data AS (
+WITH limites AS (
+  SELECT
+    '{{ moment(DatePicker_Inicial.selectedDate).format("YYYY-MM-DD") }}'::date AS dt_ini_ref,
+    '{{ moment(DatePicker_Final.selectedDate).format("YYYY-MM-DD") }}'::date   AS dt_fim_ref
+),
+faixas AS (
+  SELECT
+    date_trunc('month', dt_ini_ref)::date                                AS dt_ini_mes,
+    (date_trunc('month', dt_fim_ref) + INTERVAL '1 month - 1 day')::date AS dt_fim_mes
+  FROM limites
+),
+faixa_cap AS (
+  SELECT
+    dt_ini_mes,
+    LEAST(dt_fim_mes, CURRENT_DATE) AS dt_fim_cap  -- corta no dia atual
+  FROM faixas
+),
+pesos_por_data AS (
   SELECT 
-    data,
-    AVG(peso_dia) AS peso_medio
-  FROM public.vw_locais_com_horarios
-  WHERE nome = ANY ({{ Select_Lojas.selectedOptionValues }})
-    AND data = '{{ DatePicker_Inicial.selectedDate }}'
-  AND data = '{{ DatePicker_Final.selectedDate }}'
-    AND data <= CURRENT_DATE
-  GROUP BY data
+    h.data::date AS dia,
+    AVG(h.peso_dia) AS peso_medio
+  FROM public.vw_locais_com_horarios h
+  CROSS JOIN faixa_cap f
+  WHERE
+    h.nome = ANY ({{ Select_Lojas.selectedOptionValues }})
+    AND h.data::date BETWEEN f.dt_ini_mes AND f.dt_fim_cap
+  GROUP BY h.data::date
 )
-SELECT 
-  ROUND(SUM(peso_medio), 2) AS total_peso_mes
+SELECT
+  ROUND(COALESCE(SUM(peso_medio), 0), 2) AS total_peso_mes
 FROM pesos_por_data;

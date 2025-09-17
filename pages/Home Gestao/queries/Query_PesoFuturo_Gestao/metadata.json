@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "WITH pesos_por_data AS (\n  SELECT \n    h.data::date AS dia,\n    AVG(h.peso_dia) AS peso_medio\n  FROM public.vw_locais_com_horarios h\n  WHERE\n    h.nome = ANY ({{ Select_Lojas.selectedOptionValues }})\n    AND h.data::date >= {{ DatePicker_Inicial.selectedDate }}::date\n    AND h.data::date <= {{ DatePicker_Final.selectedDate }}::date\n  GROUP BY h.data::date\n)\nSELECT ROUND(COALESCE(SUM(CASE WHEN dia > current_date THEN peso_medio ELSE 0 END), 0), 2) AS total_peso_futuro;",
+      "body": "WITH limites AS (\n  SELECT\n    -- Datas vindas do DatePicker só para referência de mês\n    '{{ moment(DatePicker_Inicial.selectedDate).format(\"YYYY-MM-DD\") }}'::date AS dt_ini_ref,\n    '{{ moment(DatePicker_Final.selectedDate).format(\"YYYY-MM-DD\") }}'::date   AS dt_fim_ref\n),\nfaixas AS (\n  SELECT\n    date_trunc('month', dt_ini_ref)::date                                         AS dt_ini_mes,\n    (date_trunc('month', dt_fim_ref) + INTERVAL '1 month - 1 day')::date          AS dt_fim_mes\n  FROM limites\n),\npesos_por_data AS (\n  SELECT \n    h.data::date AS dia,\n    AVG(h.peso_dia) AS peso_medio\n  FROM public.vw_locais_com_horarios h\n  CROSS JOIN faixas f\n  WHERE\n    h.nome = ANY ({{ Select_Lojas.selectedOptionValues }})\n    AND h.data::date BETWEEN f.dt_ini_mes AND f.dt_fim_mes\n  GROUP BY h.data::date\n)\nSELECT\n  ROUND(COALESCE(SUM(peso_medio) FILTER (WHERE dia > current_date), 0), 2) AS total_peso_futuro\nFROM pesos_por_data;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

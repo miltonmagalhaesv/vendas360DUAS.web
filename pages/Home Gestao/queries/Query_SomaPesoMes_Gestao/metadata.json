@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "WITH pesos_por_data AS (\n  SELECT \n    data,\n    AVG(peso_dia) AS peso_medio\n  FROM public.vw_locais_com_horarios\n  WHERE nome = ANY ({{ Select_Lojas.selectedOptionValues }})\n    AND data = '{{ DatePicker_Inicial.selectedDate }}'\n  AND data = '{{ DatePicker_Final.selectedDate }}'\n    AND data <= CURRENT_DATE\n  GROUP BY data\n)\nSELECT \n  ROUND(SUM(peso_medio), 2) AS total_peso_mes\nFROM pesos_por_data;",
+      "body": "WITH limites AS (\n  SELECT\n    '{{ moment(DatePicker_Inicial.selectedDate).format(\"YYYY-MM-DD\") }}'::date AS dt_ini_ref,\n    '{{ moment(DatePicker_Final.selectedDate).format(\"YYYY-MM-DD\") }}'::date   AS dt_fim_ref\n),\nfaixas AS (\n  SELECT\n    date_trunc('month', dt_ini_ref)::date                                AS dt_ini_mes,\n    (date_trunc('month', dt_fim_ref) + INTERVAL '1 month - 1 day')::date AS dt_fim_mes\n  FROM limites\n),\nfaixa_cap AS (\n  SELECT\n    dt_ini_mes,\n    LEAST(dt_fim_mes, CURRENT_DATE) AS dt_fim_cap  -- corta no dia atual\n  FROM faixas\n),\npesos_por_data AS (\n  SELECT \n    h.data::date AS dia,\n    AVG(h.peso_dia) AS peso_medio\n  FROM public.vw_locais_com_horarios h\n  CROSS JOIN faixa_cap f\n  WHERE\n    h.nome = ANY ({{ Select_Lojas.selectedOptionValues }})\n    AND h.data::date BETWEEN f.dt_ini_mes AND f.dt_fim_cap\n  GROUP BY h.data::date\n)\nSELECT\n  ROUND(COALESCE(SUM(peso_medio), 0), 2) AS total_peso_mes\nFROM pesos_por_data;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

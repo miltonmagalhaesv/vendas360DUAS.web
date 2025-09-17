@@ -1,12 +1,26 @@
-WITH pesos_por_data AS (
+WITH limites AS (
+  SELECT
+    -- Datas vindas do DatePicker só para referência de mês
+    '{{ moment(DatePicker_Inicial.selectedDate).format("YYYY-MM-DD") }}'::date AS dt_ini_ref,
+    '{{ moment(DatePicker_Final.selectedDate).format("YYYY-MM-DD") }}'::date   AS dt_fim_ref
+),
+faixas AS (
+  SELECT
+    date_trunc('month', dt_ini_ref)::date                                         AS dt_ini_mes,
+    (date_trunc('month', dt_fim_ref) + INTERVAL '1 month - 1 day')::date          AS dt_fim_mes
+  FROM limites
+),
+pesos_por_data AS (
   SELECT 
     h.data::date AS dia,
     AVG(h.peso_dia) AS peso_medio
   FROM public.vw_locais_com_horarios h
+  CROSS JOIN faixas f
   WHERE
     h.nome = ANY ({{ Select_Lojas.selectedOptionValues }})
-    AND h.data::date >= {{ DatePicker_Inicial.selectedDate }}::date
-    AND h.data::date <= {{ DatePicker_Final.selectedDate }}::date
+    AND h.data::date BETWEEN f.dt_ini_mes AND f.dt_fim_mes
   GROUP BY h.data::date
 )
-SELECT ROUND(COALESCE(SUM(CASE WHEN dia > current_date THEN peso_medio ELSE 0 END), 0), 2) AS total_peso_futuro;
+SELECT
+  ROUND(COALESCE(SUM(peso_medio) FILTER (WHERE dia > current_date), 0), 2) AS total_peso_futuro
+FROM pesos_por_data;
