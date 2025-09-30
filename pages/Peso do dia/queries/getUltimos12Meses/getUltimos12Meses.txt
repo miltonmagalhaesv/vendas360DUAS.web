@@ -1,3 +1,11 @@
+WITH limites AS (
+  SELECT
+    DATE '2025-01-01' AS inicio,
+    date_trunc(
+      'month',
+      make_date((extract(year FROM current_date)::int) + 1, 5, 1)  -- Maio do próximo ano
+    )::date AS fim
+)
 SELECT 
   to_char(mes, 'YYYY-MM') AS value,
   CASE extract(month from mes)
@@ -15,7 +23,7 @@ SELECT
     WHEN 12 THEN 'Dezembro'
   END || '/ ' || extract(year from mes) AS label
 FROM (
-  SELECT date_trunc('month', current_date) - (INTERVAL '1 month' * g) AS mes
-  FROM generate_series(0, 11) g
-) ultimos_meses
-ORDER BY mes DESC;
+  SELECT generate_series(inicio, fim, interval '1 month')::date AS mes
+  FROM limites
+) meses
+ORDER BY mes;
