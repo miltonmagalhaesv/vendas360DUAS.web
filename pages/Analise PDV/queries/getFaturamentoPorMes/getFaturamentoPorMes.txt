@@ -1,10 +1,12 @@
 SELECT
-  EXTRACT(YEAR FROM data_lanca) AS ano,
-  TO_CHAR(date_trunc('month', data_lanca), 'Mon') AS mes_nome,
-  date_trunc('month', data_lanca)::date AS mes_data,
-  ROUND(SUM(valor_liquido)::numeric, 2) AS valor_faturado
+  EXTRACT(YEAR FROM data_lanca)                    AS ano,
+  TO_CHAR(date_trunc('month', data_lanca), 'Mon')  AS mes_nome,
+  date_trunc('month', data_lanca)::date            AS mes_data,
+  ROUND(SUM(valor_liquido)::numeric, 2)            AS valor_faturado
 FROM public.vw_resumo_vend_devo
-WHERE oper = 'S - Venda'
-  AND EXTRACT(YEAR FROM data_lanca) IN (EXTRACT(YEAR FROM CURRENT_DATE), EXTRACT(YEAR FROM CURRENT_DATE) - 1)
+WHERE EXTRACT(YEAR FROM data_lanca) IN (
+  EXTRACT(YEAR FROM CURRENT_DATE),
+  EXTRACT(YEAR FROM CURRENT_DATE) - 1
+)
 GROUP BY 1, 2, 3
 ORDER BY mes_data, ano;

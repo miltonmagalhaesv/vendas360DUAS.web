@@ -1,5 +1,4 @@
--- getPVs
 SELECT DISTINCT ponto_venda
 FROM public.vw_resumo_vend_devo
-WHERE oper = 'S - Venda'
+WHERE ponto_venda IS NOT NULL
 ORDER BY 1;

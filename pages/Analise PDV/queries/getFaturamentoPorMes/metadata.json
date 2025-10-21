@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n  EXTRACT(YEAR FROM data_lanca) AS ano,\n  TO_CHAR(date_trunc('month', data_lanca), 'Mon') AS mes_nome,\n  date_trunc('month', data_lanca)::date AS mes_data,\n  ROUND(SUM(valor_liquido)::numeric, 2) AS valor_faturado\nFROM public.vw_resumo_vend_devo\nWHERE oper = 'S - Venda'\n  AND EXTRACT(YEAR FROM data_lanca) IN (EXTRACT(YEAR FROM CURRENT_DATE), EXTRACT(YEAR FROM CURRENT_DATE) - 1)\nGROUP BY 1, 2, 3\nORDER BY mes_data, ano;",
+      "body": "SELECT\n  EXTRACT(YEAR FROM data_lanca)                    AS ano,\n  TO_CHAR(date_trunc('month', data_lanca), 'Mon')  AS mes_nome,\n  date_trunc('month', data_lanca)::date            AS mes_data,\n  ROUND(SUM(valor_liquido)::numeric, 2)            AS valor_faturado\nFROM public.vw_resumo_vend_devo\nWHERE EXTRACT(YEAR FROM data_lanca) IN (\n  EXTRACT(YEAR FROM CURRENT_DATE),\n  EXTRACT(YEAR FROM CURRENT_DATE) - 1\n)\nGROUP BY 1, 2, 3\nORDER BY mes_data, ano;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -25,7 +25,7 @@
     "dynamicBindingPathList": [],
     "name": "getFaturamentoPorMes",
     "pageId": "Analise PDV",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

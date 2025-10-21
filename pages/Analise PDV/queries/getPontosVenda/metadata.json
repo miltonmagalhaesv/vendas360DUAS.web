@@ -1,11 +1,11 @@
 {
   "gitSyncId": "68750378005e0954974296b0_9560ffac-f165-4309-8e20-90619983ca59",
-  "id": "Analise PDV_getPVs",
+  "id": "Analise PDV_getPontosVenda",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "-- getPVs\nSELECT DISTINCT ponto_venda\nFROM public.vw_resumo_vend_devo\nWHERE oper = 'S - Venda'\nORDER BY 1;",
+      "body": "SELECT DISTINCT ponto_venda\nFROM public.vw_resumo_vend_devo\nWHERE ponto_venda IS NOT NULL\nORDER BY 1;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -23,9 +23,9 @@
       "pluginId": "postgres-plugin"
     },
     "dynamicBindingPathList": [],
-    "name": "getPVs",
+    "name": "getPontosVenda",
     "pageId": "Analise PDV",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

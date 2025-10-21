@@ -3,22 +3,22 @@
   "allowScroll": false,
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 52,
+  "bottomRow": 50,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "chartData": {
+    "4rvc6fhim3": {
+      "data": "{{\n  getFaturamentoPV.data\n    .filter(r =>\n      r.ponto_venda === selPV.selectedOptionValue &&\n      r.ano === (Number(selAno.selectedOptionValue) - 1)\n    )\n    .map(r => ({\n      x: r.mes_nome,\n      y: Number(r.valor_faturado)\n    }))\n}}",
+      "seriesName": "Ano Anterior"
+    },
     "ibkem8y33w": {
       "color": "",
-      "data": "{{ \n  getVendasPorMes.data\n    .filter(i => i.ano === new Date().getFullYear())\n    .map(i => ({ x: i.mes_nome, y: i.qtd_vendas }))\n}}",
+      "data": "{{\n  getFaturamentoPV.data\n    .filter(r =>\n      r.ponto_venda === selPV.selectedOptionValue &&\n      r.ano === Number(selAno.selectedOptionValue)\n    )\n    .map(r => ({\n      x: r.mes_nome,\n      y: Number(r.valor_faturado)\n    }))\n}}",
       "seriesName": "Ano Atual"
-    },
-    "iea8i7vu8o": {
-      "data": "{{ \n  getVendasPorMes.data\n    .filter(i => i.ano === new Date().getFullYear() - 1)\n    .map(i => ({ x: i.mes_nome, y: i.qtd_vendas }))\n}}",
-      "seriesName": "Ano Anterior"
     }
   },
-  "chartName": "Quantidade Vendas por Mês",
+  "chartName": "Faturamento por Mês",
   "chartType": "LINE_CHART",
-  "customEChartConfig": "{{\n{\n  \"dataset\": {\n    \"source\": [\n      [\n        \"Day\",\n        \"Baidu\",\n        \"Google\",\n        \"Bing\"\n      ],\n      [\n        \"Mon\",\n        620,\n        120,\n        60\n      ],\n      [\n        \"Tue\",\n        732,\n        132,\n        72\n      ],\n      [\n        \"Wed\",\n        701,\n        101,\n        71\n      ],\n      [\n        \"Thu\",\n        734,\n        134,\n        74\n      ],\n      [\n        \"Fri\",\n        1090,\n        290,\n        190\n      ],\n      [\n        \"Sat\",\n        1130,\n        230,\n        130\n      ],\n      [\n        \"Sun\",\n        1120,\n        220,\n        110\n      ]\n    ]\n  },\n  \"tooltip\": {\n    \"trigger\": \"axis\",\n    \"axisPointer\": {\n      \"type\": \"shadow\"\n    }\n  },\n  \"title\": {\n    \"text\": \"Search Engine Usage\",\n    \"left\": \"center\",\n    \"textStyle\": {\n      \"width\": 200,\n      \"overflow\": \"truncate\"\n    }\n  },\n  \"legend\": {\n    \"top\": 40,\n    \"type\": \"scroll\"\n  },\n  \"grid\": {\n    \"left\": 15,\n    \"right\": 15,\n    \"bottom\": 30,\n    \"top\": 100,\n    \"containLabel\": true\n  },\n  \"xAxis\": [\n    {\n      \"type\": \"category\"\n    }\n  ],\n  \"yAxis\": [\n    {\n      \"type\": \"value\"\n    }\n  ],\n  \"series\": [\n    {\n      \"type\": \"bar\",\n      \"stack\": \"Search Engine\"\n    },\n    {\n      \"type\": \"bar\",\n      \"stack\": \"Search Engine\"\n    },\n    {\n      \"type\": \"bar\",\n      \"stack\": \"Search Engine\"\n    }\n  ]\n}\n}}",
+  "customEChartConfig": "{{ ((chartType) => ( \n(() => {\n  const data = getFaturamentoPV.data.filter(r => r.ponto_venda === selPV.selectedOptionValue);\n  const meses = [...new Set(data.map(r => r.mes_nome))];\n  const anoAtual = Number(selAno.selectedOptionValue);\n  const anoAnterior = anoAtual - 1;\n\n  const valoresAtual = meses.map(m =>\n    (data.find(r => r.mes_nome === m && r.ano === anoAtual)?.valor_faturado) || 0\n  );\n  const valoresAnterior = meses.map(m =>\n    (data.find(r => r.mes_nome === m && r.ano === anoAnterior)?.valor_faturado) || 0\n  );\n\n  return {\n    title: {\n      text: `Faturamento Mensal — ${selPV.selectedOptionLabel || ''} (${anoAtual})`,\n      left: 'center',\n      textStyle: {\n        fontSize: 16,\n        fontWeight: 'bold',\n        color: '#333'\n      }\n    },\n    tooltip: { trigger: 'axis' },\n    legend: {\n      data: ['Ano Atual', 'Ano Anterior'],\n      top: 30\n    },\n    xAxis: { type: 'category', data: meses },\n    yAxis: {\n      type: 'value',\n      axisLabel: {\n        formatter: function (v) {\n          return 'R$ ' + Number(v).toLocaleString('pt-BR');\n        }\n      }\n    },\n    series: [\n      { name: 'Ano Atual', type: 'bar', data: valoresAtual },\n      { name: 'Ano Anterior', type: 'line', data: valoresAnterior }\n    ],\n    color: ['#553DE9', '#AAAAAA']\n  };\n})()\n))(Chart1.chartType) }}",
   "customFusionChartConfig": {
     "dataSource": {
       "chart": {
@@ -68,9 +68,6 @@
   },
   "dynamicBindingPathList": [
     {
-      "key": "customEChartConfig"
-    },
-    {
       "key": "borderRadius"
     },
     {
@@ -83,10 +80,13 @@
       "key": "fontFamily"
     },
     {
-      "key": "chartData.iea8i7vu8o.data"
+      "key": "chartData.ibkem8y33w.data"
     },
     {
-      "key": "chartData.ibkem8y33w.data"
+      "key": "customEChartConfig"
+    },
+    {
+      "key": "chartData.4rvc6fhim3.data"
     }
   ],
   "dynamicPropertyPathList": [],
@@ -110,8 +110,9 @@
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 37,
+  "setAdaptiveYMin": false,
   "showDataPointLabel": false,
-  "topRow": 20,
+  "topRow": 18,
   "type": "CHART_WIDGET",
   "version": 1,
   "widgetId": "ylysam09p1",

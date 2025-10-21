@@ -1,0 +1,7 @@
+SELECT
+  ponto_venda,
+  ROUND(SUM(valor_liquido)::numeric,2) AS faturamento
+FROM public.vw_resumo_vend_devo
+WHERE EXTRACT(YEAR FROM data_lanca) = {{ Number(selAno.selectedOptionValue) }}
+GROUP BY 1
+ORDER BY faturamento DESC;
