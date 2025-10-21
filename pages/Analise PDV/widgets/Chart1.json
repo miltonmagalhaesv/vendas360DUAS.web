@@ -3,15 +3,20 @@
   "allowScroll": false,
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 78,
+  "bottomRow": 52,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "chartData": {
-    "a8yb5ad4vs": {
-      "data": "{{\n(() => {\n  const rows = Vendas900_DiarioLoja.data || [];   // << confirmar que é \"||\"\n  if (!Array.isArray(rows) || rows.length === 0) return [];\n\n  // detecta o campo de data que veio do SQL\n  const xKey = ['dia','mes','periodo','data'].find(k => k in rows[0]) || 'dia';\n  const yKey = 'qtd_vendas';\n\n  const byLoja = _.groupBy(rows, r => r.ponto_venda);\n  return Object.keys(byLoja).map(loja => ({\n    seriesName: loja || 'Sem loja',\n    data: byLoja[loja]\n      .filter(r => r[xKey] != null && r[yKey] != null)\n      .sort((a,b) => new Date(a[xKey]) - new Date(b[xKey]))\n      .map(r => ({\n        x: String(r[xKey]).slice(0,10),        // garante 'YYYY-MM-DD'\n        y: Number(r[yKey]) || 0\n      }))\n  }));\n})()\n}}",
-      "seriesName": "2023"
+    "ibkem8y33w": {
+      "color": "",
+      "data": "{{ \n  getVendasPorMes.data\n    .filter(i => i.ano === new Date().getFullYear())\n    .map(i => ({ x: i.mes_nome, y: i.qtd_vendas }))\n}}",
+      "seriesName": "Ano Atual"
+    },
+    "iea8i7vu8o": {
+      "data": "{{ \n  getVendasPorMes.data\n    .filter(i => i.ano === new Date().getFullYear() - 1)\n    .map(i => ({ x: i.mes_nome, y: i.qtd_vendas }))\n}}",
+      "seriesName": "Ano Anterior"
     }
   },
-  "chartName": "Sales Report",
+  "chartName": "Quantidade Vendas por Mês",
   "chartType": "LINE_CHART",
   "customEChartConfig": "{{\n{\n  \"dataset\": {\n    \"source\": [\n      [\n        \"Day\",\n        \"Baidu\",\n        \"Google\",\n        \"Bing\"\n      ],\n      [\n        \"Mon\",\n        620,\n        120,\n        60\n      ],\n      [\n        \"Tue\",\n        732,\n        132,\n        72\n      ],\n      [\n        \"Wed\",\n        701,\n        101,\n        71\n      ],\n      [\n        \"Thu\",\n        734,\n        134,\n        74\n      ],\n      [\n        \"Fri\",\n        1090,\n        290,\n        190\n      ],\n      [\n        \"Sat\",\n        1130,\n        230,\n        130\n      ],\n      [\n        \"Sun\",\n        1120,\n        220,\n        110\n      ]\n    ]\n  },\n  \"tooltip\": {\n    \"trigger\": \"axis\",\n    \"axisPointer\": {\n      \"type\": \"shadow\"\n    }\n  },\n  \"title\": {\n    \"text\": \"Search Engine Usage\",\n    \"left\": \"center\",\n    \"textStyle\": {\n      \"width\": 200,\n      \"overflow\": \"truncate\"\n    }\n  },\n  \"legend\": {\n    \"top\": 40,\n    \"type\": \"scroll\"\n  },\n  \"grid\": {\n    \"left\": 15,\n    \"right\": 15,\n    \"bottom\": 30,\n    \"top\": 100,\n    \"containLabel\": true\n  },\n  \"xAxis\": [\n    {\n      \"type\": \"category\"\n    }\n  ],\n  \"yAxis\": [\n    {\n      \"type\": \"value\"\n    }\n  ],\n  \"series\": [\n    {\n      \"type\": \"bar\",\n      \"stack\": \"Search Engine\"\n    },\n    {\n      \"type\": \"bar\",\n      \"stack\": \"Search Engine\"\n    },\n    {\n      \"type\": \"bar\",\n      \"stack\": \"Search Engine\"\n    }\n  ]\n}\n}}",
   "customFusionChartConfig": {
@@ -78,35 +83,39 @@
       "key": "fontFamily"
     },
     {
-      "key": "chartData.a8yb5ad4vs.data"
+      "key": "chartData.iea8i7vu8o.data"
+    },
+    {
+      "key": "chartData.ibkem8y33w.data"
     }
   ],
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [],
   "flexVerticalAlignment": "start",
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
   "isLoading": false,
   "isVisible": true,
-  "key": "6hyppx9gp5",
+  "key": "tu6yl3qx5b",
   "labelOrientation": "auto",
-  "leftColumn": 14,
+  "leftColumn": 12,
   "minWidth": 450,
-  "mobileBottomRow": 63,
+  "mobileBottomRow": 45,
   "mobileLeftColumn": 11,
-  "mobileRightColumn": 27,
-  "mobileTopRow": 31,
+  "mobileRightColumn": 35,
+  "mobileTopRow": 13,
   "needsErrorInfo": true,
-  "parentColumnSpace": 19.8125,
+  "parentColumnSpace": 17.9375,
   "parentId": "0",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 30,
+  "rightColumn": 37,
   "showDataPointLabel": false,
-  "topRow": 19,
+  "topRow": 20,
   "type": "CHART_WIDGET",
   "version": 1,
-  "widgetId": "kbj6t6qili",
+  "widgetId": "ylysam09p1",
   "widgetName": "Chart1",
-  "xAxisName": "Product Line",
-  "yAxisName": "Revenue($)"
+  "xAxisName": "Mês",
+  "yAxisName": "Quantidade de Vendas"
 }

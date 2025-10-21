@@ -42,9 +42,10 @@
     "Jul",
     "Ago",
     "Set",
+    "Out",
     "Total"
   ],
-  "columnUpdatedAt": 1759329298017,
+  "columnUpdatedAt": 1761078787641,
   "columnWidthMap": {
     "Jul": 187,
     "Jun": 172,
@@ -104,6 +105,9 @@
     },
     {
       "key": "primaryColumns.Set.computedValue"
+    },
+    {
+      "key": "primaryColumns.Out.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -437,6 +441,40 @@
       "label": "Mar",
       "notation": "standard",
       "originalId": "Mar",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "Out": {
+      "alias": "Out",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Out\"])) : Out })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "Out",
+      "index": 10,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Out",
+      "notation": "standard",
+      "originalId": "Out",
       "sticky": "",
       "textColor": "",
       "textSize": "0.875rem",

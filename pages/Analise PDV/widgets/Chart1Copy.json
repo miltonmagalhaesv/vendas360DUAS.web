@@ -2,21 +2,20 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "allowScroll": false,
   "animateLoading": true,
-  "borderRadius": "0.375rem",
-  "bottomRow": 31,
-  "boxShadow": "none",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 52,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "chartData": {
-    "jrcjqan2g4": {
-      "data": "{{ \n  getFaturamentoPorMes.data\n    .filter(item => item.ano === new Date().getFullYear() - 1)\n    .map(item => ({\n      x: item.mes_nome,\n      y: item.valor_faturado\n    }))\n}}",
-      "seriesName": "Ano Anterior"
-    },
-    "lpb3d47ouy": {
-      "color": "#553de9",
+    "ibkem8y33w": {
       "data": "{{ \n  getFaturamentoPorMes.data\n    .filter(item => item.ano === new Date().getFullYear())\n    .map(item => ({\n      x: item.mes_nome,\n      y: item.valor_faturado\n    }))\n}}",
       "seriesName": "Ano Atual"
+    },
+    "iea8i7vu8o": {
+      "data": "{{ \n  getFaturamentoPorMes.data\n    .filter(item => item.ano === new Date().getFullYear() - 1)\n    .map(item => ({\n      x: item.mes_nome,\n      y: item.valor_faturado\n    }))\n}}",
+      "seriesName": "Ano Anterior"
     }
   },
-  "chartName": "",
+  "chartName": "Quantidade Vendas por Mês",
   "chartType": "LINE_CHART",
   "customEChartConfig": "{{\n{\n  \"dataset\": {\n    \"source\": [\n      [\n        \"Day\",\n        \"Baidu\",\n        \"Google\",\n        \"Bing\"\n      ],\n      [\n        \"Mon\",\n        620,\n        120,\n        60\n      ],\n      [\n        \"Tue\",\n        732,\n        132,\n        72\n      ],\n      [\n        \"Wed\",\n        701,\n        101,\n        71\n      ],\n      [\n        \"Thu\",\n        734,\n        134,\n        74\n      ],\n      [\n        \"Fri\",\n        1090,\n        290,\n        190\n      ],\n      [\n        \"Sat\",\n        1130,\n        230,\n        130\n      ],\n      [\n        \"Sun\",\n        1120,\n        220,\n        110\n      ]\n    ]\n  },\n  \"tooltip\": {\n    \"trigger\": \"axis\",\n    \"axisPointer\": {\n      \"type\": \"shadow\"\n    }\n  },\n  \"title\": {\n    \"text\": \"Search Engine Usage\",\n    \"left\": \"center\",\n    \"textStyle\": {\n      \"width\": 200,\n      \"overflow\": \"truncate\"\n    }\n  },\n  \"legend\": {\n    \"top\": 40,\n    \"type\": \"scroll\"\n  },\n  \"grid\": {\n    \"left\": 15,\n    \"right\": 15,\n    \"bottom\": 30,\n    \"top\": 100,\n    \"containLabel\": true\n  },\n  \"xAxis\": [\n    {\n      \"type\": \"category\"\n    }\n  ],\n  \"yAxis\": [\n    {\n      \"type\": \"value\"\n    }\n  ],\n  \"series\": [\n    {\n      \"type\": \"bar\",\n      \"stack\": \"Search Engine\"\n    },\n    {\n      \"type\": \"bar\",\n      \"stack\": \"Search Engine\"\n    },\n    {\n      \"type\": \"bar\",\n      \"stack\": \"Search Engine\"\n    }\n  ]\n}\n}}",
   "customFusionChartConfig": {
@@ -71,16 +70,22 @@
       "key": "customEChartConfig"
     },
     {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
       "key": "accentColor"
     },
     {
       "key": "fontFamily"
     },
     {
-      "key": "chartData.lpb3d47ouy.data"
+      "key": "chartData.ibkem8y33w.data"
     },
     {
-      "key": "chartData.jrcjqan2g4.data"
+      "key": "chartData.iea8i7vu8o.data"
     }
   ],
   "dynamicPropertyPathList": [],
@@ -89,30 +94,27 @@
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
   "isLoading": false,
   "isVisible": true,
-  "key": "2wekgt5vg7",
+  "key": "tu6yl3qx5b",
   "labelOrientation": "auto",
-  "leftColumn": 1,
+  "leftColumn": 38,
   "minWidth": 450,
-  "mobileBottomRow": 78,
-  "mobileLeftColumn": 0,
-  "mobileRightColumn": 9,
-  "mobileTopRow": 46,
+  "mobileBottomRow": 45,
+  "mobileLeftColumn": 11,
+  "mobileRightColumn": 35,
+  "mobileTopRow": 13,
   "needsErrorInfo": true,
-  "originalBottomRow": 29,
-  "originalTopRow": 11,
   "parentColumnSpace": 17.9375,
-  "parentId": "22eattohj5",
+  "parentId": "0",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 63,
-  "setAdaptiveYMin": false,
   "showDataPointLabel": false,
-  "topRow": 13,
+  "topRow": 20,
   "type": "CHART_WIDGET",
   "version": 1,
-  "widgetId": "skpghakkti",
-  "widgetName": "Chart_Vendas_Ano",
-  "xAxisName": "",
-  "yAxisName": ""
+  "widgetId": "eajogtr1of",
+  "widgetName": "Chart1Copy",
+  "xAxisName": "Mês",
+  "yAxisName": "Quantidade de Vendas"
 }
