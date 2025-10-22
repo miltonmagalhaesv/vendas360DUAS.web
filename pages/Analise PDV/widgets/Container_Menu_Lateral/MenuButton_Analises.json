@@ -21,11 +21,7 @@
       "key": "borderRadius"
     }
   ],
-  "dynamicPropertyPathList": [
-    {
-      "key": "menuItems.menuItem3.onClick"
-    }
-  ],
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [
     {
       "key": "menuItems.menuItem3.onClick"
@@ -68,7 +64,7 @@
       "isDisabled": false,
       "isVisible": true,
       "label": "Ponto de Venda",
-      "onClick": "{{navigateTo('Analise PDV'')}}",
+      "onClick": "{{navigateTo('Analise PDV', {}, 'SAME_WINDOW');}}",
       "widgetId": ""
     }
   },
