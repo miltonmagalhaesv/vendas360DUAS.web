@@ -29,6 +29,9 @@
   "dynamicTriggerPathList": [
     {
       "key": "menuItems.menuItem3.onClick"
+    },
+    {
+      "key": "menuItems.menuItem2.onClick"
     }
   ],
   "iconAlign": "left",
@@ -56,6 +59,7 @@
       "isDisabled": false,
       "isVisible": true,
       "label": "Vendedor",
+      "onClick": "{{navigateTo('Analise Vendedor', {}, 'SAME_WINDOW');}}",
       "widgetId": ""
     },
     "menuItem3": {
