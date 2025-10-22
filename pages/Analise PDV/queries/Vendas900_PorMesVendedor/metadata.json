@@ -25,7 +25,7 @@
     "dynamicBindingPathList": [],
     "name": "Vendas900_PorMesVendedor",
     "pageId": "Analise PDV",
-    "runBehaviour": "ON_PAGE_LOAD",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

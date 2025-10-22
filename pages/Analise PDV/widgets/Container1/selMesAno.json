@@ -1,0 +1,65 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 7,
+  "boxShadow": "none",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => (  moment().startOf('month').format('YYYY-MM-01') ))(selMesAno.options, selMesAno.serverSideFiltering) }}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "defaultOptionValue"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "qs1faubdu5",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelText": "Mês de referência",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 93,
+  "mobileLeftColumn": 13,
+  "mobileRightColumn": 33,
+  "mobileTopRow": 86,
+  "needsErrorInfo": false,
+  "optionLabel": "label",
+  "optionValue": "value",
+  "parentColumnSpace": 17.9375,
+  "parentId": "iucln207hv",
+  "parentRowSpace": 10,
+  "placeholderText": "Selecione o mês",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 19,
+  "serverSideFiltering": false,
+  "sourceData": "{{\n  (() => {\n    const meses = [\"Janeiro \",\"Fevereiro \",\"Março \",\"Abril \",\"Maio \",\"Junho \",\"Julho \",\"Agosto \",\"Setembro \",\"Outubro \",\"Novembro \",\"Dezembro \"];\n    const hoje = new Date();\n    return Array.from({length: 18}).map((_, i) => {\n      const d = new Date(hoje.getFullYear(), hoje.getMonth() - i, 1);\n      const label = `${meses[d.getMonth()]}/ ${String(d.getFullYear()).slice(-2)}`;\n      const value = d.toISOString().split('T')[0]; // exemplo: 2025-08-01\n      return { label, value };\n    });\n  })()\n}}",
+  "topRow": 0,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "ftm83v05s9",
+  "widgetName": "selMesAno"
+}

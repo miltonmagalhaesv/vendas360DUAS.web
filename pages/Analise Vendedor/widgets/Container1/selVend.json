@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 12,
+  "bottomRow": 18,
   "boxShadow": "none",
   "defaultOptionValue": "",
   "dynamicBindingPathList": [
@@ -57,7 +57,7 @@
   "rightColumn": 46,
   "serverSideFiltering": false,
   "sourceData": "{{\n  _.uniq(\n    (getVendAno.data || []).map(r => r.vendedor).filter(Boolean)\n  ).map(v => ({ label: v, value: v }))\n}}",
-  "topRow": 5,
+  "topRow": 11,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "ko01l75r0s",

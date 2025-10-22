@@ -1,0 +1,43 @@
+WITH base AS (
+  SELECT
+    nome_loja,
+    nome_vendedor,
+    COALESCE(meta_valor,    0)::numeric AS meta_valor,
+    COALESCE(valor_vendido, 0)::numeric AS valor_vendido
+  FROM public.vw_comissao_vendedores_completa
+  WHERE mes_ano = '{{ selMesAno.selectedOptionValue }}'::date
+),
+agg AS (
+  SELECT
+    nome_loja,
+    SUM(meta_valor)                    AS total_meta_pdv,
+    SUM(valor_vendido)                 AS total_vendido_pdv,
+    COUNT(DISTINCT nome_vendedor)      AS n_vendedores
+  FROM base
+  GROUP BY 1
+),
+tot_empresa AS (
+  SELECT SUM(total_vendido_pdv) AS total_vendido_empresa
+  FROM agg
+)
+SELECT
+  a.nome_loja,
+  ROUND(a.total_meta_pdv, 2)                               AS total_meta_pdv,
+  ROUND(a.total_vendido_pdv, 2)                            AS total_vendido_pdv,
+  ROUND(GREATEST(a.total_meta_pdv - a.total_vendido_pdv, 0), 2) AS gap_meta_pdv,
+  a.n_vendedores,
+  -- Atingimento do PDV (ponderado corretamente)
+  ROUND(
+    CASE WHEN a.total_meta_pdv > 0
+         THEN (a.total_vendido_pdv / a.total_meta_pdv) * 100
+         ELSE 0 END
+  , 2)                                                     AS atingimento_pdv_pct,
+  -- Participação do PDV no faturamento total da empresa no mês
+  ROUND(
+    CASE WHEN t.total_vendido_empresa > 0
+         THEN (a.total_vendido_pdv / t.total_vendido_empresa) * 100
+         ELSE 0 END
+  , 2)                                                     AS participacao_empresa_pct
+FROM agg a
+CROSS JOIN tot_empresa t
+ORDER BY a.total_vendido_pdv DESC, a.nome_loja;

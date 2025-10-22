@@ -1,0 +1,42 @@
+WITH base AS (
+  SELECT
+    nome_loja,
+    nome_vendedor,
+    COALESCE(meta_valor,    0)::numeric AS meta_valor,
+    COALESCE(valor_vendido, 0)::numeric AS valor_vendido,
+    COALESCE(atingimento,   0)::numeric AS atingimento -- já é % na view
+  FROM public.vw_comissao_vendedores_completa
+  WHERE mes_ano = '{{ selMesAno.selectedOptionValue }}'::date
+),
+totais AS (
+  SELECT
+    nome_loja,
+    SUM(meta_valor)    AS total_meta_loja,
+    SUM(valor_vendido) AS total_venda_loja
+  FROM base
+  GROUP BY 1
+)
+SELECT
+  b.nome_loja,
+  b.nome_vendedor,
+  ROUND(b.meta_valor,    2) AS meta_valor,
+  ROUND(b.valor_vendido, 2) AS valor_vendido,
+  ROUND(b.atingimento,   2) AS atingimento,            -- % atingimento do vendedor
+
+  -- % da meta do vendedor sobre a meta total do PDV
+  ROUND(
+    CASE WHEN t.total_meta_loja > 0
+         THEN (b.meta_valor / t.total_meta_loja) * 100
+         ELSE 0 END
+  , 2) AS participacao_meta_pct,
+
+  -- % do vendido do vendedor sobre o vendido total do PDV
+  ROUND(
+    CASE WHEN t.total_venda_loja > 0
+         THEN (b.valor_vendido / t.total_venda_loja) * 100
+         ELSE 0 END
+  , 2) AS participacao_venda_pct
+
+FROM base b
+JOIN totais t USING (nome_loja)
+ORDER BY b.nome_loja, b.valor_vendido DESC, b.nome_vendedor;
