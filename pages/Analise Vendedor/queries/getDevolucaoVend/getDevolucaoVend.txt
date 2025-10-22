@@ -1,0 +1,5 @@
+SELECT vendedor, ROUND(AVG(devolucao_pct_valor)::numeric,2) AS devolucao_pct_valor_medio
+FROM public.vw_vendedor_mes
+WHERE ano = {{ Number(selAno.selectedOptionValue) }}
+GROUP BY 1
+ORDER BY devolucao_pct_valor_medio DESC;

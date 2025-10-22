@@ -1,0 +1,10 @@
+SELECT
+  mes_data,
+  TO_CHAR(mes_data, 'Mon') AS mes_nome,
+  meta_valor,
+  valor_liquido,
+  ROUND(atingimento_pct::numeric, 2) AS atingimento_pct
+FROM public.vw_comissao_vendedores_completa
+WHERE ano = {{ Number(selAno.selectedOptionValue) }}
+  AND vendedor = {{ selVend.selectedOptionValue }}
+ORDER BY mes_data;

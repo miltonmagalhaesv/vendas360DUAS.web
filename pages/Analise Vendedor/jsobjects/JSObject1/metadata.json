@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "68750378005e0954974296b0_2eab76cb-14ef-4f7a-8023-a7763935e812",
+  "id": "Analise Vendedor_JSObject1",
+  "unpublishedCollection": {
+    "name": "JSObject1",
+    "pageId": "Analise Vendedor",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "myVar1",
+        "value": "[]"
+      },
+      {
+        "name": "myVar2",
+        "value": "{}"
+      }
+    ]
+  }
+}

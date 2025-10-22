@@ -1,0 +1,3 @@
+SELECT *
+FROM public.vw_vendedor_mes
+WHERE ano = {{ Number(selAno.selectedOptionValue) }};

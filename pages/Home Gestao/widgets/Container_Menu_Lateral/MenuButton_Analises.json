@@ -29,6 +29,9 @@
   "dynamicTriggerPathList": [
     {
       "key": "menuItems.menuItem3.onClick"
+    },
+    {
+      "key": "menuItems.menuItem1.onClick"
     }
   ],
   "iconAlign": "left",
@@ -48,6 +51,7 @@
       "isDisabled": false,
       "isVisible": true,
       "label": "Produtos",
+      "onClick": "{{navigateTo('Analise de Produto', {}, 'SAME_WINDOW');}}",
       "widgetId": ""
     },
     "menuItem2": {

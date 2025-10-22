@@ -1,0 +1,7 @@
+SELECT
+  vendedor,
+  ROUND(SUM(comissao_prevista)::numeric, 2) AS comissao_prevista_total
+FROM public.vw_comissao_vendedores_completa
+WHERE ano = {{ Number(selAno.selectedOptionValue) }}
+GROUP BY 1
+ORDER BY comissao_prevista_total DESC;

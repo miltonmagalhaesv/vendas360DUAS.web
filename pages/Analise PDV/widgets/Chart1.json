@@ -13,7 +13,7 @@
     "ibkem8y33w": {
       "color": "",
       "data": "{{\n  getFaturamentoPV.data\n    .filter(r =>\n      r.ponto_venda === selPV.selectedOptionValue &&\n      r.ano === Number(selAno.selectedOptionValue)\n    )\n    .map(r => ({\n      x: r.mes_nome,\n      y: Number(r.valor_faturado)\n    }))\n}}",
-      "seriesName": "Ano Atual"
+      "seriesName": "{{ 'Ano de ' + selAno.selectedOptionLabel }}"
     }
   },
   "chartName": "Faturamento por Mês",
@@ -87,6 +87,9 @@
     },
     {
       "key": "chartData.4rvc6fhim3.data"
+    },
+    {
+      "key": "chartData.ibkem8y33w.seriesName"
     }
   ],
   "dynamicPropertyPathList": [],
@@ -118,5 +121,5 @@
   "widgetId": "ylysam09p1",
   "widgetName": "Chart1",
   "xAxisName": "Mês",
-  "yAxisName": "Quantidade de Vendas"
+  "yAxisName": "Valor (R$)"
 }

@@ -1,0 +1,13 @@
+SELECT
+  date_trunc('month', data_lanca)::date AS mes_data,
+  TO_CHAR(date_trunc('month', data_lanca), 'Mon') AS mes_nome,
+  ROUND(
+    SUM(CASE WHEN oper = 'S - Venda' THEN valor_liquido ELSE 0 END)::numeric
+    /
+    NULLIF(COUNT(DISTINCT CASE WHEN oper = 'S - Venda' THEN id_venda END), 0)
+  , 2) AS ticket_medio
+FROM public.vw_resumo_vend_devo
+WHERE EXTRACT(YEAR FROM data_lanca) = {{ Number(selAno.selectedOptionValue) }}
+  AND oper = 'S - Venda'
+GROUP BY 1, 2
+ORDER BY mes_data;

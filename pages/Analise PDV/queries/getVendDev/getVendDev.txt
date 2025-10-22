@@ -1,0 +1,9 @@
+SELECT
+  date_trunc('month', data_lanca)::date AS mes,
+  TO_CHAR(date_trunc('month', data_lanca), 'Mon') AS mes_nome,
+  SUM(CASE WHEN oper ILIKE '%Venda%' THEN ABS(valor_liquido) ELSE 0 END) AS venda,
+  SUM(CASE WHEN oper ILIKE '%Devol%' THEN ABS(valor_liquido) ELSE 0 END) AS devolucao
+FROM public.vw_resumo_vend_devo
+WHERE EXTRACT(YEAR FROM data_lanca) = {{ Number(selAno.selectedOptionValue) }}
+GROUP BY 1,2
+ORDER BY mes;

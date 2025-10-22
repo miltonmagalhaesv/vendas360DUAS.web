@@ -1,0 +1,18 @@
+SELECT
+  EXTRACT(YEAR FROM data_lanca)                   AS ano,
+  ponto_venda,
+  date_trunc('month', data_lanca)::date           AS mes_data,
+  TO_CHAR(date_trunc('month', data_lanca), 'Mon') AS mes_nome,
+  ROUND(SUM(
+    CASE
+      WHEN oper ILIKE '%Devol%' THEN -ABS(valor_liquido)   -- devolução negativa
+      ELSE  ABS(valor_liquido)                              -- vendas/ajustes positivos
+    END
+  )::numeric, 2) AS valor_faturado
+FROM public.vw_resumo_vend_devo
+WHERE EXTRACT(YEAR FROM data_lanca) IN (
+  {{ Number(selAno.selectedOptionValue) }},
+  {{ Number(selAno.selectedOptionValue) - 1 }}
+)
+GROUP BY 1,2,3,4
+ORDER BY mes_data, ponto_venda, ano;

@@ -68,6 +68,14 @@
     {
       "id": "Analise PDV",
       "isDefault": false
+    },
+    {
+      "id": "Analise de Produto",
+      "isDefault": false
+    },
+    {
+      "id": "Analise Vendedor",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {

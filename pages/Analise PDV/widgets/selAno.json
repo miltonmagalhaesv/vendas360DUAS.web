@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 16,
+  "bottomRow": 18,
   "boxShadow": "none",
   "defaultOptionValue": "{{ ((options, serverSideFiltering) => (  String(new Date().getFullYear()) ))(selAno.options, selAno.serverSideFiltering) }}",
   "dynamicBindingPathList": [
@@ -57,7 +57,7 @@
   "rightColumn": 34,
   "serverSideFiltering": false,
   "sourceData": "{{\n  [0,1,2,3].map(i => {\n    const y = new Date().getFullYear() - i;\n    return { label: String(y), value: String(y) };\n  })\n}}",
-  "topRow": 9,
+  "topRow": 11,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "mkxr99xba3",

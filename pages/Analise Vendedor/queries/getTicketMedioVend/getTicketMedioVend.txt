@@ -1,0 +1,5 @@
+SELECT vendedor, ROUND(AVG(ticket_medio)::numeric,2) AS ticket_medio_medio
+FROM public.vw_vendedor_mes
+WHERE ano = {{ Number(selAno.selectedOptionValue) }}
+GROUP BY 1
+ORDER BY ticket_medio_medio DESC;

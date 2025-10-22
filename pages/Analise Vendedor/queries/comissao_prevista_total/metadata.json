@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "68750378005e0954974296b0_3cb82768-9387-45b7-a74f-7abffde502ce",
-  "id": "Analise PDV_Peso_faturamento",
+  "gitSyncId": "68750378005e0954974296b0_9e0ee64c-0707-4ab1-929a-c62711019c13",
+  "id": "Analise Vendedor_comissao_prevista_total",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n  ponto_venda,\n  ROUND(SUM(valor_liquido)::numeric,2) AS faturamento\nFROM public.vw_resumo_vend_devo\nWHERE EXTRACT(YEAR FROM data_lanca) = {{ Number(selAno.selectedOptionValue) }}\nGROUP BY 1\nORDER BY faturamento DESC;",
+      "body": "SELECT\n  vendedor,\n  ROUND(SUM(comissao_prevista)::numeric, 2) AS comissao_prevista_total\nFROM public.vw_comissao_vendedores_completa\nWHERE ano = {{ Number(selAno.selectedOptionValue) }}\nGROUP BY 1\nORDER BY comissao_prevista_total DESC;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -27,8 +27,8 @@
         "key": "body"
       }
     ],
-    "name": "Peso_faturamento",
-    "pageId": "Analise PDV",
+    "name": "comissao_prevista_total",
+    "pageId": "Analise Vendedor",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }

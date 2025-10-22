@@ -1,0 +1,7 @@
+SELECT
+  vendedor,
+  ROUND(AVG(atingimento_pct)::numeric, 2) AS atingimento_medio
+FROM public.vw_comissao_vendedores_completa
+WHERE ano = {{ Number(selAno.selectedOptionValue) }}
+GROUP BY 1
+ORDER BY atingimento_medio DESC;

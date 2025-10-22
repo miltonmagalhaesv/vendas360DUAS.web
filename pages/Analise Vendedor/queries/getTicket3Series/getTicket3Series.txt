@@ -1,0 +1,8 @@
+WITH base AS (
+  SELECT * FROM public.vw_vendedor_mes
+  WHERE ano IN (
+    {{ Number(selAno.selectedOptionValue) }},
+    {{ Number(selAno.selectedOptionValue) - 1 }}
+  )
+)
+SELECT * FROM base;

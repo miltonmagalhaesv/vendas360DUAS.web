@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 16,
+  "bottomRow": 18,
   "boxShadow": "none",
   "defaultOptionValue": "{{ ((options, serverSideFiltering) => (  getFaturamentoPV.data?.[0]?.ponto_venda ))(selPV.options, selPV.serverSideFiltering) }}",
   "dynamicBindingPathList": [
@@ -57,7 +57,7 @@
   "rightColumn": 26,
   "serverSideFiltering": false,
   "sourceData": "{{\n  getFaturamentoPV.data\n    .map(r => r.ponto_venda)\n    .filter((v, i, arr) => v && arr.indexOf(v) === i)\n    .map(v => ({ label: v, value: v }))\n}}",
-  "topRow": 9,
+  "topRow": 11,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "w93uk4lysg",

@@ -1,0 +1,9 @@
+SELECT
+  mes_ano,
+  TO_CHAR(mes_ano,'Mon') AS mes_nome,
+  meta_valor,
+  valor_vendido
+FROM public.vw_comissao_vendedores_completa
+WHERE mes_ano = {{ Number(selAno.selectedOptionValue) }}
+  AND vendedor = {{ selVend.selectedOptionValue }}
+ORDER BY mes_data;

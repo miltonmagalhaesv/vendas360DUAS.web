@@ -1,0 +1,5 @@
+SELECT mes, mes_nome, valor_liquido, ticket_medio, descontos_concedidos, devolucao_pct_valor
+FROM public.vw_vendedor_mes
+WHERE ano = {{ Number(selAno.selectedOptionValue) }}
+  AND vendedor = {{ selVend.selectedOptionValue }}
+ORDER BY mes;
