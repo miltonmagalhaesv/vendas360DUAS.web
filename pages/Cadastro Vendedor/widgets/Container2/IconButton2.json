@@ -1,0 +1,43 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 4,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "TERTIARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [],
+  "dynamicTriggerPathList": [],
+  "iconName": "info-sign",
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "4huty8j3dr",
+  "leftColumn": 0,
+  "minWidth": 50,
+  "mobileBottomRow": 4,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 3,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "onClick": "{{}}",
+  "parentColumnSpace": 14.26171875,
+  "parentId": "02dxbdwl8f",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 3,
+  "tooltip": "<div style=\"background:#553DE9; padding:8px;\">\n  <p style=\"text-align:center; font-size:16px; color:#fff; margin:0;\">\n    <b>Como funciona o cadastro de vendedor</b>\n  </p>\n</div>\n\n<div style=\"padding:10px; width:280px; white-space:normal; word-wrap:break-word;\">\n\n<p style=\"text-align:justify; font-size:14px;\">\n\n<b>1. Preenchimento</b><br>\nInforme apenas <b>Nome</b>, <b>Sobrenome</b> e <b>Nome do Vendedor</b> (igual ao Linx).<br><br>\n\n<b>2. Geração automática</b><br>\n• Usuário gerado automaticamente;<br>\n• Senha temporária: <b>1234</b>;<br>\n• E-mail técnico.<br><br>\n\n<b>3. Após cadastrar</b><br>\nO sistema mostra um modal com os dados e o botão <b>Copiar mensagem</b> para enviar ao WhatsApp do vendedor.<br><br>\n\n<b>4. Primeiro acesso</b><br>\nO vendedor deve alterar a senha temporária no primeiro login.\n</p>\n\n</div>",
+  "topRow": 0,
+  "type": "ICON_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "xjugv4te88",
+  "widgetName": "IconButton2"
+}

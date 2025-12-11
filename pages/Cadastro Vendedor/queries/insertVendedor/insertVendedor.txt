@@ -1,0 +1,47 @@
+WITH base AS (
+  -- monta o username base: primeiro nome + último sobrenome
+  SELECT
+    lower(
+      regexp_replace({{ InputNome.text }}, '\s.*$', '') || '.' ||
+      regexp_replace({{ InputSobrenome.text }}, '^.*\s', '')
+    ) AS base_username
+),
+numero_existentes AS (
+  -- conta quantos usernames já existem com esse prefixo
+  SELECT
+    COUNT(*)::int AS qnt
+  FROM rh.colaboradores c
+  JOIN base b
+    ON c.nome_usuario LIKE b.base_username || '%'
+),
+usuario_final AS (
+  SELECT
+    b.base_username ||
+    CASE 
+      WHEN n.qnt = 0 THEN ''            -- monica.santo
+      ELSE n.qnt::text                  -- monica.santo1, .2, etc
+    END AS nome_usuario
+  FROM base b
+  CROSS JOIN numero_existentes n
+)
+INSERT INTO rh.colaboradores (
+  nome,
+  sobrenome,
+  nome_vendedor,
+  nome_usuario,
+  email,
+  status,
+  cargo,
+  senha_hash
+)
+SELECT
+  {{ InputNome.text }}         AS nome,
+  {{ InputSobrenome.text }}    AS sobrenome,
+  {{ InputNomeVendedor.text }} AS nome_vendedor,
+  u.nome_usuario               AS nome_usuario,
+  u.nome_usuario || '@duas-temp.local' AS email,   -- 👈 e-mail gerado automaticamente
+  'ativo'                      AS status,
+  'Vendedor'                   AS cargo,
+  '1234'                       AS senha_hash
+FROM usuario_final u
+RETURNING id, nome, sobrenome, nome_vendedor, nome_usuario;

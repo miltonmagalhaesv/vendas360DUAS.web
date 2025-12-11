@@ -1,0 +1,43 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 4,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "TERTIARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [],
+  "dynamicTriggerPathList": [],
+  "iconName": "info-sign",
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "4huty8j3dr",
+  "leftColumn": 0,
+  "minWidth": 50,
+  "mobileBottomRow": 4,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 3,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "onClick": "{{}}",
+  "parentColumnSpace": 14.26171875,
+  "parentId": "95v3aqe2lw",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 3,
+  "tooltip": "<div style=\"background:#553DE9; padding:8px;\">\n  <p style=\"text-align:center; font-size:16px; color:#fff; margin:0;\">\n    <b>Visualização de vendedores</b>\n  </p>\n</div>\n\n<div style=\"padding:10px; width:280px; white-space:normal; word-wrap:break-word;\">\n  <p style=\"text-align:justify; font-size:14px;\">\n\n  <b>1. Ativos x Inativos</b><br>\n  Use o <b>switch</b> para escolher se deseja ver apenas vendedores <b>ativos</b> ou apenas <b>inativos</b> na tabela.<br><br>\n\n  <b>2. Significado do status</b><br>\n  • <b>Ativo</b>: vendedor com acesso liberado ao Vendas 360.<br>\n  • <b>Inativo</b>: vendedor sem acesso ao sistema.<br><br>\n\n  <b>3. Botões Ativar/Desativar</b><br>\n  • <b>Desativar</b>: remove o acesso do vendedor.<br>\n  • <b>Ativar</b>: devolve o acesso imediatamente.<br><br>\n\n  <b>4. Atualização da lista</b><br>\n  Após mudar o status, o vendedor é movido para a lista correspondente. Se necessário, alterne o switch para conferir.\n  </p>\n</div>",
+  "topRow": 0,
+  "type": "ICON_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "dsgyj1q1hi",
+  "widgetName": "IconButton2Copy"
+}

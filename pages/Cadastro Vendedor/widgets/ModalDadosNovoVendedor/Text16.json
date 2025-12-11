@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 11,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "1rem",
+  "fontStyle": "",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "s06ye1gpgw",
+  "leftColumn": 3,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 9,
+  "mobileLeftColumn": 3,
+  "mobileRightColumn": 19,
+  "mobileTopRow": 5,
+  "needsErrorInfo": false,
+  "originalBottomRow": 33,
+  "originalTopRow": 7,
+  "overflow": "NONE",
+  "parentColumnSpace": 6.9375,
+  "parentId": "lrefq6x5aq",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 62,
+  "shouldTruncate": false,
+  "text": "{{\n  (() => {\n    const dados = insertVendedor.data?.[0];\n    const urlAcesso = \"https://l1nq.com/vendas360DUAS\"; // TROCA AQUI SE FOR OUTRO LINK\n\n    if (!dados) {\n      return \"Não foi possível carregar os dados do novo vendedor.\";\n    }\n\n    return `Vendedor cadastrado com sucesso!\n\nEnvie os dados abaixo para o vendedor:\n\n<b>Nome:</b> ${dados.nome} ${dados.sobrenome}\n<b>Usuário: </b>${dados.nome_usuario}\n<b>Senha temporária:</b> 1234\n\n<p style=\" text-align: center;\"><b>Link de acesso:</b>\n${urlAcesso}\n\n<i>No primeiro acesso, o sistema vai pedir para o vendedor criar uma nova senha.</i></p>`;\n  })()\n}}",
+  "textAlign": "LEFT",
+  "textColor": "#231F20",
+  "topRow": 7,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "6f2j3xbno2",
+  "widgetName": "Text16"
+}

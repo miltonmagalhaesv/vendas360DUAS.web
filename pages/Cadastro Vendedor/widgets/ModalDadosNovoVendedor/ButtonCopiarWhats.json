@@ -1,0 +1,60 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 19,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonStyle": "PRIMARY_BUTTON",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    },
+    {
+      "key": "iconName"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconName": "{{}}",
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "prvtyd2ulg",
+  "leftColumn": 14,
+  "minWidth": 120,
+  "mobileBottomRow": 22,
+  "mobileLeftColumn": 47,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 18,
+  "needsErrorInfo": false,
+  "onClick": "{{\n  (() => {\n    const dados = insertVendedor.data?.[0];\n    const urlAcesso = \"https://vendas360.duasdesign.com\"; // mesmo link\n\n    if (!dados) {\n      showAlert(\"Não foi possível montar a mensagem.\", \"error\");\n      return;\n    }\n\n    const msg = \n`Olá ${dados.nome},\n\nSeu acesso ao sistema Vendas 360 foi criado. Seguem os seus dados:\n\nUsuário: ${dados.nome_usuario}\nSenha temporária: 1234\nLink de acesso: ${urlAcesso}\n\nNo primeiro acesso, o sistema vai pedir para você alterar essa senha temporária por uma senha definitiva.`;\n\n    copyToClipboard(msg);\n    showAlert(\"Mensagem copiada! É só colar no WhatsApp do vendedor.\", \"success\");\n  })()\n}}",
+  "originalBottomRow": 41,
+  "originalTopRow": 37,
+  "parentId": "lrefq6x5aq",
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 50,
+  "text": "Copiar mensagem para WhatsApp",
+  "topRow": 15,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "jkrjt20f23",
+  "widgetName": "ButtonCopiarWhats"
+}
