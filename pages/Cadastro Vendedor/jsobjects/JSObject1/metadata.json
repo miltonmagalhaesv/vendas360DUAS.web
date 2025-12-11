@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "68750378005e0954974296b0_f6c30e00-1725-4a16-8cac-49e05e2562e9",
+  "id": "Cadastro Vendedor_JSObject1",
+  "unpublishedCollection": {
+    "name": "JSObject1",
+    "pageId": "Cadastro Vendedor",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "myVar1",
+        "value": "[]"
+      },
+      {
+        "name": "myVar2",
+        "value": "{}"
+      }
+    ]
+  }
+}

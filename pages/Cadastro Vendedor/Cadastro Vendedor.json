@@ -1,12 +1,12 @@
 {
-  "gitSyncId": "68750378005e0954974296b0_32c391dd-90ae-446d-814c-2538e4c97896",
+  "gitSyncId": "68750378005e0954974296b0_fe4f0f97-328b-44fa-acc4-3c6121e5cfae",
   "unpublishedPage": {
     "isHidden": false,
     "layouts": [
       {
         "dsl": {
           "backgroundColor": "none",
-          "bottomRow": 2850,
+          "bottomRow": 1840,
           "canExtend": true,
           "containerStyle": "none",
           "detachFromLayout": true,
@@ -26,7 +26,7 @@
         }
       }
     ],
-    "name": "Planejamento de Metas",
-    "slug": "planejamento-de-metas"
+    "name": "Cadastro Vendedor",
+    "slug": "cadastro-vendedor"
   }
 }

@@ -1,0 +1,14 @@
+-- getVendedoresAtivos
+SELECT 
+  id,
+  nome,
+  sobrenome,
+  nome_usuario,
+  nome_vendedor,
+  email,
+  loja,
+  status
+FROM rh.colaboradores
+WHERE cargo = 'Vendedor'
+  AND TRIM(LOWER(status)) = 'ativo'
+ORDER BY nome;

@@ -1,0 +1,7 @@
+UPDATE rh.colaboradores
+SET status = CASE 
+               WHEN TRIM(LOWER(status)) = 'ativo' THEN 'inativo'
+               ELSE 'ativo'
+             END
+WHERE id = {{ this.params.id }}
+RETURNING *;

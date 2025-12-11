@@ -1,0 +1,71 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 16,
+  "boxShadow": "none",
+  "configureMenuItems": {
+    "config": {
+      "id": "config",
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Menu Item"
+    },
+    "id": "config",
+    "label": "Configure menu items"
+  },
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "menuItems.menuItem3.onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "menuItems.menuItemtrhk201cvw.onClick"
+    }
+  ],
+  "iconAlign": "left",
+  "iconName": "saved",
+  "isCompact": false,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "ec7ov5xkq8",
+  "label": "Cadastro",
+  "leftColumn": 1,
+  "menuColor": "#553de9",
+  "menuItems": {
+    "menuItemtrhk201cvw": {
+      "id": "menuItemtrhk201cvw",
+      "index": 0,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Cadastro de Vendedor",
+      "onClick": "{{navigateTo('Cadastro Vendedor', {}, 'SAME_WINDOW');}}",
+      "widgetId": "cvbyfyiuyy"
+    }
+  },
+  "menuItemsSource": "STATIC",
+  "menuVariant": "TERTIARY",
+  "mobileBottomRow": 14,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 10,
+  "mobileTopRow": 10,
+  "needsErrorInfo": false,
+  "parentColumnSpace": 17.9375,
+  "parentId": "3scysahq2w",
+  "parentRowSpace": 10,
+  "placement": "START",
+  "renderMode": "CANVAS",
+  "rightColumn": 61,
+  "sourceData": [],
+  "topRow": 12,
+  "type": "MENU_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "4m2kjup34m",
+  "widgetName": "MenuButton_Cadastro"
+}

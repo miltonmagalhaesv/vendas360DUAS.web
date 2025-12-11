@@ -1,0 +1,13 @@
+-- getVendedores
+SELECT 
+  id,
+  nome,
+  sobrenome,
+  nome_usuario,
+  nome_vendedor,
+  email,
+  loja,
+  TRIM(LOWER(status)) AS status
+FROM rh.colaboradores
+WHERE cargo = 'Vendedor'
+ORDER BY nome;

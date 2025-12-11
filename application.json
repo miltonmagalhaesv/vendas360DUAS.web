@@ -76,6 +76,10 @@
     {
       "id": "Analise Vendedor",
       "isDefault": false
+    },
+    {
+      "id": "Cadastro Vendedor",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {
