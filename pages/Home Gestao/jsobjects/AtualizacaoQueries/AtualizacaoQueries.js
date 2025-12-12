@@ -21,6 +21,7 @@ export default {
 		KPI_Acumulado_Ano.clear();KPI_Acumulado_Ano.run();
 		KPI_Media_Ano.clear();KPI_Media_Ano.run();
 		GraficoVendasMes.clear();GraficoVendasMes.run();
+		getFaturamentoPorDiaYoY.clear();getFaturamentoPorDiaYoY.run();
 		
 		
   },

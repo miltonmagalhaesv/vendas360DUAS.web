@@ -36,7 +36,7 @@
   "mobileRightColumn": 60,
   "mobileTopRow": 12,
   "needsErrorInfo": false,
-  "onClick": "{{ JSObject4.atualizarDadosDoMes() }}",
+  "onClick": "{{ AtualizacaoQueries.atualizarDadosDoMes() }}",
   "parentColumnSpace": 14.5419921875,
   "parentId": "6ox33zx6de",
   "parentRowSpace": 10,

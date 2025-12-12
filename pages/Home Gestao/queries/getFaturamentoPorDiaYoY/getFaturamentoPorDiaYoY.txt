@@ -1,0 +1,42 @@
+-- Parâmetros dt_ini e dt_fim são lidos dos componentes de texto
+WITH params AS (
+  SELECT
+    '{{ txt_data_inicial_sql.text }}'::date AS dt_ini,
+    '{{ txt_data_final_sql.text }}'::date AS dt_fim
+),
+calendar AS (
+  SELECT generate_series(
+    (SELECT dt_ini FROM params),
+    (SELECT dt_fim FROM params),
+    interval '1 day'
+  )::date AS dia
+),
+base_atual AS (
+  SELECT
+    data_lanca::date AS dia,
+    ROUND(SUM(valor_liquido)::numeric, 2) AS valor
+  FROM public.vw_resumo_vend_devo
+  WHERE data_lanca >= (SELECT dt_ini FROM params)
+    AND data_lanca <  ((SELECT dt_fim FROM params) + interval '1 day')
+    AND ponto_venda = ANY ('{{ Select_Lojas.selectedOptionValues }}')
+  GROUP BY 1
+),
+base_anterior AS (
+  SELECT
+    (data_lanca::date + interval '1 year')::date AS dia_ref,
+    ROUND(SUM(valor_liquido)::numeric, 2) AS valor
+  FROM public.vw_resumo_vend_devo
+  WHERE data_lanca >= ((SELECT dt_ini FROM params) - interval '1 year')
+    AND data_lanca <  (((SELECT dt_fim FROM params) + interval '1 day') - interval '1 year')
+    AND ponto_venda = ANY ('{{ Select_Lojas.selectedOptionValues }}')
+  GROUP BY 1
+)
+SELECT
+  -- AQUI ESTÁ A MUDANÇA: Formatando a data para o padrão DD/MM/AA
+  to_char(c.dia, 'DD/MM/YY') AS dia,
+  COALESCE(a.valor, 0) AS valor_atual,
+  COALESCE(p.valor, 0) AS valor_anterior
+FROM calendar c
+LEFT JOIN base_atual a    ON a.dia = c.dia
+LEFT JOIN base_anterior p ON p.dia_ref = c.dia
+ORDER BY c.dia;

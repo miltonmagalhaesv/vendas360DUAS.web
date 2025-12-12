@@ -3,13 +3,13 @@ export default {
   setHoje: async () => {
     DatePicker_Inicial.setValue(moment().startOf("day").toDate());
     DatePicker_Final.setValue(moment().endOf("day").toDate());
-    await JSObject4.atualizarDadosDoMes();
+    await AtualizacaoQueries.atualizarDadosDoMes();
   },
   // Ontem
   setOntem: async () => {
     DatePicker_Inicial.setValue(moment().subtract(1, "day").startOf("day").toDate());
     DatePicker_Final.setValue(moment().subtract(1, "day").endOf("day").toDate());
-    await JSObject4.atualizarDadosDoMes();
+    await AtualizacaoQueries.atualizarDadosDoMes();
   },
   // Última semana
   setUltimaSemana: async () => {
@@ -27,19 +27,19 @@ export default {
 
   DatePicker_Inicial.setValue(inicioSemanaPassada.toDate());
   DatePicker_Final.setValue(fimSemanaPassada.toDate());
-  await JSObject4.atualizarDadosDoMes();
+  await AtualizacaoQueries.atualizarDadosDoMes();
 },
   // Este mês
   setEsteMes: async () => {
     DatePicker_Inicial.setValue(moment().startOf("month").toDate());
     DatePicker_Final.setValue(moment().endOf("day").toDate());
-    await JSObject4.atualizarDadosDoMes();
+    await AtualizacaoQueries.atualizarDadosDoMes();
   },
   // Último mês
   setUltimoMes: async () => {
     DatePicker_Inicial.setValue(moment().subtract(1, "month").startOf("month").toDate());
     DatePicker_Final.setValue(moment().subtract(1, "month").endOf("month").toDate());
-    await JSObject4.atualizarDadosDoMes();
+    await AtualizacaoQueries.atualizarDadosDoMes();
   },
   // Últimos 3 meses
   setUltimos3Meses: async () => {
@@ -51,12 +51,12 @@ export default {
 
   DatePicker_Inicial.setValue(inicio.toDate());
   DatePicker_Final.setValue(fim.toDate());
-  await JSObject4.atualizarDadosDoMes();
+  await AtualizacaoQueries.atualizarDadosDoMes();
 },
   // Este ano
   setEsteAno: async () => {
     DatePicker_Inicial.setValue(moment().startOf("year").toDate());
     DatePicker_Final.setValue(moment().endOf("day").toDate());
-    await JSObject4.atualizarDadosDoMes();
+    await AtualizacaoQueries.atualizarDadosDoMes();
   },
 }
